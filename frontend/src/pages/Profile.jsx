@@ -1,7 +1,7 @@
-import CardProfile from "@components/CardProfile";
+import CardProfileInfo from "@components/CardProfileInfo";
 
 function Profile() {
-  return <CardProfile />;
+  return <CardProfileInfo />;
 }
 
 export default Profile;
