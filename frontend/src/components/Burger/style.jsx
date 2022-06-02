@@ -33,10 +33,6 @@ export default styled.div`
     }
   }
 
-  .burgerMenu {
-    display: none;
-    transform: ${{ open }} => (open ? "show": "");
-
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: grey;
