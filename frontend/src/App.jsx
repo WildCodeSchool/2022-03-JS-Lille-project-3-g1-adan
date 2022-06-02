@@ -1,14 +1,13 @@
-import Home from "@pages/Home";
+import { Routes, Route } from "react-router-dom";
 import Register from "@pages/Register";
-
-import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/inscription" element={<Register />} />
+      </Routes>
       <Register />
-      <Home />
-      <p>coucou</p>
     </div>
   );
 }
