@@ -1,13 +1,15 @@
 import Home from "@pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Profile from "@pages/Profile";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <Routes>
+      <Route path="/profile" element={<Profile />} />
+      <Route index element={<Home />} />
+    </Routes>
   );
 }
 
