@@ -4,7 +4,6 @@ export default styled.div`
   background-color: #bb5459;
   .bannerImg {
     width: 100vw;
-    position: absolute;
   }
 
   .profileInfo {
@@ -12,12 +11,10 @@ export default styled.div`
     display: flex;
     margin: 8em 2rem 0 2rem;
     width: 85vw;
-    position: absolute;
   }
 
   .avatarImg {
     width: 20%;
-    position: absolute;
     border-radius: 50%;
     margin: rem 0 0 2rem;
   }

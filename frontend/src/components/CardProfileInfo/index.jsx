@@ -1,5 +1,9 @@
 import Avatar from "@assets/imgProfile/unnamed.png";
 import Banner from "@assets/imgProfile/banner.jpg";
+import insta from "@assets/imgProfile/insta.svg";
+import linkedin from "@assets/imgProfile/linkedin.svg";
+import agenda from "@assets/imgProfile/agenda.svg";
+import DemoProfile from "@components/DemoProfile";
 import SCardProfile from "./style";
 
 function CardProfileInfo() {
@@ -19,11 +23,16 @@ function CardProfileInfo() {
         </ul>
         <div>
           <button type="button">follow</button>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img src={agenda} alt="" />
+          <img src={insta} alt="" />
+          <img src={linkedin} alt="" />
         </div>
       </div>
+      <div>
+        <button type="button">Avis</button>
+        <button type="button">MP</button>
+      </div>
+      <DemoProfile />
     </SCardProfile>
   );
 }
