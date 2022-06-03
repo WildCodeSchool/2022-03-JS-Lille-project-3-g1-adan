@@ -12,6 +12,7 @@ export default styled.div`
     display: flex;
     margin: 8em 2rem 0 2rem;
     width: 85vw;
+    background-image: ;
   }
 
   .avatarImg {

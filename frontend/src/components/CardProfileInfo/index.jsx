@@ -1,5 +1,3 @@
-import Avatar from "@assets/imgProfile/val1.png";
-import Banner from "@assets/imgProfile/banner.png";
 import insta from "@assets/imgProfile/insta.svg";
 import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
