@@ -2,9 +2,15 @@ import styled from "styled-components";
 
 export default styled.nav`
   @media screen and (min-width: 500px) {
+    position: fixed;
+    bottom: 0;
+    top: 4rem;
+    right: 20px;
+    flex-direction: row;
+
     > button {
-      width: 2rem;
-      height: 2rem;
+      width: 3rem;
+      height: 3rem;
       position: fixed;
       top: 15px;
       right: 20px;
@@ -38,29 +44,9 @@ export default styled.nav`
     > .desktopMenu {
       display: ${({ open }) => (open ? "block" : "none")};
     }
+
+    ul.mobile {
+      background-color: #c4c4c4;
+    }
   }
 `;
-/* flex-flow: column nowrap;
-  background-color: grey;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 300px;
-  padding-top: 3.5rem; */
-
-/* width: 2rem;
-  height: 2rem;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap; */
-
-/* background-color: grey;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 150px; */

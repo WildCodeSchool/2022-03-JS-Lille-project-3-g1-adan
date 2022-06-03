@@ -1,12 +1,16 @@
 import Burger from "@components/Burger";
+import NavMob from "@components/NavMob";
 import React from "react";
 import SNavbar from "./style";
 
 function Navbar() {
   return (
-    <SNavbar>
-      <Burger />
-    </SNavbar>
+    <div>
+      <SNavbar>
+        <Burger />
+        <NavMob />
+      </SNavbar>
+    </div>
   );
 }
 

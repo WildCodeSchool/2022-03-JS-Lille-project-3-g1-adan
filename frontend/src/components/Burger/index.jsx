@@ -16,10 +16,10 @@ function Burger() {
         <div />
       </button>
       <ul className="desktopMenu">
-        <li className="navBarItem ">Recherche</li>
-        <li className="navBarItem ">Accueil</li>
-        <li className="navBarItem "> Contactez nous</li>
-        <li className="navBarItem "> Profil</li>
+        <button type="button">Acc</button>
+        <button type="button">Acc</button>
+        <button type="button">Acc</button>
+        <button type="button">Acc</button>
       </ul>
     </SBurger>
   );
