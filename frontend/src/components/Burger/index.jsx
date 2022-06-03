@@ -16,10 +16,18 @@ function Burger() {
         <div />
       </button>
       <ul className="desktopMenu">
-        <button type="button">Acc</button>
-        <button type="button">Acc</button>
-        <button type="button">Acc</button>
-        <button type="button">Acc</button>
+        <button type="button" className="picture">
+          Acc
+        </button>
+        <button type="button" className="picture">
+          Acc
+        </button>
+        <button type="button" className="picture">
+          Acc
+        </button>
+        <button type="button" className="picture">
+          Acc
+        </button>
       </ul>
     </SBurger>
   );

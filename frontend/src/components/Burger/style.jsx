@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export default styled.nav`
+  display: none;
   @media screen and (min-width: 500px) {
     position: fixed;
     bottom: 0;
     top: 4rem;
     right: 20px;
-    flex-direction: row;
+    display: initial;
+
+    .picture {
+      display: flex;
+      justify-content: space-around;
+      background-color: #c4c4c4;
+    }
 
     > button {
       width: 3rem;
@@ -23,7 +30,7 @@ export default styled.nav`
         height: 0.25rem;
         background-color: ${({ open }) => (open ? "#333" : "#333")};
         border-radius: 2rem;
-        transform-origin: 1px;
+        transform-origin: 0.1px;
         transition: all 0.3s linear;
 
         &:nth-child(1) {
