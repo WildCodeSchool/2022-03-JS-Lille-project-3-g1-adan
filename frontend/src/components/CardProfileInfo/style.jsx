@@ -4,6 +4,7 @@ export default styled.div`
   background-color: #bb5459;
   .bannerImg {
     width: 100vw;
+    height: 10vh;
   }
 
   .profileInfo {
@@ -14,8 +15,9 @@ export default styled.div`
   }
 
   .avatarImg {
-    width: 20%;
-    border-radius: 50%;
+    width: 10rem;
+    height: auto;
+    border-radius: 100%;
     margin: rem 0 0 2rem;
   }
   @media screen and (min-width: 400px);
