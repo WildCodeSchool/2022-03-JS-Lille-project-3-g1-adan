@@ -11,11 +11,9 @@ export default function Register() {
           <input className="registerInput" type="button" value="INSCRIPTION" />
           <div className="registerContainer">
             <Link to="/inscription/artiste">
-              <input
-                className="registerContainerInput"
-                type="button"
-                value="Je suis un artiste"
-              />
+              <button className="registerContainerInput" type="button">
+                Je suis un artiste
+              </button>
             </Link>
             <input
               className="registerContainerInput"
