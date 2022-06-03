@@ -4,7 +4,7 @@ import SDemoProfile from "./style";
 function DemoProfile() {
   return (
     <SDemoProfile>
-      <img src={cover} alt="" />
+      <img src={cover} alt="cover album" />
     </SDemoProfile>
   );
 }
