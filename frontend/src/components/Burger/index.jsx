@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import contact from "@assets/pictureNavMob/contact.png";
 import SBurger from "./style";
 
 function Burger() {
@@ -8,17 +9,25 @@ function Burger() {
   };
 
   return (
-    <SBurger>
+    <SBurger toggleNav={toggleNav}>
       <nav>
         {toggleMenu && (
-          <ul className="liste">
-            <li className="picture">Acceuil</li>
-            <li className="picture">Acceuil</li>
-            <li className="picture">Acceuil</li>
-            <li className="picture">Acceuil</li>
+          <ul>
+            <li className="picture">Page d'accueil</li>
+            <li className="picture">Mon profil</li>
+            <li className="picture">Mon agenda</li>
+            <li className="picture">A propos</li>
+            <li className="picture">Déconnexion</li>
           </ul>
         )}
-        <button type="button" onClick={toggleNav} className="btn">
+        <img src={contact} alt="profil" className="pict" />
+        <button
+          type="button"
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+          }}
+          className="btn"
+        >
           BTN
         </button>
       </nav>
@@ -37,8 +46,8 @@ export default Burger;
 //     <SBurger open={open}>
 //       <button
 //         type="button"
-//         onClick={() => {
-//           setOpen(!open);
+// onClick={() => {
+//   setOpen(!open);
 //         }}
 //       >
 //         <div />

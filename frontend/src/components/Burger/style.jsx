@@ -46,16 +46,16 @@
 //           transform: ${({ open }) => (open ? "rotate(45deg)" : " rotate(0)")};
 //         }
 
-//         &:nth-child(2) {
-//           transform: ${({ open }) =>
-//             open ? "translateX(100%)" : " translateX(0)"};
-//           opacity: ${({ open }) => (open ? 0 : 1)};
-//         }
+// &:nth-child(2) {
+//   transform: ${({ open }) =>
+//     open ? "translateX(100%)" : " translateX(0)"};
+//   opacity: ${({ open }) => (open ? 0 : 1)};
+// }
 
 //         &:nth-child(3) {
 //           transform: ${({ open }) => (open ? "rotate(-45deg)" : " rotate(0)")};
 //         }
-//       }
+// //       }
 //     }
 //     > .desktopMenu {
 //       display: ${({ open }) => (open ? "block" : "none")};
@@ -74,33 +74,59 @@ export default styled.nav`
     nav {
       height: 10vh;
       background-color: #c4c4c4;
+      border: 2px solid yellow;
     }
     .liste {
-      list-style-type: none;
-      background-color: #c4c4c4;
       height: 10vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      border: 2px solid black;
       width: 20vw;
-
       flex-direction: column;
     }
-    .picture {
-      padding: 2rem 40%;
+    ul {
+      padding: 3rem;
+      width: 10rem;
       position: relative;
-      left: 64.5rem;
-      top: 12rem;
+      left: 64rem;
+      top: 3rem;
       background-color: #c4c4c4;
-      display: flex;
-      height: 4rem;
+
+      border-radius: 2rem;
+    }
+    .picture {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .pict {
+      display: block;
+      position: absolute;
+      right: 7rem;
+      top: 1.4rem;
+      height: 5.4vh;
     }
     .btn {
       display: block;
       position: absolute;
       right: 1.5rem;
       top: 1.4rem;
+      height: 5.6vh;
       cursor: pointer;
+      b &:nth-child(1) {
+        transform: ${({ toggleMenu }) =>
+          toggleMenu ? "rotate(45deg)" : " rotate(0)"};
+      }
+      &:nth-child(2) {
+        transform: ${({ toggleMenu }) =>
+          toggleMenu ? "translateX(100%)" : " translateX(0)"};
+        opacity: ${({ toggleMenu }) => (toggleMenu ? 0 : 1)};
+      }
+      &:nth-child(3) {
+        transform: ${({ toggleMenu }) =>
+          toggleMenu ? "rotate(-45deg)" : " rotate(0)"};
+      }
+      //       }
     }
   }
 `;
