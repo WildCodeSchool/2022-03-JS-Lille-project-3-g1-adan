@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export default styled.div`
   display: none;
+
   @media screen and (max-width: 500px) {
     position: absolute;
     bottom: 0;
     width: 100vw;
-    display: initial;
-
+    display: block;
     .mobile {
       background-color: #c4c4c4;
       height: 7vh;

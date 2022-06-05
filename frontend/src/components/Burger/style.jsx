@@ -74,13 +74,12 @@ export default styled.nav`
     nav {
       height: 10vh;
       background-color: #c4c4c4;
-      border: 2px solid yellow;
     }
     .liste {
       height: 10vh;
       display: flex;
       justify-content: center;
-      border: 2px solid black;
+
       width: 20vw;
       flex-direction: column;
     }
@@ -126,7 +125,6 @@ export default styled.nav`
         transform: ${({ toggleMenu }) =>
           toggleMenu ? "rotate(-45deg)" : " rotate(0)"};
       }
-      //       }
     }
   }
 `;
