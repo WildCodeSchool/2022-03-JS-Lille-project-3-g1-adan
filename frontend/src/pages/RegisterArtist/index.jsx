@@ -17,7 +17,7 @@ export default function RegisterArtist() {
   };
   return (
     <SRegisterArtist>
-      <img src={Logo} alt="Logo ADAN" />
+      <img className="imgLogo" src={Logo} alt="Logo ADAN" />
       <div className="register">
         <div className="registerContainer">
           <h1>Artiste</h1>
@@ -46,10 +46,16 @@ export default function RegisterArtist() {
               name="secuNum"
               placeholder="Numéro de sécurité sociale"
             />
-            <Checkbox check={handleChange} act={active} />
-            <Checkbox check={handleChangeBis} act={activeBis} />
+            <div className="select">
+              <Checkbox check={handleChange} act={active} />
+              <span>Groupe</span>
+              <Checkbox check={handleChangeBis} act={activeBis} />
+              <span>Solo</span>
+            </div>
 
-            <button type="submit">Suite</button>
+            <button className="btnNext" type="submit">
+              SUITE
+            </button>
           </form>
         </div>
       </div>

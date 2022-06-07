@@ -8,7 +8,7 @@ export default styled.section`
   top: 0;
   text-align: center;
 
-  img {
+  .imgLogo {
     width: 47vw;
     height: 27vh;
     margin-top: 2.75rem;

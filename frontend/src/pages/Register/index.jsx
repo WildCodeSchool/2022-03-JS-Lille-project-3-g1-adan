@@ -6,7 +6,7 @@ export default function Register() {
   return (
     <div>
       <SRegister>
-        <img src={Logo} alt="Logo ADAN" />
+        <img className="imgLogo" src={Logo} alt="Logo ADAN" />
         <div className="register">
           <input className="registerInput" type="button" value="INSCRIPTION" />
           <div className="registerContainer">
