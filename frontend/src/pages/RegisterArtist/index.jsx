@@ -1,7 +1,20 @@
 import Logo from "@assets/Logo_ADAN.png";
+import Checkbox from "@components/Checkbox";
+import { useState } from "react";
 import SRegisterArtist from "./style";
 
 export default function RegisterArtist() {
+  const [active, setActive] = useState(false);
+  const [activeBis, setActiveBis] = useState(false);
+
+  const handleChange = () => {
+    setActive(!active);
+    setActiveBis(false);
+  };
+  const handleChangeBis = () => {
+    setActiveBis(!activeBis);
+    setActive(false);
+  };
   return (
     <SRegisterArtist>
       <img src={Logo} alt="Logo ADAN" />
@@ -30,15 +43,12 @@ export default function RegisterArtist() {
             <input
               className="inputForm"
               type="text"
-              name="secunum"
+              name="secuNum"
               placeholder="Numéro de sécurité sociale"
             />
-            <div className="checkbox">
-              <input type="checkbox" name="band" />
-              <span>Groupe</span>
-              <input type="checkbox" name="band" />
-              <span>Solo</span>
-            </div>
+            <Checkbox check={handleChange} act={active} />
+            <Checkbox check={handleChangeBis} act={activeBis} />
+
             <button type="submit">Suite</button>
           </form>
         </div>
