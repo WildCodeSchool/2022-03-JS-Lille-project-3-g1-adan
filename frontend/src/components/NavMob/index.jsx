@@ -8,16 +8,14 @@ import SNavMob from "./style";
 function NavMob() {
   return (
     <SNavMob>
-      <nav>
-        <ul className="mobile">
-          <img src={recherche} alt="recherche" className="pict" />
+      <nav className="mobile">
+        <img src={recherche} alt="recherche" className="pict" />
 
-          <img src={acceuil} alt="acceuil" className="pict" />
+        <img src={acceuil} alt="acceuil" className="pict" />
 
-          <img src={contact} alt="contact" className="pict" />
+        <img src={contact} alt="contact" className="picto" />
 
-          <img src={profil} alt="profil" className="pict" />
-        </ul>
+        <img src={profil} alt="profil" className="pict" />
       </nav>
     </SNavMob>
   );

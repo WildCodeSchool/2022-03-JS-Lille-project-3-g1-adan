@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export default styled.div`
+export default styled.nav`
   display: none;
-
-  @media screen and (max-width: 500px) {
-    position: absolute;
+  @media screen and (max-width: 799px) {
+    position: fixed;
     bottom: 0;
     width: 100vw;
     display: block;
     .mobile {
+      display: none;
       background-color: #c4c4c4;
       height: 7vh;
       padding: 1rem;
@@ -16,14 +16,12 @@ export default styled.div`
       justify-content: space-around;
       align-items: flex-end;
     }
-
+    .picto,
     .pict {
-      width: 7vw;
-      height: 4vh;
-      padding: 0.5rem;
+      width: auto;
+      height: 5vh;
+      padding: 0.25rem;
       border: 2px black;
-
-      background-color: #c4c4c4;
     }
   }
 `;

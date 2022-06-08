@@ -1,6 +1,3 @@
 import styled from "styled-components";
 
-export default styled.nav`
-  div {
-  }
-`;
+export default styled.nav``;
