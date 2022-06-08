@@ -15,7 +15,7 @@ function CardProfileInfo() {
     axios.get(`http://localhost:5000/artist/${profileId}`).then(({ data }) => {
       setArtistData(data);
     });
-  }, [{ artistData }]);
+  }, []);
 
   const [isFollow, setIsFollow] = useState(false);
   const handleIsFollow = () => {
@@ -23,9 +23,22 @@ function CardProfileInfo() {
   };
   return (
     <SCardProfile src={artistData}>
-      <div className="bannerImg"> </div>
+      <div
+        className={
+          artistData.banner === null || artistData.banner === ""
+            ? "defaultBanner"
+            : "bannerImg"
+        }
+      />
       <div className="profileInfo">
-        <div className="avatarImg"> </div>
+        <div
+          className={
+            artistData.avatar === null || artistData.avatar === ""
+              ? "defaultAvatar"
+              : "avatarImg"
+          }
+        />
+        {/* <div className="avatarImg"> </div> */}
         <div>
           <h1>
             {artistData.firstname} {artistData.lastname}

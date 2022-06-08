@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import banner from "@assets/imgProfile/banner.png";
+import avatar from "@assets/imgProfile/avatarDefault.svg";
 
 export default styled.div`
   background-color: #bb5459;
@@ -11,9 +13,16 @@ export default styled.div`
     background-size: cover;
   }
 
+  .defaultBanner {
+    height: 12vh;
+    background-image: url(${banner});
+    background-position: center;
+    background-size: cover;
+  }
+
   .profileInfo {
     background-color: rgb(196, 196, 196);
-    margin: 0 2rem;
+    margin: 0 auto;
     padding: 1rem 0;
     width: 85vw;
     border-bottom-right-radius: 19px;
@@ -34,6 +43,19 @@ export default styled.div`
     left: 0;
     bottom: 72.49%;
   }
+  .defaultAvatar {
+    height: 50%;
+    width: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-image: url(${avatar});
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 72.49%;
+    background-color: #bb5459;
+  }
 
   .followButton {
     border-radius: 18px;
@@ -45,7 +67,6 @@ export default styled.div`
     text-align: center;
     color: #ffffff;
     padding: 0.3rem;
-    box-sizing: border-box;
     position: absolute;
     right: 1rem;
     top: 0.5rem;
@@ -68,7 +89,7 @@ export default styled.div`
     border-bottom-right-radius: 19px;
     border-bottom-left-radius: 19px;
     width: 70vw;
-    margin: 0 4rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
   }
@@ -107,6 +128,8 @@ export default styled.div`
     line-height: 1.5rem;
   }
   .imgAgenda {
+    height: 20%;
+    width: auto;
     position: absolute;
     right: 1.8rem;
     top: 2.8rem;
@@ -114,12 +137,18 @@ export default styled.div`
 
   .imgInsta {
     position: absolute;
+    height: 20%;
+    width: auto;
+    aspect-ratio: 1/1;
     right: 3rem;
     top: 6rem;
   }
 
   .imgLinkedin {
     position: absolute;
+    height: 20%;
+    width: auto;
+    aspect-ratio: 1/1;
     right: 0.5rem;
     top: 6rem;
   }
@@ -127,5 +156,29 @@ export default styled.div`
   .test {
     text-align: center;
   }
-  @media screen and (min-width: 500px);
+  @media screen and (min-width: 500px) {
+    /* h1 {
+      color: white;
+    } */
+    .imgAgenda {
+      right: 8%;
+      top: 30%;
+    }
+
+    .imgInsta {
+      right: 13%;
+      top: 60%;
+    }
+
+    .imgLinkedin {
+      right: 3%;
+      top: 60%;
+    }
+    .followButton {
+      right: 6.5%;
+      top: 5%;
+      font-size: calc(100vw / 45);
+      padding: calc(100vw / 99);
+    }
+  }
 `;
