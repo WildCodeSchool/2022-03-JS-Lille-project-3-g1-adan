@@ -16,32 +16,53 @@ function CardProfileInfo() {
       setArtistData(data);
     });
   }, [{ artistData }]);
+
+  const [isFollow, setIsFollow] = useState(false);
+  const handleIsFollow = () => {
+    setIsFollow(!isFollow);
+  };
   return (
-    <SCardProfile>
-      <img src={artistData.banner} className="bannerImg" alt="" />
+    <SCardProfile src={artistData}>
+      <div className="bannerImg"> </div>
       <div className="profileInfo">
+        <div className="avatarImg"> </div>
         <div>
-          <img src={artistData.avatar} className="avatarImg" alt="" />
           <h1>
             {artistData.firstname} {artistData.lastname}
           </h1>
           <p>{artistData.role}</p>
         </div>
+        <button
+          type="button"
+          className={`followButton ${
+            isFollow ? "isNotFollowed" : "isFollowed"
+          }`}
+          onClick={handleIsFollow}
+        >
+          Suivre
+        </button>
         <ul>
-          <li>{artistData.bandname}</li>
-          <li>{artistData.city}</li>
-          <li>{artistData.cachet}</li>
+          <li>👥 {artistData.bandname} The goodman</li>
+          <li>🌍 {artistData.city}</li>
+          <li>€ {artistData.cachet}</li>
         </ul>
+        <div className="test">
+          <a href="www.google.com"> + d'information </a>{" "}
+        </div>
+
         <div>
-          <button type="button">follow</button>
-          <img src={agenda} alt="" />
-          <img src={insta} alt="" />
-          <img src={linkedin} alt="" />
+          <img className="imgAgenda" src={agenda} alt="" />
+          <img className="imgInsta" src={insta} alt="" />
+          <img className="imgLinkedin" src={linkedin} alt="" />
         </div>
       </div>
-      <div>
-        <button type="button">Avis</button>
-        <button type="button">MP</button>
+      <div className="bottomProfile">
+        <button type="button" className="btnBottomProfile">
+          Avis
+        </button>
+        <button type="button" className="btnBottomProfile">
+          MP
+        </button>
       </div>
       <DemoProfile />
     </SCardProfile>
