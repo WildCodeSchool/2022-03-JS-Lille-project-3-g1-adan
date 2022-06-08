@@ -8,5 +8,8 @@ export default styled.div`
     margin: 1rem;
     width: 30%;
   }
+  /* button {
+    color: black;
+  } */
   @media screen and (min-width: 400px);
 `;
