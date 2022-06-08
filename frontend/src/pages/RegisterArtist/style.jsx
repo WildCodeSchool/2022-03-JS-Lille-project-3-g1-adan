@@ -9,7 +9,7 @@ export default styled.section`
   text-align: center;
   .imgLogo {
     width: 47vw;
-    height: 27vh;
+    height: auto;
     margin-top: 2.75rem;
   }
   .register {
@@ -21,7 +21,6 @@ export default styled.section`
   .registerContainer {
     margin-top: 2rem;
     width: 85vw;
-    height: 58vh;
     background-color: #c4c4c4;
     border-radius: 1rem;
     border: 1px solid white;
@@ -34,12 +33,12 @@ export default styled.section`
   .inputForm {
     width: 65vw;
     height: 3vh;
-    margin-top: 1.5rem;
     border-radius: 0.3rem;
     border: 1px solid white;
+    margin: 1rem;
   }
   .select {
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
     margin-right: 3rem;
@@ -60,12 +59,38 @@ export default styled.section`
     margin-top: 1rem;
   }
   .btnNext {
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     width: 65vw;
     height: 5vh;
-    border-radius: 1rem;
+    border-radius: 2rem;
     border: 1px solid white;
     background-color: #f67778;
     color: white;
+  }
+  @media screen and (min-width: 850px) {
+    .registerContainer {
+      height: 40vh;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .imgLogo {
+      width: 15vw;
+    }
+    .registerContainer {
+      margin-top: 5rem;
+      width: 40vw;
+      height: 50vh;
+    }
+    .inputForm {
+      width: 30vw;
+    }
+    .select {
+      margin-top: 1rem;
+    }
+    .btnNext {
+      margin-top: 1rem;
+      width: 25vw;
+    }
   }
 `;

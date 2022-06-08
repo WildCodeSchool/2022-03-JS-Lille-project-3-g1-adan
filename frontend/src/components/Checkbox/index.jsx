@@ -1,5 +1,5 @@
-import Black from "@assets/checkbox_black.png";
-import White from "@assets/checkbox_white.png";
+import Black from "@assets/imgRegister/checkbox_black.png";
+import White from "@assets/imgRegister/checkbox_white.png";
 import propTypes from "prop-types";
 
 export default function Checkbox({ check, act }) {
@@ -22,5 +22,5 @@ export default function Checkbox({ check, act }) {
 
 Checkbox.propTypes = {
   check: propTypes.func.isRequired,
-  act: propTypes.string.isRequired,
+  act: propTypes.bool.isRequired,
 };

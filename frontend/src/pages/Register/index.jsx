@@ -1,4 +1,4 @@
-import Logo from "@assets/Logo_ADAN.png";
+import Logo from "@assets/logo/Logo_ADAN.png";
 import { Link } from "react-router-dom";
 import SRegister from "./style";
 
