@@ -59,13 +59,13 @@ function CardProfileInfo() {
           <li>€ {artistData.cachet}</li>
         </ul>
         <div className="description">
-          <a href="www.google.com"> + d'information </a>{" "}
+          <a href="www.google.com"> + d'information </a>
         </div>
 
         <div>
-          <img className="imgAgenda" src={agenda} alt="" />
-          <img className="imgInsta" src={insta} alt="" />
-          <img className="imgLinkedin" src={linkedin} alt="" />
+          <img className="imgAgenda" src={agenda} alt="Logo agenda" />
+          <img className="imgInsta" src={insta} alt="Logo instagram" />
+          <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
         </div>
       </div>
       <div className="bottomProfile">
