@@ -59,7 +59,7 @@ function CardProfileInfo() {
           <li>🌍 {artistData.city}</li>
           <li>€ {artistData.cachet}</li>
         </ul>
-        <div className="test">
+        <div className="description">
           <a href="www.google.com"> + d'information </a>{" "}
         </div>
 
@@ -70,7 +70,10 @@ function CardProfileInfo() {
         </div>
       </div>
       <div className="bottomProfile">
-        <button type="button" className="btnBottomProfile">
+        <button
+          type="button"
+          className="btnBottomProfile btnBottomProfileBorder"
+        >
           Avis
         </button>
         <button type="button" className="btnBottomProfile">

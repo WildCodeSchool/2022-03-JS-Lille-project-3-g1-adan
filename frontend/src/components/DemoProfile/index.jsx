@@ -1,5 +1,5 @@
-import cover from "@assets/imgProfile/cover.jpg";
 import ReactPlayer from "react-player";
+import datas from "@assets/imgProfile/data.json";
 import SDemoProfile from "./style";
 
 function DemoProfile() {
@@ -7,14 +7,18 @@ function DemoProfile() {
     <SDemoProfile>
       <div className="player-wrapper">
         <ReactPlayer
-          url="https://youtu.be/F5tSoaJ93ac"
-          controls="true"
+          url="https://soundcloud.com/marev8/au-dd?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+          controls
           width="100%"
           height="100%"
           className="react-player"
         />
       </div>
-      <img src={cover} alt="" />
+      <div className="coverContainer">
+        {datas.map((data) => {
+          return <img src={data.src} key={data.id} alt="cover" />;
+        })}
+      </div>
     </SDemoProfile>
   );
 }

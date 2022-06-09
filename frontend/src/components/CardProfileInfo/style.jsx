@@ -4,8 +4,8 @@ import avatar from "@assets/imgProfile/avatarDefault.svg";
 
 export default styled.div`
   background-color: #bb5459;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   .bannerImg {
     height: 12vh;
     background-image: url(${(props) => props.src.banner});
@@ -103,10 +103,14 @@ export default styled.div`
     border-left: black 1px solid;
     border: none;
     width: 100%;
+    padding: 1rem 0;
   }
 
   .btnBottomProfile:hover {
     background-color: #bb5759;
+  }
+  .btnBottomProfileBorder {
+    border-right: solid black 1px;
   }
 
   h1 {
@@ -127,7 +131,9 @@ export default styled.div`
     padding-left: 2rem;
     line-height: 1.5rem;
   }
-  .imgAgenda {
+  .imgAgenda,
+  .imgInsta,
+  .imgLinkedin {
     height: 20%;
     width: auto;
     position: absolute;
@@ -136,24 +142,16 @@ export default styled.div`
   }
 
   .imgInsta {
-    position: absolute;
-    height: 20%;
-    width: auto;
-    aspect-ratio: 1/1;
     right: 3rem;
     top: 6rem;
   }
 
   .imgLinkedin {
-    position: absolute;
-    height: 20%;
-    width: auto;
-    aspect-ratio: 1/1;
     right: 0.5rem;
     top: 6rem;
   }
 
-  .test {
+  .description {
     text-align: center;
   }
   @media screen and (min-width: 500px) {
