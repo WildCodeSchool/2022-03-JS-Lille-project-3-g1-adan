@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Search() {
-  const [musicStyles, setMusicStyles] = useState([]);
-  const [artistRoles, setArtistRoles] = useState([]);
+  const [searchTerms, setSearchTerms] = useState([]);
   const [searchType, setSearchType] = useState("");
   const [formData, setFormData] = useState({
     searchType: "",
@@ -16,17 +15,15 @@ export default function Search() {
     band: true,
   });
   useEffect(() => {
-    axios.get("http://localhost:5000/bands").then(({ data }) => {
-      setMusicStyles(data);
-    });
-    axios.get("http://localhost:5000/artists").then(({ data }) => {
-      setArtistRoles(data);
+    axios.get("http://localhost:5000/musicStyles").then(({ data }) => {
+      setSearchTerms(data);
     });
   }, []);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
   };
+
   const handleChange = (evt) => {
     const { name } = evt.target;
     let { value } = evt.target;
@@ -64,9 +61,13 @@ export default function Search() {
               value={formData.artistRole}
               onChange={handleChange}
             >
-              {artistRoles.map((role) => (
-                <option value={role.role}>{role.role}</option>
-              ))}
+              {searchTerms
+                .filter((role) => role.role != null)
+                .map((role) => (
+                  <option value={role.role} key={role.role}>
+                    {role.role}
+                  </option>
+                ))}
             </select>
             <select
               name="musicStyle"
@@ -74,8 +75,10 @@ export default function Search() {
               onChange={handleChange}
             >
               <option value="">Style de musique</option>
-              {musicStyles.map((style) => (
-                <option value={style.musicStyle}>{style.musicStyle}</option>
+              {searchTerms.map((style) => (
+                <option value={style.style} key={style.style}>
+                  {style.style}
+                </option>
               ))}
             </select>
             <input
