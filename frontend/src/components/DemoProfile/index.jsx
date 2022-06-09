@@ -19,6 +19,7 @@ function DemoProfile() {
           return <img src={data.src} key={data.id} alt="cover" />;
         })}
       </div>
+
     </SDemoProfile>
   );
 }
