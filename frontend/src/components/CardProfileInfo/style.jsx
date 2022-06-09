@@ -155,9 +155,6 @@ export default styled.div`
     text-align: center;
   }
   @media screen and (min-width: 500px) {
-    /* h1 {
-      color: white;
-    } */
     .imgAgenda {
       right: 8%;
       top: 30%;
