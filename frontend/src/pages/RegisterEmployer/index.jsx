@@ -6,7 +6,7 @@ export default function RegisterEmployer() {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
-  const [secuNum, setSecuNum] = useState("");
+  const [selection, setSelection] = useState("");
 
   const hChangeLastname = (evt) => {
     setLastname(evt.target.value);
@@ -17,8 +17,8 @@ export default function RegisterEmployer() {
   const hChangeEmail = (evt) => {
     setEmail(evt.target.value);
   };
-  const hChangeSecuNum = (evt) => {
-    setSecuNum(evt.target.value);
+  const hChangeSelection = (evt) => {
+    setSelection(evt.target.value);
   };
 
   const hSubmit = (evt) => {
@@ -56,19 +56,13 @@ export default function RegisterEmployer() {
               value={email}
               onChange={hChangeEmail}
             />
-
-            <select
-              className="inputForm"
-              value={secuNum}
-              onChange={hChangeSecuNum}
-            >
-              <option value="" disabled selected hidden>
-                Selectionner Privé/Public ...
+            <select className="inputForm" onChange={hChangeSelection}>
+              <option value={selection} disabled selected hidden>
+                Slectionnez Privé/Public ...
               </option>
               <option value="0">Privé </option>
               <option value="1">Public</option>
             </select>
-
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
             </button>
