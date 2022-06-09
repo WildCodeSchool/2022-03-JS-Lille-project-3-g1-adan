@@ -56,15 +56,18 @@ export default function RegisterEmployer() {
               value={email}
               onChange={hChangeEmail}
             />
-            <input
+
+            <select
               className="inputForm"
-              type="select"
-              multiple="oui"
-              name="secuNum"
-              placeholder="Privé/Public"
               value={secuNum}
               onChange={hChangeSecuNum}
-            />
+            >
+              <option value="" disabled selected hidden>
+                Selectionner Privé/Public ...
+              </option>
+              <option value="0">Privé </option>
+              <option value="1">Public</option>
+            </select>
 
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
