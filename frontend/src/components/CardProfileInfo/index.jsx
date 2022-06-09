@@ -38,7 +38,6 @@ function CardProfileInfo() {
               : "avatarImg"
           }
         />
-        {/* <div className="avatarImg"> </div> */}
         <div>
           <h1>
             {artistData.firstname} {artistData.lastname}
