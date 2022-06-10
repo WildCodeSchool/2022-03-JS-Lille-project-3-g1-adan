@@ -91,6 +91,7 @@ export default styled.section`
     .btnNext {
       margin-top: 1rem;
       width: 25vw;
+      cursor: pointer;
     }
   }
 `;
