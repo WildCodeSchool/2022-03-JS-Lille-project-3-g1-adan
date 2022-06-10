@@ -62,6 +62,7 @@ export default styled.section`
     .registerContainerInput {
       margin-top: 6rem;
       width: 45vw;
+      cursor: pointer;
     }
   }
 
