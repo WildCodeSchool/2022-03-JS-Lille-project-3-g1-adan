@@ -12,8 +12,6 @@ export default function Home() {
           de prestations
         </p>
       </section>
-      <section />
-      <section />
     </Style>
   );
 }
