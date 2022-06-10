@@ -19,7 +19,7 @@ export default styled.section`
     flex-direction: column;
   }
   .registerContainer {
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 85vw;
     background-color: #c4c4c4;
     border-radius: 1rem;
@@ -72,7 +72,7 @@ export default styled.section`
     }
 
     .btnNext {
-      margin-top: 1rem;
+      margin-top: 2rem;
       width: 25vw;
     }
   }
