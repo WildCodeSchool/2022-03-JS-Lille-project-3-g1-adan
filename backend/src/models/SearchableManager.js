@@ -10,6 +10,5 @@ class SearchableManager extends AbstractManager {
     );
   }
  }
-}
 
 module.exports = SearchableManager;
