@@ -15,7 +15,11 @@ export default function Search() {
       setSearchResults([]);
     } else {
       axios
-        .get(`http://localhost:5000/searchs?needle=${formData.search}`)
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/searchs?needle=${
+            formData.search
+          }`
+        )
         .then(({ data }) => {
           setSearchResults(data);
         });
