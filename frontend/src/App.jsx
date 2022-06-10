@@ -9,6 +9,8 @@ function App() {
     <Routes>
       <Route path="/profile" element={<Profile />} />
       <Route path="/search" element={<Search />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
+
     </Routes>
   );
 }
