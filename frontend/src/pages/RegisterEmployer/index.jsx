@@ -58,10 +58,10 @@ export default function RegisterEmployer() {
             />
             <select className="inputForm" onChange={hChangeSelection}>
               <option value={selection} disabled selected hidden>
-                Slectionnez Privé/Public ...
+                Type d'employeur ...
               </option>
-              <option value="0">Privé </option>
-              <option value="1">Public</option>
+              <option value="0">Privé/Public </option>
+              <option value="1">Personnel</option>
             </select>
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
