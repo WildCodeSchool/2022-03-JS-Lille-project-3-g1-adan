@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
     </Routes>
   );
 }
