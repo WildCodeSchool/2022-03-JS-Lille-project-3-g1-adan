@@ -7,9 +7,10 @@ function App() {
     <div className="App">
        <Navbar />
        <Routes>
-        <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
        </Routes>
      </div>
+
   );
 }
 
