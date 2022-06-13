@@ -6,11 +6,7 @@ export default styled.section`
   height: 100vh;
   top: 0;
   text-align: center;
-  .imgLogo {
-    width: 47vw;
-    height: auto;
-    margin-top: 2.75rem;
-  }
+
   .register {
     display: flex;
     align-items: center;
@@ -73,13 +69,10 @@ export default styled.section`
   }
 
   @media screen and (min-width: 1024px) {
-    .imgLogo {
-      width: 15vw;
-    }
     .registerContainer {
       margin-top: 5rem;
       width: 40vw;
-      height: 50vh;
+      height: 40vh;
     }
     .inputForm {
       width: 30vw;

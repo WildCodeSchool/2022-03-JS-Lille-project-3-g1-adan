@@ -2,22 +2,20 @@ import { useState } from "react";
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
-  const [lastname, setLastname] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [selection, setSelection] = useState("");
-  const hChangeLastname = (evt) => {
-    setLastname(evt.target.value);
+  const [siret, setSiret] = useState("");
+  const [categoryJur, setCategoryJur] = useState("");
+  const [nin, setNin] = useState("");
+
+  const hChangeSiret = (evt) => {
+    setSiret(evt.target.value);
   };
-  const hChangeFirstname = (evt) => {
-    setFirstname(evt.target.value);
+  const hChangeCategoryJur = (evt) => {
+    setCategoryJur(evt.target.value);
   };
-  const hChangeEmail = (evt) => {
-    setEmail(evt.target.value);
+  const hChangeNin = (evt) => {
+    setNin(evt.target.value);
   };
-  const hChangeSelection = (evt) => {
-    setSelection(evt.target.value);
-  };
+
   const hSubmit = (evt) => {
     evt.preventDefault();
   };
@@ -30,36 +28,30 @@ export default function RegisterEmployer() {
             <input
               className="inputForm"
               type="text"
-              name="lastname"
-              placeholder="Nom"
-              value={lastname}
-              onChange={hChangeLastname}
+              name="siret"
+              placeholder="N° SIRET"
+              value={siret}
+              onChange={hChangeSiret}
             />
             <input
               className="inputForm"
               type="text"
-              name="firstname"
-              placeholder="Prénom"
-              value={firstname}
-              onChange={hChangeFirstname}
+              name="categorie juridique"
+              placeholder="Catégorie juridique"
+              value={categoryJur}
+              onChange={hChangeCategoryJur}
             />
             <input
               className="inputForm"
               type="text"
-              name="email"
-              placeholder="Email"
-              value={email}
-              onChange={hChangeEmail}
+              name="raison sociale"
+              placeholder="Raison Sociale"
+              value={nin}
+              onChange={hChangeNin}
             />
-            <select className="inputForm" onChange={hChangeSelection}>
-              <option value={selection} disabled selected hidden>
-                Type d'employeur ...
-              </option>
-              <option value="0">Privé/Public </option>
-              <option value="1">Personnelcode </option>
-            </select>
+
             <button className="btnNext" type="submit" onChange={hSubmit}>
-              SUITE
+              Validez
             </button>
           </form>
         </div>
