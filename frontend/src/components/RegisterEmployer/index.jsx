@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "@assets/imgProfile/logoAdanblanc.png";
+
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
@@ -27,7 +27,6 @@ export default function RegisterEmployer() {
 
   return (
     <SRegisterEmployer>
-      <img className="imgLogo" src={Logo} alt="Logo ADAN" />
       <div className="register">
         <div className="registerContainer">
           <h1>Employeur</h1>

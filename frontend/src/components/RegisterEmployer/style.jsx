@@ -1,17 +1,12 @@
 import styled from "styled-components";
 
 export default styled.section`
-  background-color: #bb5759;
   position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
   text-align: center;
-  .imgLogo {
-    width: 47vw;
-    height: auto;
-    margin-top: 2.75rem;
-  }
+
   .register {
     display: flex;
     align-items: center;

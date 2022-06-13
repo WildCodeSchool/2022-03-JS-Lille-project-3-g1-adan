@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Profile from "@pages/Profile";
 import "./App.css";
-import RegisterEmployer from "@pages/RegisterEmployer";
+import RegisterEmployer from "@components/RegisterEmployer";
 
 function App() {
   return (
