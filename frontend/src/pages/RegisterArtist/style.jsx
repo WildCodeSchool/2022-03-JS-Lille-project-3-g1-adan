@@ -38,7 +38,6 @@ export default styled.section`
     margin: 1rem;
   }
   .select {
-    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
     margin-right: 3rem;
@@ -86,7 +85,7 @@ export default styled.section`
       width: 30vw;
     }
     .select {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
     .btnNext {
       margin-top: 1rem;

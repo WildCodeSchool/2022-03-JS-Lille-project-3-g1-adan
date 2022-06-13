@@ -1,5 +1,6 @@
 import Logo from "@assets/logo/Logo_ADAN.png";
 import Checkbox from "@components/Checkbox";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import SRegisterArtist from "./style";
@@ -18,9 +19,11 @@ export default function RegisterArtist() {
   };
 
   const [formData, setFormData] = useState({
+    bandName: "",
     lastname: "",
     firstname: "",
     email: "",
+    password: "",
     secuNum: "",
   });
 
@@ -32,7 +35,7 @@ export default function RegisterArtist() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post("http://localhost:5000/artist");
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}`);
   };
 
   return (
@@ -42,6 +45,19 @@ export default function RegisterArtist() {
         <div className="registerContainer">
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
+            <div className="select">
+              <Checkbox check={handleChange} act={active} />
+              <span>Groupe</span>
+              <Checkbox check={handleChangeBis} act={activeBis} />
+              <span>Solo</span>
+            </div>
+            <input
+              className="inputBandName"
+              type="text"
+              name="bandName"
+              placeholder="Nom du groupe"
+              value={formData.bandName}
+            />
             <input
               className="inputForm"
               type="text"
@@ -68,22 +84,25 @@ export default function RegisterArtist() {
             />
             <input
               className="inputForm"
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              value={formData.password}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
               type="text"
               name="secuNum"
               placeholder="Numéro de sécurité sociale"
               value={formData.secuNum}
               onChange={hChangeFormData}
             />
-            <div className="select">
-              <Checkbox check={handleChange} act={active} />
-              <span>Groupe</span>
-              <Checkbox check={handleChangeBis} act={activeBis} />
-              <span>Solo</span>
-            </div>
-
-            <button className="btnNext" type="submit">
-              SUITE
-            </button>
+            <Link to="/inscription/artiste/artisteSuite">
+              <button className="btnNext" type="submit">
+                SUITE
+              </button>
+            </Link>
           </form>
         </div>
       </div>
