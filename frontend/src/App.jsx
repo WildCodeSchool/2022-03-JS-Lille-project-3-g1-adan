@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Profile from "@pages/Profile";
-import RegisterEmployerLast from "@pages/RegisterEmployerLast";
+import Register from "@pages/Register";
 import "./App.css";
 
 function App() {
   return (
     <Routes>
       <Route path="/profile/:profileId" element={<Profile />} />
-      <Route path="/registeremployerlast" element={<RegisterEmployerLast />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   );
 }
