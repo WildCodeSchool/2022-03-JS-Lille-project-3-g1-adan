@@ -4,6 +4,7 @@ export default styled.div`
   margin: 2rem auto;
   padding: 1rem 0;
   width: 85vw;
+  background-color: var(--main-color);
 
   .coverContainer {
     display: flex;
