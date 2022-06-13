@@ -6,18 +6,6 @@ import { useState } from "react";
 import SRegisterArtist from "./style";
 
 export default function RegisterArtist() {
-  const [checkOne, setCheckOne] = useState(false);
-  const [checkTwo, setCheckTwo] = useState(false);
-
-  const handleChange = () => {
-    setCheckOne(!checkOne);
-    setCheckTwo(false);
-  };
-  const handleChangeBis = () => {
-    setCheckTwo(!checkTwo);
-    setCheckOne(false);
-  };
-
   const [formData, setFormData] = useState({
     bandName: "",
     lastname: "",
@@ -31,6 +19,17 @@ export default function RegisterArtist() {
     const newData = { ...formData };
     newData[evt.target.name] = evt.target.value;
     setFormData(newData);
+  };
+  const [checkOne, setCheckOne] = useState(false);
+  const [checkTwo, setCheckTwo] = useState(false);
+
+  const handleChange = () => {
+    setCheckOne(!checkOne);
+    setCheckTwo(false);
+  };
+  const handleChangeBis = () => {
+    setCheckTwo(!checkTwo);
+    setCheckOne(false);
   };
 
   const hSubmit = (evt) => {
@@ -46,34 +45,40 @@ export default function RegisterArtist() {
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
             <div className="select">
-              <Checkbox check={handleChange} act={checkOne} />
+              <Checkbox check={handleChange} act={checkOne} type="button" />
               <span>Groupe</span>
               <Checkbox check={handleChangeBis} act={checkTwo} />
               <span>Solo</span>
             </div>
-            <input
-              className="inputBandName"
-              type="text"
-              name="bandName"
-              placeholder="Nom du groupe"
-              value={formData.bandName}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="lastname"
-              placeholder="Nom"
-              value={formData.lastname}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="firstname"
-              placeholder="Prénom"
-              value={formData.firstname}
-              onChange={hChangeFormData}
-            />
+            {checkOne ? (
+              <input
+                className="inputBandName"
+                type="text"
+                name="bandName"
+                placeholder="Nom du groupe"
+                value={formData.bandName}
+              />
+            ) : (
+              <>
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="lastname"
+                  placeholder="Nom"
+                  value={formData.lastname}
+                  onChange={hChangeFormData}
+                />
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="firstname"
+                  placeholder="Prénom"
+                  value={formData.firstname}
+                  onChange={hChangeFormData}
+                />
+              </>
+            )}
+
             <input
               className="inputForm"
               type="text"

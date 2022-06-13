@@ -10,7 +10,6 @@ export default styled.section`
   .imgLogo {
     width: 47vw;
     height: auto;
-    margin-top: 2.75rem;
   }
   .register {
     display: flex;
@@ -19,7 +18,7 @@ export default styled.section`
     flex-direction: column;
   }
   .registerContainer {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 85vw;
     background-color: #c4c4c4;
     border-radius: 1rem;
@@ -29,6 +28,13 @@ export default styled.section`
     margin-top: 0.7rem;
     color: white;
     font-size: 1.5rem;
+  }
+  .inputBandName {
+    width: 65vw;
+    height: 3vh;
+    border-radius: 0.3rem;
+    border: 1px solid white;
+    margin: 1rem;
   }
   .inputForm {
     width: 65vw;
@@ -79,7 +85,10 @@ export default styled.section`
     .registerContainer {
       margin-top: 5rem;
       width: 40vw;
-      height: 50vh;
+      height: 60vh;
+    }
+    .inputBandName {
+      width: 30vw;
     }
     .inputForm {
       width: 30vw;
@@ -88,7 +97,7 @@ export default styled.section`
       margin-top: 0.5rem;
     }
     .btnNext {
-      margin-top: 1rem;
+      margin-top: 2rem;
       width: 25vw;
       cursor: pointer;
     }
