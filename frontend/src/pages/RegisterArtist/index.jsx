@@ -6,16 +6,16 @@ import { useState } from "react";
 import SRegisterArtist from "./style";
 
 export default function RegisterArtist() {
-  const [active, setActive] = useState(false);
-  const [activeBis, setActiveBis] = useState(false);
+  const [checkOne, setCheckOne] = useState(false);
+  const [checkTwo, setCheckTwo] = useState(false);
 
   const handleChange = () => {
-    setActive(!active);
-    setActiveBis(false);
+    setCheckOne(!checkOne);
+    setCheckTwo(false);
   };
   const handleChangeBis = () => {
-    setActiveBis(!activeBis);
-    setActive(false);
+    setCheckTwo(!checkTwo);
+    setCheckOne(false);
   };
 
   const [formData, setFormData] = useState({
@@ -46,9 +46,9 @@ export default function RegisterArtist() {
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
             <div className="select">
-              <Checkbox check={handleChange} act={active} />
+              <Checkbox check={handleChange} act={checkOne} />
               <span>Groupe</span>
-              <Checkbox check={handleChangeBis} act={activeBis} />
+              <Checkbox check={handleChangeBis} act={checkTwo} />
               <span>Solo</span>
             </div>
             <input
