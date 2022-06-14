@@ -54,7 +54,7 @@ export default styled.section`
     justify-content: center;
   }
   .checkbox button {
-    border: 0;
+    border: none;
     background-color: #c4c4c4;
     margin-left: 2rem;
   }
