@@ -29,5 +29,4 @@ export default styled.div`
       height: 30vh;
     }
   }
-
 `;
