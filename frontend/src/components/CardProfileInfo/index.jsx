@@ -1,4 +1,3 @@
-
 import insta from "@assets/imgProfile/insta.svg";
 import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
