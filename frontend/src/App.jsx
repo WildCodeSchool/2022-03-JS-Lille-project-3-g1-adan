@@ -15,8 +15,8 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/RegisterEmployer" element={<RegisterEmployer />} />
       <Route path="/profile/:profileId" element={<Profile />} />
-
     </Routes>
+</div>
   );
 }
 
