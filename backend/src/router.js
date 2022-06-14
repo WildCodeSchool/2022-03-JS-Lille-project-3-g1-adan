@@ -4,6 +4,7 @@ const {
   ItemController,
   UserController,
   ArtistController,
+  AuthController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -26,4 +27,5 @@ router.put("/artist/:id", ArtistController.edit);
 router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
+router.post("/auth/signup", AuthController.signup);
 module.exports = router;
