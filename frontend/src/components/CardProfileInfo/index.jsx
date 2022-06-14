@@ -1,7 +1,7 @@
 import insta from "@assets/imgProfile/insta.svg";
 import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
-import DemoProfile from "@components/DemoProfile";
+import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -21,6 +21,27 @@ function CardProfileInfo() {
   const handleIsFollow = () => {
     setIsFollow(!isFollow);
   };
+
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <SCardProfile src={artistData}>
       <div
@@ -59,7 +80,20 @@ function CardProfileInfo() {
           <li>€ {artistData.cachet}</li>
         </ul>
         <div className="description">
-          <a href="www.google.com"> + d'information </a>
+          <button type="button" onClick={openModal}>
+            + d'information
+          </button>
+          <Modal
+            isOpen={modalIsOpen}
+            style={customStyles}
+            contentLabel="Description"
+          >
+            <h2>Description</h2>
+            <p> {artistData.description}</p>
+            <button type="button" onClick={closeModal}>
+              close
+            </button>
+          </Modal>
         </div>
 
         <div>
@@ -79,7 +113,6 @@ function CardProfileInfo() {
           MP
         </button>
       </div>
-      <DemoProfile />
     </SCardProfile>
   );
 }
