@@ -1,4 +1,3 @@
-import Logo from "@assets/logo/Logo_ADAN.png";
 import Checkbox from "@components/Checkbox";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -34,12 +33,11 @@ export default function RegisterArtist() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}`);
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`);
   };
 
   return (
     <SRegisterArtist>
-      <img className="imgLogo" src={Logo} alt="Logo ADAN" />
       <div className="register">
         <div className="registerContainer">
           <h1>Artiste</h1>
