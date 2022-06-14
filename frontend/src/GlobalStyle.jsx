@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 body {
   width: 100vw;
   height: 100vh;
+  background-color: var(--main-color)
 }
 `;
 export default GlobalStyle;
