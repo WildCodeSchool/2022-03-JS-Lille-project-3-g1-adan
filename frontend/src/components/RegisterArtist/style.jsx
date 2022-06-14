@@ -9,9 +9,9 @@ export default styled.section`
   text-align: center;
   .imgLogo {
     width: 47vw;
-    height: auto;
   }
   .register {
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +83,7 @@ export default styled.section`
       width: 15vw;
     }
     .registerContainer {
-      margin-top: 5rem;
+      margin-top: 3rem;
       width: 40vw;
       height: 60vh;
     }
