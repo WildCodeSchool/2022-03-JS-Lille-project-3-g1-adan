@@ -60,7 +60,7 @@ export default function RegisterEmployer() {
                 Type d'employeur ...
               </option>
               <option value="0">Privé/Public </option>
-              <option value="1">Personnelcode </option>
+              <option value="1">Personnel </option>
             </select>
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
