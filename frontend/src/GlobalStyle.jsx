@@ -7,9 +7,11 @@ const GlobalStyle = createGlobalStyle`
   --main-font: "Raleway", sans-serif;
   --main-color: #bb5459;
 }
+font-family: var(--main-font);
 body {
   width: 100vw;
   height: 100vh;
+  font-family: var(--main-font);
 }
 `;
 export default GlobalStyle;
