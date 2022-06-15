@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.div`
-  margin: 2rem auto;
+  margin: 3rem auto 10rem auto;
   padding: 1rem 0;
   width: 85vw;
   background-color: var(--main-color);
