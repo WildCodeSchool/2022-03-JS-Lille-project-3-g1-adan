@@ -12,8 +12,6 @@ class MusicStyleController {
         res.sendStatus(500).send("problem");
       });
   };
-
- 
 }
 
 module.exports = MusicStyleController;
