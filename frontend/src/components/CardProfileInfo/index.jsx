@@ -30,6 +30,7 @@ function CardProfileInfo() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      lineHeight: "2rem",
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -89,7 +90,7 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p> {artistData.description}</p>
+            <p Name="descriptionParaph"> {artistData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
