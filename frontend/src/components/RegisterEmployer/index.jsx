@@ -52,8 +52,9 @@ export default function RegisterEmployer() {
               <option value={formData.role} >
                 Type d'employeur ...
               </option>
-              <option value="0">Privé/Public </option>
-              <option value="1">Personnel </option>
+              <option value="Private">Privé </option>
+              <option value="Public">Public </option>
+              <option value="Personnal">Personnel </option>
             </select>
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
