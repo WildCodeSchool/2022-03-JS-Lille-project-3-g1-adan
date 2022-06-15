@@ -6,7 +6,7 @@ export default function RegisterEmployer() {
    lastname: "",
     firstname: "",
     email: "",
-    role: "",
+    status: "",
   });
   const hChangeFormData = (evt) => {
     const newData = { ...formData };
@@ -49,12 +49,12 @@ export default function RegisterEmployer() {
               onChange={hChangeFormData}
             />
             <select className="inputForm" onChange={hChangeSelection}>
-              <option value={formData.role} >
+              <option value={formData.status} >
                 Type d'employeur ...
               </option>
-              <option value="Private">Privé </option>
-              <option value="Public">Public </option>
-              <option value="Personnal">Personnel </option>
+              <option value={dataForm.status}>Privé </option>
+              <option value={dataForm.status}>Public </option>
+              <option value={dataForm.status}>Personnel </option>
             </select>
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
