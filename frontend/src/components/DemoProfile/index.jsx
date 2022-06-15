@@ -1,4 +1,3 @@
-
 import ReactPlayer from "react-player";
 import datas from "@assets/imgProfile/data.json";
 import SDemoProfile from "./style";
