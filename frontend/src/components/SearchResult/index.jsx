@@ -9,6 +9,7 @@ function searchResult() {
       <BackButton />
       <GroupInfo />
       <GroupMember />
+      <GroupMember />
     </SsearchResult>
   );
 }
