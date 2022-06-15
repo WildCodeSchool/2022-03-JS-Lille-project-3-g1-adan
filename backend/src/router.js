@@ -28,4 +28,5 @@ router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.post("/auth/signup", AuthController.signup);
+
 module.exports = router;
