@@ -12,9 +12,11 @@ function CardProfileInfo() {
   const { profileId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/artist/${profileId}`).then(({ data }) => {
-      setArtistData(data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .then(({ data }) => {
+        setArtistData(data);
+      });
   }, []);
 
   const [isFollow, setIsFollow] = useState(false);
@@ -82,7 +84,7 @@ function CardProfileInfo() {
         </ul>
         <div className="description">
           <button type="button" onClick={openModal} className="descriptionBtn">
-            + d'information
+            + d'informations
           </button>
           <Modal
             isOpen={modalIsOpen}
@@ -90,7 +92,7 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p Name="descriptionParaph"> {artistData.description}</p>
+            <p>{artistData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
