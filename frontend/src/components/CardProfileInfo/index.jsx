@@ -82,7 +82,7 @@ function CardProfileInfo() {
         </ul>
         <div className="description">
           <button type="button" onClick={openModal} className="descriptionBtn">
-            + d'information
+            + d'informations
           </button>
           <Modal
             isOpen={modalIsOpen}
@@ -90,13 +90,12 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p> {artistData.description}</p>
+            <p>{artistData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
           </Modal>
         </div>
-
         <div>
           <img className="imgAgenda" src={agenda} alt="Logo agenda" />
           <a href={artistData.instagram}>
