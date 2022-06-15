@@ -10,7 +10,7 @@ function DemoProfile() {
   const { profileId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/artist/${profileId}`).then(({ data }) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`).then(({ data }) => {
       setArtistData(data);
     });
   }, []);
