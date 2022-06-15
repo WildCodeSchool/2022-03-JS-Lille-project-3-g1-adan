@@ -38,7 +38,7 @@ export default function RegisterEmployer() {
               name="firstname"
               placeholder="Prénom"
               value={formData.firstname}
-              onChange={hChangeFirstname}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
@@ -52,9 +52,9 @@ export default function RegisterEmployer() {
               <option value={formData.status} >
                 Type d'employeur ...
               </option>
-              <option value={dataForm.status}>Privé </option>
-              <option value={dataForm.status}>Public </option>
-              <option value={dataForm.status}>Personnel </option>
+              <option value={formData.status}>Privé </option>
+              <option value={formData.status}>Public </option>
+              <option value={formData.status}>Personnel </option>
             </select>
             <button className="btnNext" type="submit" onChange={hSubmit}>
               SUITE
