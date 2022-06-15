@@ -178,8 +178,8 @@ export default styled.div`
     .followButton {
       right: 6.5%;
       top: 5%;
-      font-size: calc(100vw / 55);
-      padding: calc(100vw / 100);
+      font-size: 1rem;
+      padding: 0.5rem;
     }
     h1 {
       font-size: calc(100vw / 40);
