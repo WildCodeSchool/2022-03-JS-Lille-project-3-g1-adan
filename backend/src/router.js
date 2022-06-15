@@ -18,7 +18,6 @@ router.put("/user/:id", UserController.edit);
 router.post("/user", UserController.add);
 router.delete("/user/:id", UserController.delete);
 
-router.get("/artists", ArtistController.browse);
 router.get("/artist", ArtistController.browse);
 router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.edit);
