@@ -10,7 +10,7 @@ class AuthController {
 
     user.password = bcrypt.hashSync(
       user.password,
-      parseInt(process.env.CRYPT_ROUNDS, 18)
+      parseInt(process.env.CRYPT_ROUNDS, 10)
     );
 
     models.user
