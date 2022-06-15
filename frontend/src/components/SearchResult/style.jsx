@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export default styled.div`
-  position: absolute;
+  /* position: absolute;
   left: 5.33%;
   right: 5.33%;
   top: 11.58%;
-  bottom: 23.77%;
-
+  bottom: 23.77%; */
+  position: relative;
+  margin: 4rem 1rem;
+  padding: 1rem;
   background: #c4c4c4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 19px; ;
