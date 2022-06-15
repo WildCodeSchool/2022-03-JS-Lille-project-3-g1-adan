@@ -1,24 +1,17 @@
 import { useState } from "react";
-
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
-  const [lastname, setLastname] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [selection, setSelection] = useState("");
-
-  const hChangeLastname = (evt) => {
-    setLastname(evt.target.value);
-  };
-  const hChangeFirstname = (evt) => {
-    setFirstname(evt.target.value);
-  };
-  const hChangeEmail = (evt) => {
-    setEmail(evt.target.value);
-  };
-  const hChangeSelection = (evt) => {
-    setSelection(evt.target.value);
+ const [formData, setFormData] = useState({
+   lastname: "",
+    firstname: "",
+    email: "",
+    role: "",
+  });
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
   };
 
   const hSubmit = (evt) => {
@@ -36,15 +29,15 @@ export default function RegisterEmployer() {
               type="text"
               name="lastname"
               placeholder="Nom"
-              value={lastname}
-              onChange={hChangeLastname}
+              value={formData.lastname}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
               type="text"
               name="firstname"
               placeholder="Prénom"
-              value={firstname}
+              value={formData.firstname}
               onChange={hChangeFirstname}
             />
             <input
@@ -52,11 +45,11 @@ export default function RegisterEmployer() {
               type="text"
               name="email"
               placeholder="Email"
-              value={email}
-              onChange={hChangeEmail}
+              value={formData.email}
+              onChange={hChangeFormData}
             />
             <select className="inputForm" onChange={hChangeSelection}>
-              <option value={selection} disabled selected hidden>
+              <option value={formData.role} >
                 Type d'employeur ...
               </option>
               <option value="0">Privé/Public </option>
