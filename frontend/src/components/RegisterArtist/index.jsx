@@ -23,11 +23,11 @@ export default function RegisterArtist() {
   const [checkOne, setCheckOne] = useState(false);
   const [checkTwo, setCheckTwo] = useState(false);
 
-  const handleChange = () => {
+  const hChange = () => {
     setCheckOne(!checkOne);
     setCheckTwo(false);
   };
-  const handleChangeBis = () => {
+  const hChangeBis = () => {
     setCheckTwo(!checkTwo);
     setCheckOne(false);
   };
@@ -45,9 +45,9 @@ export default function RegisterArtist() {
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
             <div className="select">
-              <Checkbox check={handleChange} act={checkOne} type="button" />
+              <Checkbox check={hChange} act={checkOne} type="button" />
               <span>Groupe</span>
-              <Checkbox check={handleChangeBis} act={checkTwo} />
+              <Checkbox check={hChangeBis} act={checkTwo} />
               <span>Solo</span>
             </div>
             {checkOne ? (
@@ -104,7 +104,7 @@ export default function RegisterArtist() {
               onChange={hChangeFormData}
             />
             <Link to="/inscription/artiste/artisteSuite">
-              <button className="btnNext" type="submit">
+              <input className="btnNext" type="submit">
                 SUITE
               </button>
             </Link>
