@@ -1,5 +1,7 @@
 import logo from "@assets/homePageImg/logo.svg";
 import thisIsUs from "@assets/homePageImg/thisIsUs.png";
+import Register from "@components/Buttons/Register";
+import Login from "@components/Login";
 import Style from "./style";
 
 export default function Home() {
@@ -18,9 +20,12 @@ export default function Home() {
           employeur une cadre sécurisé et légal dédié à la mise en place de
           prestations
         </p>
-        <button className="register" type="button">
-          inscription
-        </button>
+        <div className="login">
+          <Login />
+        </div>
+        <div className="register">
+          <Register />
+        </div>
       </section>
       <section className="who">
         <img src={thisIsUs} className="thisIsUs" alt="thisIsUs" />
