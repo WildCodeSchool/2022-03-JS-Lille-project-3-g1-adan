@@ -84,7 +84,6 @@ export default styled.div`
 
   .bottomProfile {
     background: #f77777;
-
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-bottom-right-radius: 19px;
     border-bottom-left-radius: 19px;
@@ -154,6 +153,13 @@ export default styled.div`
   .description {
     text-align: center;
   }
+
+  .descriptionBtn {
+    border: none;
+    background-color: transparent;
+    color: #1871a3;
+    text-decoration: underline;
+  }
   @media screen and (min-width: 500px) {
     .imgAgenda {
       right: 8%;
@@ -172,8 +178,14 @@ export default styled.div`
     .followButton {
       right: 6.5%;
       top: 5%;
-      font-size: calc(100vw / 45);
-      padding: calc(100vw / 99);
+      font-size: calc(100vw / 55);
+      padding: calc(100vw / 100);
+    }
+    h1 {
+      font-size: calc(100vw / 40);
+    }
+    p {
+      font-size: calc(100vw / 60);
     }
   }
 `;

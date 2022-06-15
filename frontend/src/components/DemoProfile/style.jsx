@@ -6,10 +6,11 @@ export default styled.div`
   width: 85vw;
   background-color: var(--main-color);
 
-  .coverContainer {
+  .pictureContainer {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
 
   img {

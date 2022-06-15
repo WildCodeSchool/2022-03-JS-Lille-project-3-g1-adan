@@ -80,7 +80,7 @@ function CardProfileInfo() {
           <li>€ {artistData.cachet}</li>
         </ul>
         <div className="description">
-          <button type="button" onClick={openModal}>
+          <button type="button" onClick={openModal} className="descriptionBtn">
             + d'information
           </button>
           <Modal
@@ -98,8 +98,12 @@ function CardProfileInfo() {
 
         <div>
           <img className="imgAgenda" src={agenda} alt="Logo agenda" />
-          <img className="imgInsta" src={insta} alt="Logo instagram" />
-          <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
+          <a href={artistData.instagram}>
+            <img className="imgInsta" src={insta} alt="Logo instagram" />
+          </a>
+          <a href={artistData.linkedin}>
+            <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
+          </a>
         </div>
       </div>
       <div className="bottomProfile">
