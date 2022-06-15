@@ -3,7 +3,7 @@ import banner from "@assets/homePageImg/banner.png";
 
 export default styled.div`
   .banner {
-    height: 30vh;
+    height: 25vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -22,33 +22,16 @@ export default styled.div`
   }
 
   .logo {
-    height: 25vh;
+    height: 20vh;
     width: auto;
   }
 
-  /* .connection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  } */
-
-  /* .connection p {
-    grid-area: 1 / 1 / 3 / 2;
-  } */
-  /* .login {
-    grid-area: 1 / 2 / 2 / 3;
-  } */
-  /* .register {
-    grid-area: 2 / 2 / 3 / 3;
-  } */
-
   .connection {
-    height: 30vh;
+    height: 40vh;
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    /* justify-content: space-between; */
     background-color: var(--main-color);
   }
 
@@ -72,18 +55,10 @@ export default styled.div`
   .register {
     grid-area: 2 / 2 / 3 / 3;
     text-align: center;
-    /* align-self: end;
-    box-sizing: border-box;
-    width: 20vw;
-    height: 6vh;
-    background: #c4c4c4;
-    border: 1px solid #ffffff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 1.5rem; */
   }
 
   .who {
-    height: 30vh;
+    height: 25vh;
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -91,7 +66,7 @@ export default styled.div`
   }
 
   .thisIsUs {
-    height: 30vh;
+    height: 25vh;
     width: auto;
   }
 

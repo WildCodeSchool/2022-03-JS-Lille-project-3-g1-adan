@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export default styled.div`
+  .formBox {
+    padding-top: 1rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-bottom: 1rem;
+  }
   form {
     display: flex;
     align-items: center;
@@ -13,19 +19,11 @@ export default styled.div`
     width: 26rem;
     height: 2rem;
     margin-top: 1rem;
-    /* height: 3rem; */
-
-    /* left: 55rem;
-    top: 47rem; */
   }
 
   .button {
     width: 26rem;
     height: 2rem;
-    /* height: 3rem; */
-    /* left: 55rem;
-
-    top: 47rem; */
     background: #f77777;
     border: 1px solid #ffffff;
     border-radius: 1.6rem;
