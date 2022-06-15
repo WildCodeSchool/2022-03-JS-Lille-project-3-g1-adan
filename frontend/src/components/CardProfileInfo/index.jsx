@@ -90,7 +90,7 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p Name="descriptionParaph"> {artistData.description}</p>
+            <p> {artistData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
