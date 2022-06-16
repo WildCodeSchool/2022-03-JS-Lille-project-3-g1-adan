@@ -7,7 +7,7 @@ export default function Login() {
         <form>
           <input type="text" name="email" placeholder="Email" />
           <input type="text" name="password" placeholder="Mot de passe" />
-          <input className="button" type="submit" value="CONNEXION" />
+          <input className="button" type="submit" value="connexion" />
         </form>
       </div>
     </Style>
