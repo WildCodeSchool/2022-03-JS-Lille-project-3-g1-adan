@@ -3,16 +3,14 @@ const express = require("express");
 const {
   ItemController,
   UserController,
+  MusicStyleController,
   ArtistController,
+  SearchableController,
 } = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/musicStyles", MusicStyleController.browse);
 
 router.get("/user", UserController.browse);
 router.get("/user/:id", UserController.read);
@@ -25,5 +23,7 @@ router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.edit);
 router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
+
+router.get("/searchs", SearchableController.browse);
 
 module.exports = router;
