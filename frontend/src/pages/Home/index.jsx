@@ -2,11 +2,11 @@ import logo from "@assets/homePageImg/logo.svg";
 import thisIsUs from "@assets/homePageImg/thisIsUs.png";
 import Register from "@components/Buttons/Register";
 import Login from "@components/Login";
-import Style from "./style";
+import SHome from "./style";
 
 export default function Home() {
   return (
-    <Style>
+    <SHome>
       <section className="banner">
         <img src={logo} className="logo" alt="logo-adan" />
         <p>
@@ -27,7 +27,7 @@ export default function Home() {
           <Register />
         </div>
       </section>
-      <section className="who">
+      <section className="about">
         <img src={thisIsUs} className="thisIsUs" alt="thisIsUs" />
         <div className="description">
           <h1>Qui sommes nous ?</h1>
@@ -39,6 +39,6 @@ export default function Home() {
           <h2>En savoir plus</h2>
         </div>
       </section>
-    </Style>
+    </SHome>
   );
 }
