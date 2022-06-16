@@ -42,7 +42,7 @@ export default function RegisterEmployer() {
             <input
               className="inputForm"
               type="text"
-              name="socialReason"
+              name="nin"
               placeholder="Raison Sociale"
               value={formData.nin}
               onChange={hChangeFormData}
