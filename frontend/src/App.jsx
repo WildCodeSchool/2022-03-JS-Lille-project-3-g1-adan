@@ -5,7 +5,6 @@ import Register from "@pages/Register";
 import Search from "@pages/Search";
 import Home from "@pages/Home";
 
-
 function App() {
   return (
    <div className="App">
