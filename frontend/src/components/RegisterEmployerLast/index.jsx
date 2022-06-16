@@ -34,7 +34,7 @@ export default function RegisterEmployer() {
             <input
               className="inputForm"
               type="text"
-              name="categorieJuridique"
+              name="legalCategory"
               placeholder="Catégorie juridique"
               value={formData.categoryJur}
               onChange={hChangeFormData}
@@ -42,7 +42,7 @@ export default function RegisterEmployer() {
             <input
               className="inputForm"
               type="text"
-              name="raisonSociale"
+              name="socialReason"
               placeholder="Raison Sociale"
               value={formData.nin}
               onChange={hChangeFormData}
