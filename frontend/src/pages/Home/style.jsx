@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "@assets/homePageImg/banner.png";
+import banner from "@assets/homePageImg/banner2.png";
 
 export default styled.div`
   .banner {

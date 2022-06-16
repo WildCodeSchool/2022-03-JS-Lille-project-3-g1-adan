@@ -30,6 +30,10 @@ class ArtistManager extends AbstractManager {
       [artist.title, artist.id]
     );
   }
+
+  findAll() {
+    return this.connection.query(`select role from  ${this.table}`);
+  }
 }
 
 module.exports = ArtistManager;
