@@ -8,16 +8,17 @@ import Register from "@pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/register/artist" element={<RegisterArtist />} /> 
-        <Route path="/profile/:profileId" element={<Profile />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Navbar />
-    </div>
+   <div className="App">
+    <Routes>
+      <Route path="/search" element={<Search />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/register/artist" element={<RegisterArtist />} /> 
+    </Routes>
+    <Navbar />
+  </div>
   );
 }
 
