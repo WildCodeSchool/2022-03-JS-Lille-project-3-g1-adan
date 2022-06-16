@@ -6,7 +6,7 @@ export default styled.div`
     display: none;
   }
 
-  .who {
+  .about {
     display: none;
   }
 
@@ -89,7 +89,7 @@ export default styled.div`
       text-align: center;
     }
 
-    .who {
+    .about {
       height: 25vh;
       width: 100vw;
       display: flex;
