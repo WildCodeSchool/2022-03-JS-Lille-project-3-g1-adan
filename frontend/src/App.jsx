@@ -14,8 +14,10 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/:profileId" element={<Profile />} />
       <Route path="/register" element={<Register />} /> 
-      <Navbar />
     </Routes>
+    <Navbar />
+    </div>
+
   );
 }
 
