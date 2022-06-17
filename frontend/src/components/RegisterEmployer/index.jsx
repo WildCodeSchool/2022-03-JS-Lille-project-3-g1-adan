@@ -1,24 +1,17 @@
 import { useState } from "react";
-
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
-  const [lastname, setLastname] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [selection, setSelection] = useState("");
-
-  const hChangeLastname = (evt) => {
-    setLastname(evt.target.value);
-  };
-  const hChangeFirstname = (evt) => {
-    setFirstname(evt.target.value);
-  };
-  const hChangeEmail = (evt) => {
-    setEmail(evt.target.value);
-  };
-  const hChangeSelection = (evt) => {
-    setSelection(evt.target.value);
+  const [formData, setFormData] = useState({
+    lastname: "",
+    firstname: "",
+    email: "",
+    status: "",
+  });
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
   };
 
   const hSubmit = (evt) => {
@@ -30,39 +23,42 @@ export default function RegisterEmployer() {
       <div className="register">
         <div className="registerContainer">
           <h1>Employeur</h1>
-          <form className="registerForm">
+          <form className="registerForm" onSubmit={hSubmit}>
             <input
               className="inputForm"
               type="text"
               name="lastname"
               placeholder="Nom"
-              value={lastname}
-              onChange={hChangeLastname}
+              value={formData.lastname}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
               type="text"
               name="firstname"
               placeholder="Prénom"
-              value={firstname}
-              onChange={hChangeFirstname}
+              value={formData.firstname}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
               type="text"
               name="email"
               placeholder="Email"
-              value={email}
-              onChange={hChangeEmail}
+              value={formData.email}
+              onChange={hChangeFormData}
             />
-            <select className="inputForm" onChange={hChangeSelection}>
-              <option value={selection} disabled selected hidden>
-                Type d'employeur ...
-              </option>
-              <option value="0">Privé/Public </option>
-              <option value="1">Personnelcode </option>
+            <select
+              className="inputForm"
+              name="status"
+              onChange={hChangeFormData}
+            >
+              <option>Type d'employeur ...</option>
+              <option value="private">Privé </option>
+              <option value="public">Public </option>
+              <option value="personal">Personnel </option>
             </select>
-            <button className="btnNext" type="submit" onChange={hSubmit}>
+            <button className="btnNext" type="submit">
               SUITE
             </button>
           </form>
