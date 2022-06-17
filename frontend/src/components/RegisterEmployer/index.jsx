@@ -13,7 +13,6 @@ export default function RegisterEmployer() {
     newData[evt.target.name] = evt.target.value;
     setFormData(newData);
   };
-
   const hSubmit = (evt) => {
     evt.preventDefault();
   };
