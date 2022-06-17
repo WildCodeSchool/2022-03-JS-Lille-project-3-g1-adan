@@ -5,6 +5,7 @@ const {
   UserController,
   MusicStyleController,
   ArtistController,
+  AuthController,
   SearchableController,
 } = require("./controllers");
 
@@ -23,6 +24,8 @@ router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.edit);
 router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
+
+router.post("/auth/signup", AuthController.signup);
 
 router.get("/searchs", SearchableController.browse);
 

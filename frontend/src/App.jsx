@@ -8,15 +8,14 @@ import Home from "@pages/Home";
 function App() {
   return (
    <div className="App">
-    <Navbar />
     <Routes>
       <Route path="/search" element={<Search />} />
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/:profileId" element={<Profile />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/register" element={<Register />} /> 
+      <Navbar />
     </Routes>
-     </div>
   );
 }
 
