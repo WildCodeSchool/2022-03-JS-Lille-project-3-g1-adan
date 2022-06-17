@@ -7,14 +7,15 @@ import Register from "@pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile/:profileId" element={<Profile />} />
-        <Route path="/register/artistLast" element={<RegisterArtistLast />} />
-        <Navbar />
-      </Routes>
-    </div>
+   <div className="App">
+    <Routes>
+      <Route path="/search" element={<Search />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
+    </Routes>
+    <Navbar />
+  </div>
   );
 }
 
