@@ -2,9 +2,9 @@ import styled from "styled-components";
 import banner from "@assets/homePageImg/banner2.png";
 
 export default styled.div`
- .about, 
- .connection p, 
- .banner :not(.logo) {
+  .about,
+  .connection p,
+  .banner :not(.logo) {
     display: none;
   }
 
