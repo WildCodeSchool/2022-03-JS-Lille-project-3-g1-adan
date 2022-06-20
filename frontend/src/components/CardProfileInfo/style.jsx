@@ -160,7 +160,7 @@ export default styled.div`
     color: #1871a3;
     text-decoration: underline;
   }
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .imgAgenda {
       right: 8%;
       top: 30%;
@@ -186,6 +186,10 @@ export default styled.div`
     }
     p {
       font-size: calc(100vw / 60);
+    }
+    .bannerImg {
+      height: 35vh;
+      margin-top: 10vh;
     }
   }
 `;
