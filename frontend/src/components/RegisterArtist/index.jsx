@@ -1,5 +1,4 @@
 import Checkbox from "@components/Checkbox";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import SRegisterArtist from "./style";
@@ -33,7 +32,7 @@ export default function RegisterArtist() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`);
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData);
   };
 
   return (
@@ -101,11 +100,10 @@ export default function RegisterArtist() {
               value={formData.secuNum}
               onChange={hChangeFormData}
             />
-            <Link to="/inscription/artiste/artisteSuite">
-              <button className="btnNext" type="submit">
-                SUITE
-              </button>
-            </Link>
+
+            <button className="btnNext" type="submit">
+              SUITE
+            </button>
           </form>
         </div>
       </div>
