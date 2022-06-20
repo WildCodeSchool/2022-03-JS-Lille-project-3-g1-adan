@@ -10,7 +10,6 @@ export default function SignupArtist() {
     firstname: "",
     email: "",
     password: "",
-    secuNum: "",
   });
 
   const hChangeFormData = (evt) => {
