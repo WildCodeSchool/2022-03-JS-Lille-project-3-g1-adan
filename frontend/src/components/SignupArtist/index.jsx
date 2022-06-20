@@ -1,9 +1,9 @@
 import Checkbox from "@components/Checkbox";
 import axios from "axios";
 import { useState } from "react";
-import SRegisterArtist from "./style";
+import SSignupArtist from "./style";
 
-export default function RegisterArtist() {
+export default function SignupArtist() {
   const [formData, setFormData] = useState({
     bandName: "",
     lastname: "",
@@ -36,7 +36,7 @@ export default function RegisterArtist() {
   };
 
   return (
-    <SRegisterArtist>
+    <SSignupArtist>
       <div className="register">
         <div className="registerContainer">
           <h1>Artiste</h1>
@@ -107,6 +107,6 @@ export default function RegisterArtist() {
           </form>
         </div>
       </div>
-    </SRegisterArtist>
+    </SSignupArtist>
   );
 }
