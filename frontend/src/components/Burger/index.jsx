@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import contact from "@assets/pictureNavMob/contact.png";
 import logoAdangris from "@assets/pictureNavMob/logoAdangris.png";
+import { Link } from "react-router-dom";
 import SBurger from "./style";
 
 function Burger() {
@@ -13,16 +14,29 @@ function Burger() {
   return (
     <SBurger toggleNav={toggleNav} open={open}>
       <img src={logoAdangris} alt="logo" className="logo" />
+
       {toggleMenu && (
         <ul>
-          <li className="picture">Page d'accueil</li>
-          <li className="picture">Mon profil</li>
-          <li className="picture">Mon agenda</li>
-          <li className="picture">A propos</li>
-          <li className="picture">Déconnexion</li>
+          <Link to="/profile/:profileId">
+            <li className="picture">Mon profil</li>
+          </Link>
+          <Link to="/">
+            <li className="picture">Page d'accueil</li>
+          </Link>
+          <Link to="/agenda">
+            <li className="picture">Mon agenda</li>
+          </Link>
+          <Link to="/about">
+            <li className="picture">A propos</li>
+          </Link>
+          <Link to="/logout">
+            <li className="picture">Déconnexion</li>
+          </Link>
         </ul>
       )}
-      <img src={contact} alt="profil" className="contact" />
+      <Link to="/message">
+        <img src={contact} alt="profil" className="contact" />
+      </Link>
       <button
         type="button"
         onClick={() => {
