@@ -12,12 +12,14 @@ export default styled.section`
   }
 
   @media screen and (min-width: 500px) {
-    height: 90vh;
+    height: 100vh;
 
     h2 {
       display: block;
       font-size: 3rem;
-      margin: 4rem;
+      margin-top: 6rem;
+      color: white;
+      font-weight: bold;
     }
   }
 `;
