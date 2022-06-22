@@ -9,9 +9,11 @@ function DemoProfile() {
   const { profileId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/artist/${profileId}`).then(({ data }) => {
-      setArtistImg(data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/${profileId}`)
+      .then(({ data }) => {
+        setArtistImg(data);
+      });
   }, []);
   return (
     <SDemoProfile>
