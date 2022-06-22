@@ -7,20 +7,32 @@ export default styled.nav`
     background-color: #c4c4c4;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    width: 100vw;
   }
   ul {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     padding-bottom: 1rem;
     background-color: #c4c4c4;
     border-bottom-left-radius: 2rem;
     position: absolute;
-    top: 10%;
+    top: 95%;
     width: 12vw;
     height: fit-content;
     margin: 0 auto;
+    align-items: center;
   }
+
+  a,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+    align-self: center;
+  }
+
   .picture {
     margin: auto;
     width: auto;
@@ -28,11 +40,8 @@ export default styled.nav`
     font-size: 1rem;
   }
   .logo {
-    position: fixed;
-    left: 0;
-    height: 11vh;
     padding-top: 0;
-    margin-left: 0;
+    margin-right: auto;
     width: auto;
     height: 10vh;
   }
