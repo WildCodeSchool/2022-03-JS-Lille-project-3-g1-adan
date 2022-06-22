@@ -1,5 +1,3 @@
-import insta from "@assets/imgProfile/insta.svg";
-import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
@@ -77,9 +75,7 @@ function CardEmployerInfo() {
           Suivre
         </button>
         <ul>
-          <li>👥 {employerData.bandname} The goodman</li>
           <li>🌍 {employerData.city}</li>
-          <li>€ {employerData.cachet}</li>
         </ul>
         <div className="description">
           <button type="button" onClick={openModal}>
@@ -100,8 +96,6 @@ function CardEmployerInfo() {
 
         <div>
           <img className="imgAgenda" src={agenda} alt="Logo agenda" />
-          <img className="imgInsta" src={insta} alt="Logo instagram" />
-          <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
         </div>
       </div>
       <div className="bottomProfile">

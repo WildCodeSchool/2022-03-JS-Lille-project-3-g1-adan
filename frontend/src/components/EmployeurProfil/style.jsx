@@ -138,17 +138,7 @@ export default styled.div`
     width: auto;
     position: absolute;
     right: 1.8rem;
-    top: 2.8rem;
-  }
-
-  .imgInsta {
-    right: 3rem;
-    top: 6rem;
-  }
-
-  .imgLinkedin {
-    right: 0.5rem;
-    top: 6rem;
+    top: 1O%;
   }
 
   .description {
@@ -156,18 +146,8 @@ export default styled.div`
   }
   @media screen and (min-width: 800px) {
     .imgAgenda {
-      right: 8%;
-      top: 30%;
-    }
-
-    .imgInsta {
-      right: 13%;
-      top: 60%;
-    }
-
-    .imgLinkedin {
-      right: 3%;
-      top: 60%;
+      right: 11%;
+      top: 50%;
     }
     .followButton {
       right: 6.5%;
