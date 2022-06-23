@@ -21,7 +21,6 @@ export default styled.nav`
       width: auto;
       height: 5vh;
       padding: 0.25rem;
-      border: 2px black;
     }
   }
 `;
