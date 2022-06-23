@@ -6,7 +6,6 @@ export default styled.section`
   height: 100vh;
   top: 0;
   text-align: center;
-
   .register {
     display: flex;
     align-items: center;
@@ -67,7 +66,6 @@ export default styled.section`
       height: 40vh;
     }
   }
-
   @media screen and (min-width: 1024px) {
     .registerContainer {
       margin-top: 5rem;

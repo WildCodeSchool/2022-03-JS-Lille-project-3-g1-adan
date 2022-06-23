@@ -2,18 +2,16 @@ import { useState } from "react";
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
-  const [siret, setSiret] = useState("");
-  const [categoryJur, setCategoryJur] = useState("");
-  const [nin, setNin] = useState("");
+  const [formData, setFormData] = useState({
+    nin: "",
+    categoryJur: "",
+    siret: "",
+  });
 
-  const hChangeSiret = (evt) => {
-    setSiret(evt.target.value);
-  };
-  const hChangeCategoryJur = (evt) => {
-    setCategoryJur(evt.target.value);
-  };
-  const hChangeNin = (evt) => {
-    setNin(evt.target.value);
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
   };
 
   const hSubmit = (evt) => {
@@ -30,24 +28,24 @@ export default function RegisterEmployer() {
               type="text"
               name="siret"
               placeholder="N° SIRET"
-              value={siret}
-              onChange={hChangeSiret}
+              value={formData.siret}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
               type="text"
-              name="categorie juridique"
+              name="legalCategory"
               placeholder="Catégorie juridique"
-              value={categoryJur}
-              onChange={hChangeCategoryJur}
+              value={formData.categoryJur}
+              onChange={hChangeFormData}
             />
             <input
               className="inputForm"
               type="text"
-              name="raison sociale"
+              name="nin"
               placeholder="Raison Sociale"
-              value={nin}
-              onChange={hChangeNin}
+              value={formData.nin}
+              onChange={hChangeFormData}
             />
 
             <button className="btnNext" type="submit" onChange={hSubmit}>

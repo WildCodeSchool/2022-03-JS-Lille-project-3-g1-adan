@@ -154,7 +154,7 @@ export default styled.div`
   .description {
     text-align: center;
   }
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .imgAgenda {
       right: 8%;
       top: 30%;
@@ -174,6 +174,10 @@ export default styled.div`
       top: 5%;
       font-size: calc(100vw / 45);
       padding: calc(100vw / 99);
+    }
+    .bannerImg {
+      height: 35vh;
+      margin-top: 10vh;
     }
   }
 `;
