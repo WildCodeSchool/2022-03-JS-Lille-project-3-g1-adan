@@ -10,7 +10,7 @@ function DemoProfile() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/${profileId}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
       .then(({ data }) => {
         setArtistImg(data);
       });
