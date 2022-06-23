@@ -6,6 +6,7 @@ import SGroupInfo from "./style";
 
 function GroupInfo() {
   const [bandData, setBandData] = useState([]);
+  const [style, setStyle] = useState([]);
   const { bandId } = useParams();
 
   useEffect(() => {
@@ -13,10 +14,19 @@ function GroupInfo() {
       setBandData(data);
     });
   }, []);
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/test`).then(({ data }) => {
+      setStyle(data);
+    });
+  }, []);
   return (
     <SGroupInfo>
       <div className="imgband" />
-      <h1>{bandData.name}</h1>
+      {style &&
+        style.map(() => {
+          return <h1>{style[0].style}</h1>;
+        })}
       <p>🌍 {bandData.city}</p>
       <p>{bandData.cachet}€</p>
       <img src={agenda} alt="agenda" />

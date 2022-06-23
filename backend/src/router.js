@@ -30,6 +30,7 @@ router.delete("/artist/:id", ArtistController.delete);
 router.put("/band/:id", BandController.edit);
 router.get("/band/:id", BandController.read);
 router.get("/band", BandController.browse);
+router.get("/test", BandController.browseTest);
 router.post("/band", BandController.add);
 router.delete("/band/:id", BandController.delete);
 

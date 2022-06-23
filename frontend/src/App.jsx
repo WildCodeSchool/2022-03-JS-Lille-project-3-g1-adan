@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path="/profile" element={<Profile />} />
-      <Route path="/result" element={<Result />} />
+      <Route path="/result/:bandId" element={<Result />} />
     </Routes>
   );
 }
