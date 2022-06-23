@@ -187,5 +187,9 @@ export default styled.div`
     p {
       font-size: calc(100vw / 60);
     }
+    .bannerImg {
+      height: 35vh;
+      margin-top: 10vh;
+    }
   }
 `;
