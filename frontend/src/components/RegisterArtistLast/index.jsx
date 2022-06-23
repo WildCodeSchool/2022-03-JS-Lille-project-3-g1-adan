@@ -18,7 +18,7 @@ export default function RegisterArtistLast() {
     <SRegisterArtistLast>
       <div className="register">
         <div className="registerContainer">
-          <h1>Employeur</h1>
+          <h1>Artiste</h1>
           <form className="registerForm">
             <select className="inputForm" onChange={hChangeFormData}>
               <option value={formData.status}>Statut...</option>
