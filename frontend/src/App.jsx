@@ -16,8 +16,11 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/:profileId" element={<Profile />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/register/artist" element={<SignupArtist />} />  
-        <Route path="/register/artist/validation" element={<RegisterArtist />} />
+        <Route path="/register/artist" element={<SignupArtist />} />
+        <Route
+          path="/register/artist/validation"
+          element={<RegisterArtist />}
+        />
       </Routes>
       <Navbar />
     </div>

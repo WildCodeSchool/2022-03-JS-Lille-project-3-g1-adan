@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 
 const {
   UserController,
@@ -25,6 +26,11 @@ router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.post("/auth/signup", AuthController.signup);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  AuthController.login
+);
 
 router.get("/searchs", SearchableController.browse);
 

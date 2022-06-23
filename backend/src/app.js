@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const passport = require("passport");
 const router = require("./router");
+require("./passport-strategies");
 
 const app = express();
 
@@ -12,6 +14,8 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
+
+app.use(passport.initialize());
 
 app.use(express.json());
 

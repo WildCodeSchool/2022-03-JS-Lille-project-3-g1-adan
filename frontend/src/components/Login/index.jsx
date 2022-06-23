@@ -1,13 +1,50 @@
+import { useState } from "react";
+import axios from "axios";
 import Style from "./style";
 
 export default function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const hChange = (evt) => {
+    const { name, value } = evt.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
+      .then(() => {})
+      .catch(() => {});
+  };
+
   return (
     <Style>
       <div className="formBox">
         <form>
-          <input type="text" name="email" placeholder="Email" />
-          <input type="text" name="password" placeholder="Mot de passe" />
-          <input className="button" type="submit" value="connexion" />
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
+            placeholder="Email"
+            onChange={hChange}
+          />
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            placeholder="Mot de passe"
+            onChange={hChange}
+          />
+          <input
+            className="button"
+            type="submit"
+            onClick={hSubmit}
+            value="connexion"
+          />
         </form>
       </div>
     </Style>
