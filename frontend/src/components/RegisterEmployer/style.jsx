@@ -6,7 +6,6 @@ export default styled.section`
   height: 100vh;
   top: 0;
   text-align: center;
-
   .register {
     display: flex;
     align-items: center;
@@ -14,7 +13,7 @@ export default styled.section`
     flex-direction: column;
   }
   .registerContainer {
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 85vw;
     background-color: #c4c4c4;
     border-radius: 1rem;
@@ -32,7 +31,22 @@ export default styled.section`
     border: 1px solid white;
     margin: 1rem;
   }
-
+  .select {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-right: 3rem;
+  }
+  .checkbox {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .checkbox button {
+    border: 0;
+    background-color: #c4c4c4;
+    margin-left: 2rem;
+  }
   span {
     font-size: 1.5rem;
     color: white;
@@ -52,22 +66,20 @@ export default styled.section`
       height: 40vh;
     }
   }
-
   @media screen and (min-width: 1024px) {
-    .imgLogo {
-      width: 15vw;
-    }
     .registerContainer {
       margin-top: 5rem;
       width: 40vw;
-      height: 50vh;
+      height: 40vh;
     }
     .inputForm {
       width: 30vw;
     }
-
+    .select {
+      margin-top: 1rem;
+    }
     .btnNext {
-      margin-top: 2rem;
+      margin-top: 1rem;
       width: 25vw;
     }
   }
