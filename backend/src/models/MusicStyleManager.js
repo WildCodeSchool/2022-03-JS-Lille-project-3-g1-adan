@@ -16,6 +16,12 @@ class MusicStyleManager extends AbstractManager {
       [musicStyle.title, musicStyle.id]
     );
   }
+
+  findAll() {
+    return this.connection.query(
+      `select role, style from  ${this.table} as musicStyle left join artist on artist.id=musicStyle.id`
+    );
+  }
 }
 
 module.exports = MusicStyleManager;
