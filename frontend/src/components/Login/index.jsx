@@ -17,8 +17,12 @@ export default function Login() {
     evt.preventDefault();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
-      .then(() => {})
-      .catch(() => {});
+      .then(() => {
+        console.warn("welcome");
+      })
+      .catch(() => {
+        console.error("wrong login");
+      });
   };
 
   return (
