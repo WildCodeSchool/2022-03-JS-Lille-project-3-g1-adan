@@ -35,7 +35,7 @@ export default styled.section`
     margin-top: 0.4rem;
   }
   @media screen and (min-width: 500px) {
-    height: 90vh;
+    height: 100vh;
     ul {
       width: 45vw;
       height: fit-content;
