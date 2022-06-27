@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Logo from "@assets/logo/Logo_ADAN.png";
+import { Link } from "react-router-dom";
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
@@ -20,6 +22,7 @@ export default function RegisterEmployer() {
   return (
     <SRegisterEmployer>
       <div className="register">
+        <img src={Logo} className="imgLogo" alt="logo ADAN" />
         <div className="registerContainer">
           <h1>Employeur</h1>
           <form className="registerForm" onSubmit={hSubmit}>
@@ -57,9 +60,11 @@ export default function RegisterEmployer() {
               <option value="public">Public </option>
               <option value="personal">Personnel </option>
             </select>
-            <button className="btnNext" type="submit">
-              SUITE
-            </button>
+            <Link to="/register/employer/validation">
+              <button className="btnNext" type="submit">
+                SUITE
+              </button>
+            </Link>
           </form>
         </div>
       </div>

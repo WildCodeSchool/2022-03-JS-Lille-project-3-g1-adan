@@ -3,9 +3,13 @@ import styled from "styled-components";
 export default styled.section`
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   top: 0;
   text-align: center;
+  .imgLogo {
+    width: 47vw;
+    margin-top: 2rem;
+  }
   .register {
     display: flex;
     align-items: center;
@@ -67,10 +71,11 @@ export default styled.section`
     }
   }
   @media screen and (min-width: 1024px) {
+    margin-top: 10vh;
     .registerContainer {
-      margin-top: 5rem;
+      margin: 5rem 0;
       width: 40vw;
-      height: 40vh;
+      height: 45vh;
     }
     .inputForm {
       width: 30vw;
@@ -79,8 +84,12 @@ export default styled.section`
       margin-top: 1rem;
     }
     .btnNext {
-      margin-top: 1rem;
+      margin: 2rem 0;
       width: 25vw;
+    }
+    .imgLogo {
+      margin-top: 2rem;
+      width: 15vw;
     }
   }
 `;
