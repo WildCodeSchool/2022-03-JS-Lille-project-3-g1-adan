@@ -8,12 +8,15 @@ export default styled.div`
     display: none;
   }
 
+  .banner {
+    margin-top: 10vh;
+  }
+
   .logo {
-    height: 30vh;
     width: auto;
     text-align: center;
     display: block;
-    margin: auto;
+    margin: 2rem auto auto auto;
   }
 
   .formBox {
@@ -23,12 +26,14 @@ export default styled.div`
   .register {
     display: flex;
     justify-content: center;
-    margin-top: 3vh;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 2rem;
   }
 
   @media screen and (min-width: 500px) {
     .banner {
-      height: 25vh;
       width: 100vw;
       display: flex;
       flex-direction: column;
@@ -47,7 +52,6 @@ export default styled.div`
     }
 
     .logo {
-      height: 20vh;
       width: auto;
     }
 
@@ -67,7 +71,7 @@ export default styled.div`
       background-color: #d9d9d9;
       margin-top: 7vh;
       margin-left: 7vw;
-      padding: 1rem;
+      padding: 2rem 1rem 1rem 1rem;
       border-radius: 2.5rem;
       text-align: center;
       font-size: 1.5rem;
@@ -81,18 +85,20 @@ export default styled.div`
     .register {
       grid-area: 2 / 2 / 3 / 3;
       text-align: center;
+      align-items: center;
+      margin: 1rem 0;
     }
 
     .about {
-      height: 25vh;
+      height: 30vh;
       width: 100vw;
       display: flex;
       justify-content: space-around;
       background-color: #c77072;
+      margin-top: 2rem;
     }
 
     .thisIsUs {
-      height: 25vh;
       width: auto;
     }
 
