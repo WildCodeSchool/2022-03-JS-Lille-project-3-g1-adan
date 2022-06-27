@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Checkbox from "@components/Checkbox";
+import Logo from "@assets/logo/Logo_ADAN.png";
 import axios from "axios";
 import { useState } from "react";
 import SSignupArtist from "./style";
@@ -46,6 +47,7 @@ export default function SignupArtist() {
   return (
     <SSignupArtist>
       <div className="register">
+        <img src={Logo} className="imgLogo" alt="Logo ADAN" />
         <div className="registerContainer">
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
