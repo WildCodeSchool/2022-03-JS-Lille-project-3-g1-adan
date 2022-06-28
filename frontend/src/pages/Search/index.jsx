@@ -1,5 +1,4 @@
 import SearchInput from "@components/SearchInput";
-
 import SSearch from "./style";
 
 export default function Search() {
