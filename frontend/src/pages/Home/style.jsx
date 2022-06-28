@@ -16,7 +16,7 @@ export default styled.div`
     width: auto;
     text-align: center;
     display: block;
-    margin: 2rem auto auto auto;
+    margin-top: 2rem;
   }
 
   .formBox {
