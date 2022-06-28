@@ -3,9 +3,12 @@ import styled from "styled-components";
 export default styled.section`
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  top: 20;
+  margin-top: 10vh;
   text-align: center;
+  .imgLogo {
+    margin-top: 2rem;
+    width: 47vw;
+  }
   .register {
     display: flex;
     align-items: center;
@@ -13,7 +16,7 @@ export default styled.section`
     flex-direction: column;
   }
   .registerContainer {
-    margin-top: 20rem;
+    margin-top: 5rem;
     width: 85vw;
     background-color: #c4c4c4;
     border-radius: 1rem;
@@ -53,9 +56,9 @@ export default styled.section`
   @media screen and (min-width: 1024px) {
     .imgLogo {
       width: 15vw;
+      margin-top: 2rem;
     }
     .registerContainer {
-      margin-top: 20rem;
       width: 40vw;
       height: 30vh;
     }

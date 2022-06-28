@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "@assets/logo/Logo_ADAN.png";
 import SRegisterArtistLast from "./style";
 
 export default function RegisterArtistLast() {
@@ -17,6 +18,7 @@ export default function RegisterArtistLast() {
   return (
     <SRegisterArtistLast>
       <div className="register">
+        <img src={Logo} alt="logo Adan" className="imgLogo" />
         <div className="registerContainer">
           <h1>Artiste</h1>
           <form className="registerForm">
