@@ -18,7 +18,7 @@ export default styled.nav`
     background-color: #c4c4c4;
     border-bottom-left-radius: 2rem;
     position: absolute;
-    top: 95%;
+    top: 100%;
     width: 12vw;
     height: fit-content;
     margin: 0 auto;
