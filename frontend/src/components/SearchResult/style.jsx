@@ -9,6 +9,6 @@ export default styled.div`
   border-radius: 19px;
   @media screen and (min-width: 500px) {
     max-width: 60%;
-    margin: 4rem auto;
+    margin: 10rem auto;
   }
 `;

@@ -1,12 +1,13 @@
 import agenda from "@assets/imgProfile/agenda.svg";
+import ImgProfile from "@assets/imgProfile/unnamed.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import GroupMember from "@components/GroupMember";
 import SGroupInfo from "./style";
 
 function GroupInfo() {
   const [bandData, setBandData] = useState([]);
-  const [style, setStyle] = useState([]);
   const { bandId } = useParams();
 
   useEffect(() => {
@@ -15,22 +16,35 @@ function GroupInfo() {
     });
   }, []);
 
-  useEffect(() => {
-    axios.get(`http://localhost:5000/test`).then(({ data }) => {
-      setStyle(data);
-    });
-  }, []);
   return (
     <SGroupInfo>
       <div className="imgband" />
-      {style &&
-        style.map(() => {
-          return <h1>{style[0].style}</h1>;
+      {bandData && bandData[0] ? (
+        <>
+          <h1>{bandData[0].style}</h1>
+          <p>🌍 {bandData[0].city}</p>
+          <p>{bandData[0].cachet}€</p>
+          <img src={agenda} alt="agenda" />
+          <div className="member">Membres:</div>
+        </>
+      ) : null}
+      <div className="groupContainer">
+        {bandData.map((artist) => {
+          return (
+            <div className="cardMember">
+              <img src={artist.avatar} className="avatar" alt="ProfileImg" />
+              <div className="memberName">
+                <ul>
+                  <li>
+                    {artist.firstname} {artist.lastname}
+                  </li>
+                  <li>{artist.label}</li>
+                </ul>
+              </div>
+            </div>
+          );
         })}
-      <p>🌍 {bandData.city}</p>
-      <p>{bandData.cachet}€</p>
-      <img src={agenda} alt="agenda" />
-      <div className="member">Membres:</div>
+      </div>
     </SGroupInfo>
   );
 }

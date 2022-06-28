@@ -8,8 +8,6 @@ function searchResult() {
     <SsearchResult>
       <BackButton />
       <GroupInfo />
-      <GroupMember />
-      <GroupMember />
     </SsearchResult>
   );
 }
