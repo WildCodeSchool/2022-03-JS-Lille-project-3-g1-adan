@@ -21,7 +21,6 @@ export default function Search() {
           }`
         )
         .then(({ data }) => {
-          console.log(data);
           setSearchResults(data);
         });
     }
@@ -31,7 +30,6 @@ export default function Search() {
     const { name, value } = evt.target;
     setFormData({ ...formData, [name]: value });
   };
-  console.log(formData);
   return (
     <SSearch>
       <h2>Recherche</h2>

@@ -1,9 +1,7 @@
 import agenda from "@assets/imgProfile/agenda.svg";
-import ImgProfile from "@assets/imgProfile/unnamed.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import GroupMember from "@components/GroupMember";
 import SGroupInfo from "./style";
 
 function GroupInfo() {
