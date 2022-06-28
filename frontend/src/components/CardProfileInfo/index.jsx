@@ -4,7 +4,7 @@ import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SCardProfile from "./style";
 
 function CardProfileInfo() {
@@ -12,9 +12,11 @@ function CardProfileInfo() {
   const { profileId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/artist/${profileId}`).then(({ data }) => {
-      setArtistData(data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .then(({ data }) => {
+        setArtistData(data);
+      });
   }, []);
 
   const [isFollow, setIsFollow] = useState(false);
@@ -30,6 +32,7 @@ function CardProfileInfo() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      lineHeight: "2rem",
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -80,8 +83,8 @@ function CardProfileInfo() {
           <li>€ {artistData.cachet}</li>
         </ul>
         <div className="description">
-          <button type="button" onClick={openModal}>
-            + d'information
+          <button type="button" onClick={openModal} className="descriptionBtn">
+            + d'informations
           </button>
           <Modal
             isOpen={modalIsOpen}
@@ -89,7 +92,7 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p> {artistData.description}</p>
+            <p>{artistData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
@@ -97,9 +100,15 @@ function CardProfileInfo() {
         </div>
 
         <div>
-          <img className="imgAgenda" src={agenda} alt="Logo agenda" />
-          <img className="imgInsta" src={insta} alt="Logo instagram" />
-          <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
+          <Link to="/calendar">
+            <img className="imgAgenda" src={agenda} alt="Logo agenda" />
+          </Link>
+          <a href={artistData.instagram}>
+            <img className="imgInsta" src={insta} alt="Logo instagram" />
+          </a>
+          <a href={artistData.linkedin}>
+            <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
+          </a>
         </div>
       </div>
       <div className="bottomProfile">
