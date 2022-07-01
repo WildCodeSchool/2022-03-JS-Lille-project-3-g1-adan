@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export default styled.section`
   background-color: #bb5759;
-  position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   top: 0;
   text-align: center;
+  margin-top: 10vh;
   .imgLogo {
     width: 47vw;
-    height: auto;
+    margin-top: 2rem;
   }
   @media screen and (min-width: 1024px) {
     .imgLogo {
