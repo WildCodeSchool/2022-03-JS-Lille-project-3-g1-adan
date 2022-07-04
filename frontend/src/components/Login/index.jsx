@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import axios from "axios";
 import Style from "./style";
 
@@ -18,10 +19,26 @@ export default function Login() {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
       .then(() => {
-        console.warn("welcome");
+        toast.success("Bienvenue !", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       })
       .catch(() => {
-        console.error("wrong login");
+        toast.error("Mauvais identifiants", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
