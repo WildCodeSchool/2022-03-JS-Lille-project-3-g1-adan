@@ -1,6 +1,7 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Logo from "@assets/logo/Logo_ADAN.png";
-import { Link } from "react-router-dom";
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
@@ -9,7 +10,9 @@ export default function RegisterEmployer() {
     firstname: "",
     email: "",
     status: "",
+    password: "",
   });
+  const navigate = useNavigate();
   const hChangeFormData = (evt) => {
     const newData = { ...formData };
     newData[evt.target.name] = evt.target.value;
@@ -17,6 +20,18 @@ export default function RegisterEmployer() {
   };
   const hSubmit = (evt) => {
     evt.preventDefault();
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
+      .then(({ data }) => {
+        const { id } = data.user;
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/employer`, {
+          ...formData,
+          user_id: id,
+        });
+      })
+      .then(() => {
+        navigate("/register/employer/validation");
+      });
   };
 
   return (
@@ -50,6 +65,14 @@ export default function RegisterEmployer() {
               value={formData.email}
               onChange={hChangeFormData}
             />
+            <input
+              className="inputForm"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={hChangeFormData}
+            />
             <select
               className="inputForm"
               name="status"
@@ -60,11 +83,9 @@ export default function RegisterEmployer() {
               <option value="public">Public </option>
               <option value="personal">Personnel </option>
             </select>
-            <Link to="/register/employer/validation">
-              <button className="btnNext" type="submit">
-                SUITE
-              </button>
-            </Link>
+            <button className="btnNext" type="submit">
+              SUITE
+            </button>
           </form>
         </div>
       </div>
