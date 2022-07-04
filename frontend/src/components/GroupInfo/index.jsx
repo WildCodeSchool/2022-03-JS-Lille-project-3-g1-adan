@@ -9,9 +9,11 @@ function GroupInfo() {
   const { bandId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/band/${bandId}`).then(({ data }) => {
-      setBandData(data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/band/${bandId}`)
+      .then(({ data }) => {
+        setBandData(data);
+      });
   }, []);
 
   if (!bandData.length) {
