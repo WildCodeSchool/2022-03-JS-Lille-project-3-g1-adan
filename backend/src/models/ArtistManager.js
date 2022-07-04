@@ -5,8 +5,9 @@ class ArtistManager extends AbstractManager {
 
   insert(artist) {
     return this.connection.query(
-      `insert into ${ArtistManager.table} (firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,role,cachet) values (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+      `insert into ${ArtistManager.table} (user_id,firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,role,cachet) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       [
+        artist.user_id,
         artist.firstname,
         artist.lastname,
         artist.phone,

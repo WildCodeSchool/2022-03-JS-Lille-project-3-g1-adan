@@ -1,7 +1,6 @@
 import Navbar from "@components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Profile from "@pages/Profile";
-import Result from "@pages/Result";
 import Search from "@pages/Search";
 import Home from "@pages/Home";
 import SignupArtist from "@components/SignupArtist";
@@ -22,7 +21,6 @@ function App() {
           path="/register/artist/validation"
           element={<RegisterArtist />}
         />
-        <Route path="/result/:bandId" element={<Result />} />
       </Routes>
       <Navbar />
     </div>

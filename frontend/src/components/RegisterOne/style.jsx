@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.section`
   background-color: #bb5759;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   top: 0;
   text-align: center;
 
@@ -14,14 +14,7 @@ export default styled.section`
     justify-content: center;
     flex-direction: column;
   }
-  .registerInput {
-    width: 50vw;
-    height: 5vh;
-    margin-top: 3rem;
-    border-radius: 2rem;
-    border: 1px solid white;
-    background-color: #c4c4c4;
-  }
+
   .registerContainer {
     margin-top: 2rem;
     width: 70vw;
@@ -75,7 +68,7 @@ export default styled.section`
     }
     .registerContainer {
       width: 35vw;
-      margin-top: 30rem;
+      margin-top: 20rem;
     }
     .registerContainerInput {
       width: 28vw;
