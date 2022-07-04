@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Style from "./style";
@@ -9,6 +10,8 @@ export default function Login() {
     password: "",
   });
 
+  const dispatch = useDispatch();
+
   const hChange = (evt) => {
     const { name, value } = evt.target;
     setFormData({ ...formData, [name]: value });
@@ -18,7 +21,9 @@ export default function Login() {
     evt.preventDefault();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
-      .then(() => {
+      .then(({ data }) => {
+        const { user } = data;
+        dispatch({ type: "LOGIN", payload: user });
         toast.success("Bienvenue !", {
           position: "bottom-right",
           autoClose: 5000,
@@ -29,8 +34,8 @@ export default function Login() {
           progress: undefined,
         });
       })
-      .catch(() => {
-        toast.error("Mauvais identifiants", {
+      .catch((e) => {
+        toast.error(`Mauvais identifiants${e}`, {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
