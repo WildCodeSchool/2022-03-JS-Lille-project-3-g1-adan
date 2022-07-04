@@ -17,17 +17,15 @@ export default styled.section`
     background-size: cover;
   }
   .imgBandDefault {
-    height: 50%;
+    height: 6rem;
     width: auto;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-image: url(${logo});
     background-position: center;
     background-size: cover;
-    position: absolute;
-    left: 0;
+
     bottom: 72.49%;
-    background-color: #bb5459;
   }
   .member {
     align-self: start;

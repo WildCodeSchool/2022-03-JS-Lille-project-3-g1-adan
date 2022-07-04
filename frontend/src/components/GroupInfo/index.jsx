@@ -13,14 +13,12 @@ function GroupInfo() {
       setBandData(data);
     });
   }, []);
-  console.log(bandData);
-
   return (
-    <SGroupInfo /* src={bandData[0].logo */>
+    <SGroupInfo src={bandData.logo && bandData[0].logo}>
       <div
         className={
-          bandData.logo === null || bandData.logo === ""
-            ? "imnBandDefault"
+          bandData.logo === null || bandData.logo === undefined
+            ? "imgBandDefault"
             : "imgBand"
         }
       />
@@ -43,7 +41,7 @@ function GroupInfo() {
               <div className="memberName">
                 <ul>
                   <li>
-                    {artist.firstname} {artist.lastname}
+                    {artist.firstname} {artist.lastname}{" "}
                   </li>
                   <li>{artist.label}</li>
                 </ul>
