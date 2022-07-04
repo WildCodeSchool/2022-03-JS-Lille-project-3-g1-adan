@@ -11,6 +11,9 @@ export default function RegisterEmployer() {
     email: "",
     status: "",
     password: "",
+    companyName: "",
+    companyStatus: "",
+    numberSiret: "",
   });
   const navigate = useNavigate();
   const hChangeFormData = (evt) => {
@@ -30,7 +33,7 @@ export default function RegisterEmployer() {
         });
       })
       .then(() => {
-        navigate("/register/employer/validation");
+        navigate("/employer");
       });
   };
 
@@ -39,7 +42,7 @@ export default function RegisterEmployer() {
       <div className="register">
         <img src={Logo} className="imgLogo" alt="logo ADAN" />
         <div className="registerContainer">
-          <h1>Employeur</h1>
+          <h1>Organisateur</h1>
           <form className="registerForm" onSubmit={hSubmit}>
             <input
               className="inputForm"
@@ -73,6 +76,30 @@ export default function RegisterEmployer() {
               value={formData.password}
               onChange={hChangeFormData}
             />
+            <input
+              className="inputForm"
+              type="text"
+              name="numberSiret"
+              placeholder="N° SIRET"
+              value={formData.numberSiret}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="companyStatus"
+              placeholder="Catégorie juridique"
+              value={formData.companyStatus}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="companyName"
+              placeholder="Raison Sociale"
+              value={formData.companyName}
+              onChange={hChangeFormData}
+            />
             <select
               className="inputForm"
               name="status"
@@ -83,8 +110,8 @@ export default function RegisterEmployer() {
               <option value="public">Public </option>
               <option value="personal">Personnel </option>
             </select>
-            <button className="btnNext" type="submit">
-              SUITE
+            <button className="btnNext" type="submit" onChange={hSubmit}>
+              Validez
             </button>
           </form>
         </div>
