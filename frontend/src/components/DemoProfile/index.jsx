@@ -1,8 +1,20 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import datas from "@assets/imgProfile/data.json";
+import { useParams } from "react-router-dom";
 import SDemoProfile from "./style";
 
 function DemoProfile() {
+  const [artistImg, setArtistImg] = useState([]);
+  const { profileId } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .then(({ data }) => {
+        setArtistImg(data);
+      });
+  }, []);
   return (
     <SDemoProfile>
       <div className="player-wrapper">
@@ -15,9 +27,10 @@ function DemoProfile() {
         />
       </div>
       <div className="coverContainer">
-        {datas.map((data) => {
-          return <img src={data.src} key={data.id} alt="cover" />;
-        })}
+        {artistImg.galleryImg &&
+          artistImg.galleryImg.map((img) => {
+            return <img src={img} key={img} alt="cover" />;
+          })}
       </div>
     </SDemoProfile>
   );

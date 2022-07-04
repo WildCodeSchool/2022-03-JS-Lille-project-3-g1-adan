@@ -79,6 +79,7 @@ export default styled.section`
   }
 
   @media screen and (min-width: 1024px) {
+    margin-top: 10vh;
     .imgLogo {
       width: 15vw;
     }

@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import Checkbox from "@components/Checkbox";
+import Logo from "@assets/logo/Logo_ADAN.png";
 import axios from "axios";
 import { useState } from "react";
 import SSignupArtist from "./style";
@@ -11,7 +13,7 @@ export default function SignupArtist() {
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   const hChangeFormData = (evt) => {
     const newData = { ...formData };
     newData[evt.target.name] = evt.target.value;
@@ -19,7 +21,6 @@ export default function SignupArtist() {
   };
   const [checkOne, setCheckOne] = useState(false);
   const [checkTwo, setCheckTwo] = useState(false);
-
   const handleChange = () => {
     setCheckOne(!checkOne);
     setCheckTwo(false);
@@ -28,15 +29,25 @@ export default function SignupArtist() {
     setCheckTwo(!checkTwo);
     setCheckOne(false);
   };
-
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData);
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
+      .then(({ data }) => {
+        const { id } = data.user;
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
+          ...formData,
+          user_id: id,
+        });
+      })
+      .then(() => {
+        navigate("/register/artist/validation");
+      });
   };
-
   return (
     <SSignupArtist>
       <div className="register">
+        <img src={Logo} className="imgLogo" alt="Logo ADAN" />
         <div className="registerContainer">
           <h1>Artiste</h1>
           <form className="registerForm" onSubmit={hSubmit}>
@@ -74,7 +85,6 @@ export default function SignupArtist() {
                 />
               </>
             )}
-
             <input
               className="inputForm"
               type="text"
@@ -99,7 +109,6 @@ export default function SignupArtist() {
               value={formData.secuNum}
               onChange={hChangeFormData}
             />
-
             <button className="btnNext" type="submit">
               SUITE
             </button>

@@ -12,11 +12,11 @@ export default function RegisterOne() {
               Je suis un artiste
             </button>
           </Link>
-          <input
-            className="registerContainerInput"
-            type="button"
-            value="Je recherche un artiste"
-          />
+          <Link to="/register/employer">
+            <button className="registerContainerInput" type="button">
+              Je recherche un artiste
+            </button>
+          </Link>
         </div>
       </div>
     </SRegisterOne>
