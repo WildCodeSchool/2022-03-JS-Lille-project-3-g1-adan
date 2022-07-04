@@ -24,8 +24,6 @@ export default styled.section`
     background-image: url(${logo});
     background-position: center;
     background-size: cover;
-
-    bottom: 72.49%;
   }
   .member {
     align-self: start;

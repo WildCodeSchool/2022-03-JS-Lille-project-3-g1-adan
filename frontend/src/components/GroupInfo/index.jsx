@@ -13,26 +13,30 @@ function GroupInfo() {
       setBandData(data);
     });
   }, []);
+
+  if (!bandData.length) {
+    return null;
+  }
+
   return (
-    <SGroupInfo src={bandData.logo && bandData[0].logo}>
+    <SGroupInfo src={bandData[0].logo}>
       <div
         className={
-          bandData.logo === null || bandData.logo === undefined
+          bandData.logo === null || bandData.logo === ""
             ? "imgBandDefault"
             : "imgBand"
         }
       />
-      {bandData && bandData[0] ? (
-        <>
-          <h1>{bandData[0].style}</h1>
-          <p>🌍 {bandData[0].city}</p>
-          <p>{bandData[0].cachet}€</p>
-          <Link to="/calendar">
-            <img src={agenda} alt="agenda" />
-          </Link>
-          <div className="member">Membres:</div>
-        </>
-      ) : null}
+      <>
+        <h1>{bandData[0].style}</h1>
+        <p>🌍 {bandData[0].city}</p>
+        <p>{bandData[0].cachet}€</p>
+        <Link to="/calendar">
+          <img src={agenda} alt="agenda" />
+        </Link>
+        <div className="member">Membres:</div>
+      </>
+
       <div className="groupContainer">
         {bandData.map((artist) => {
           return (

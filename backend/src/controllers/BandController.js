@@ -13,18 +13,6 @@ class BandController {
       });
   };
 
-  static browseTest = (req, res) => {
-    models.band
-      .findStyle()
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static read = (req, res) => {
     models.band
       .findBand(req.params.id)
