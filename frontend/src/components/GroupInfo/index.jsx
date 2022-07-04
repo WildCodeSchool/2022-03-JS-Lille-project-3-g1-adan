@@ -1,7 +1,7 @@
 import agenda from "@assets/imgProfile/agenda.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SGroupInfo from "./style";
 
 function GroupInfo() {
@@ -13,16 +13,25 @@ function GroupInfo() {
       setBandData(data);
     });
   }, []);
+  console.log(bandData);
 
   return (
-    <SGroupInfo>
-      <div className="imgband" />
+    <SGroupInfo /* src={bandData[0].logo */>
+      <div
+        className={
+          bandData.logo === null || bandData.logo === ""
+            ? "imnBandDefault"
+            : "imgBand"
+        }
+      />
       {bandData && bandData[0] ? (
         <>
           <h1>{bandData[0].style}</h1>
           <p>🌍 {bandData[0].city}</p>
           <p>{bandData[0].cachet}€</p>
-          <img src={agenda} alt="agenda" />
+          <Link to="/calendar">
+            <img src={agenda} alt="agenda" />
+          </Link>
           <div className="member">Membres:</div>
         </>
       ) : null}

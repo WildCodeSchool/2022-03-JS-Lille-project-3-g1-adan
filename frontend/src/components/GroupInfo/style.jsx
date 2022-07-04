@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BandImg from "@assets/imgBand/bandImg.svg";
+import logo from "@assets/imgBand/default.png";
 
 export default styled.section`
   display: flex;
@@ -8,13 +8,26 @@ export default styled.section`
   margin-top: 2rem;
   width: 100%;
   line-height: 2rem;
-  .imgband {
+  .imgBand {
     height: 8rem;
     width: auto;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-image: url(${BandImg});
+    background-image: url(${(props) => props.src});
     background-size: cover;
+  }
+  .imgBandDefault {
+    height: 50%;
+    width: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-image: url(${logo});
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 72.49%;
+    background-color: #bb5459;
   }
   .member {
     align-self: start;
