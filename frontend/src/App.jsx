@@ -6,6 +6,7 @@ import Home from "@pages/Home";
 import SignupArtist from "@components/SignupArtist";
 import RegisterArtist from "@components/RegisterArtistLast";
 import Register from "@pages/Register";
+import Calendar from "@pages/Calendar";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           path="/register/artist/validation"
           element={<RegisterArtist />}
         />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
       <Navbar />
     </div>
