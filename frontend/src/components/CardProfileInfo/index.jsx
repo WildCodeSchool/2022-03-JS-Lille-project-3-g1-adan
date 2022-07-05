@@ -10,19 +10,12 @@ import SCardProfile from "./style";
 function CardProfileInfo() {
   const [artistData, setArtistData] = useState([]);
   const { profileId } = useParams();
-
   const [formData, setFormData] = useState({
     lastname: "",
     firstname: "",
     email: "",
     status: "",
   });
-  // console.log(formData);
-  const hChangeFormData = (evt) => {
-    const newData = { ...formData };
-    newData[evt.target.name] = evt.target.value;
-    setFormData(newData);
-  };
 
   useEffect(() => {
     axios
@@ -31,8 +24,13 @@ function CardProfileInfo() {
         setArtistData(data);
         setFormData(data);
       });
-  }, []);
-  // console.log(formData);
+  }, [formData]);
+
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
+  };
 
   const [isFollow, setIsFollow] = useState(false);
   const handleIsFollow = () => {
@@ -47,10 +45,22 @@ function CardProfileInfo() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+    },
+  };
+
+  const customStyles2 = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
       lineHeight: "2rem",
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen2, setIsOpen2] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -60,6 +70,13 @@ function CardProfileInfo() {
     setIsOpen(false);
   }
 
+  function openModal2() {
+    setIsOpen2(true);
+  }
+
+  function closeModal2() {
+    setIsOpen2(false);
+  }
   const hSubmit = (evt) => {
     evt.preventDefault();
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
@@ -90,7 +107,7 @@ function CardProfileInfo() {
           </h1>
           <p>{artistData.role}</p>
         </div>
-        <button type="button" onClick={openModal} className="descriptionBtn">
+        <button type="button" onClick={openModal} className="editButton">
           Modifier mon profil
         </button>
         <Modal
@@ -183,22 +200,22 @@ function CardProfileInfo() {
           <li>🌍 {artistData.city}</li>
           <li>€ {artistData.cachet}</li>
         </ul>
-        {/* <div className="description">
-          <button type="button" onClick={openModal} className="descriptionBtn">
+        <div className="description">
+          <button type="button" onClick={openModal2} className="descriptionBtn">
             + d'informations
           </button>
           <Modal
-            isOpen={modalIsOpen}
-            style={customStyles}
+            isOpen={modalIsOpen2}
+            style={customStyles2}
             contentLabel="Description"
           >
             <h2>Description</h2>
             <p>{artistData.description}</p>
-            <button type="button" onClick={closeModal}>
+            <button type="button" onClick={closeModal2}>
               close
             </button>
           </Modal>
-        </div> */}
+        </div>
 
         <div>
           <Link to="/calendar">

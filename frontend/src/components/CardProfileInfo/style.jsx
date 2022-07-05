@@ -57,6 +57,23 @@ export default styled.div`
     background-color: #bb5459;
   }
 
+  .editButton {
+    border-radius: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    background: #f77777;
+    border: 1px solid #bb5759;
+    padding: 0.4rem;
+    position: absolute;
+    right: 20rem;
+    top: 1.5rem;
+  }
+
   .followButton {
     border-radius: 18px;
     font-style: normal;
@@ -180,6 +197,22 @@ export default styled.div`
       top: 5%;
       font-size: 1rem;
       padding: 0.5rem;
+    }
+    .editButton {
+      border-radius: 18px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 0.9rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: #ffffff;
+      background: #f77777;
+      border: 1px solid #bb5759;
+      padding: 0.4rem;
+      position: absolute;
+      right: 20rem;
+      top: 1.5rem;
     }
     h1 {
       font-size: calc(100vw / 40);
