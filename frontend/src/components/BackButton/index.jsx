@@ -4,10 +4,8 @@ import SBackButton from "./style";
 function BackButton() {
   const navigate = useNavigate();
   return (
-    <SBackButton>
-      <button type="button" onClick={() => navigate(-1)}>
-        &#10094;
-      </button>
+    <SBackButton type="button" onClick={() => navigate(-1)}>
+      &#10094;
     </SBackButton>
   );
 }
