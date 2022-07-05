@@ -1,5 +1,3 @@
-import insta from "@assets/imgProfile/insta.svg";
-import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
@@ -7,15 +5,15 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import SCardProfile from "./style";
 
-function CardProfileInfo() {
-  const [artistData, setArtistData] = useState([]);
-  const { profileId } = useParams();
+function CardEmployerInfo() {
+  const [employerData, setEmployerData] = useState([]);
+  const { employerId } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/employer/${employerId}`)
       .then(({ data }) => {
-        setArtistData(data);
+        setEmployerData(data);
       });
   }, []);
 
@@ -32,7 +30,6 @@ function CardProfileInfo() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      lineHeight: "2rem",
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -46,10 +43,10 @@ function CardProfileInfo() {
   }
 
   return (
-    <SCardProfile src={artistData}>
+    <SCardProfile src={employerData}>
       <div
         className={
-          artistData.banner === null || artistData.banner === ""
+          employerData.banner === null || employerData.banner === ""
             ? "defaultBanner"
             : "bannerImg"
         }
@@ -57,16 +54,16 @@ function CardProfileInfo() {
       <div className="profileInfo">
         <div
           className={
-            artistData.avatar === null || artistData.avatar === ""
+            employerData.avatar === null || employerData.avatar === ""
               ? "defaultAvatar"
               : "avatarImg"
           }
         />
         <div>
           <h1>
-            {artistData.firstname} {artistData.lastname}
+            {employerData.firstname} {employerData.lastname}
           </h1>
-          <p>{artistData.role}</p>
+          <p>{employerData.role}</p>
         </div>
         <button
           type="button"
@@ -78,13 +75,11 @@ function CardProfileInfo() {
           Suivre
         </button>
         <ul>
-          <li>👥 {artistData.bandname} The goodman</li>
-          <li>🌍 {artistData.city}</li>
-          <li>€ {artistData.cachet}</li>
+          <li>🌍 {employerData.city}</li>
         </ul>
         <div className="description">
-          <button type="button" onClick={openModal} className="descriptionBtn">
-            + d'informations
+          <button className="descriptionBtn" type="button" onClick={openModal}>
+            + d'information
           </button>
           <Modal
             isOpen={modalIsOpen}
@@ -92,7 +87,7 @@ function CardProfileInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p>{artistData.description}</p>
+            <p> {employerData.description}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
@@ -103,12 +98,6 @@ function CardProfileInfo() {
           <Link to="/calendar">
             <img className="imgAgenda" src={agenda} alt="Logo agenda" />
           </Link>
-          <a href={artistData.instagram}>
-            <img className="imgInsta" src={insta} alt="Logo instagram" />
-          </a>
-          <a href={artistData.linkedin}>
-            <img className="imgLinkedin" src={linkedin} alt="Logo linkedin" />
-          </a>
         </div>
       </div>
       <div className="bottomProfile">
@@ -126,4 +115,4 @@ function CardProfileInfo() {
   );
 }
 
-export default CardProfileInfo;
+export default CardEmployerInfo;

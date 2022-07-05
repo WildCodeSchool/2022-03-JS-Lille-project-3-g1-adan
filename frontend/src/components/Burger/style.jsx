@@ -18,13 +18,12 @@ export default styled.nav`
     background-color: #c4c4c4;
     border-bottom-left-radius: 2rem;
     position: absolute;
-    top: 95%;
+    top: 100%;
     width: 12vw;
     height: fit-content;
     margin: 0 auto;
     align-items: center;
   }
-
   a,
   a:hover,
   a:active {
@@ -32,7 +31,11 @@ export default styled.nav`
     color: inherit;
     align-self: center;
   }
-
+  .pict {
+    width: auto;
+    height: 3vh;
+    margin-right: 1.5rem;
+  }
   .picture {
     margin: auto;
     width: auto;
@@ -45,19 +48,16 @@ export default styled.nav`
     width: auto;
     height: 10vh;
   }
-
   .contact {
     height: 4vh;
     width: auto;
     align-self: center;
   }
-
   .btn {
     background-color: #c4c4c4;
     border: none;
     width: auto;
   }
-
   div {
     width: 1.8rem;
     height: 0.1rem;
@@ -66,19 +66,16 @@ export default styled.nav`
     transform-origin: 0.1px;
     transition: all 0.3s linear;
     margin: 0.5rem;
-
     &:nth-child(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : " rotate(0)")};
       margin: ${({ open }) => (open ? "1.15rem" : "")};
     }
-
     &:nth-child(2) {
       transform: ${({ open }) =>
         open ? "translateX(100%)" : " translateX(0)"};
       opacity: ${({ open }) => (open ? 0 : 1)};
       display: ${({ open }) => (open ? "none" : "")};
     }
-
     &:nth-child(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : " rotate(0)")};
       margin: ${({ open }) => (open ? "1.15rem" : "")};

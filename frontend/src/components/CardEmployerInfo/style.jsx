@@ -84,6 +84,7 @@ export default styled.div`
 
   .bottomProfile {
     background: #f77777;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-bottom-right-radius: 19px;
     border-bottom-left-radius: 19px;
@@ -130,68 +131,35 @@ export default styled.div`
     padding-left: 2rem;
     line-height: 1.5rem;
   }
-  .imgAgenda,
-  .imgInsta,
-  .imgLinkedin {
+  .imgAgenda {
     height: 20%;
     width: auto;
     position: absolute;
     right: 1.8rem;
-    top: 2.8rem;
-  }
-
-  .imgInsta {
-    right: 3rem;
-    top: 6rem;
-  }
-
-  .imgLinkedin {
-    right: 0.5rem;
-    top: 6rem;
+    top: 50%;
   }
 
   .description {
     text-align: center;
   }
-
   .descriptionBtn {
     border: none;
     background-color: transparent;
     color: #1871a3;
     text-decoration: underline;
   }
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .imgAgenda {
-      right: 8%;
-      top: 30%;
-    }
-
-    .imgInsta {
-      right: 13%;
-      top: 60%;
-    }
-
-    .imgLinkedin {
-      right: 3%;
-      top: 60%;
+      right: 11%;
+      top: 50%;
     }
     .followButton {
       right: 6.5%;
       top: 5%;
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
-    h1 {
-      font-size: calc(100vw / 40);
-    }
-    p {
-      font-size: calc(100vw / 60);
+      font-size: calc(100vw / 45);
+      padding: calc(100vw / 99);
     }
     .bannerImg {
-      height: 35vh;
-      margin-top: 10vh;
-    }
-    .defaultBanner {
       height: 35vh;
       margin-top: 10vh;
     }
