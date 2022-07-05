@@ -1,11 +1,10 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { combineReducers, createStore } from "redux";
 import user from "./user";
 
 const mainReducer = combineReducers({ user });
 
 export default createStore(
   mainReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  // eslint-disable-next-line
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
