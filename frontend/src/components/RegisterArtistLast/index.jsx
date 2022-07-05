@@ -24,9 +24,7 @@ export default function RegisterArtistLast() {
           <form className="registerForm">
             <select className="inputForm" onChange={hChangeFormData}>
               <option value={formData.status}>Statut...</option>
-              <option value={formData.status}>
-                Intermittent du spectacle{" "}
-              </option>
+              <option value={formData.status}>Intermittent du spectacle</option>
               <option value={formData.status}>Artiste-auteur </option>
               <option value={formData.status}>Auto-entrepreneur </option>
             </select>

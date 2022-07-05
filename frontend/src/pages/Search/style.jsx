@@ -17,7 +17,7 @@ export default styled.section`
   @media screen and (min-width: 500px) {
     height: 100vh;
     margin-top: 10vh;
-    
+
     ul {
       width: 45vw;
       height: fit-content;
@@ -27,7 +27,7 @@ export default styled.section`
       margin-top: 1rem;
       margin-bottom: 0.8rem;
     }
-    
+
     h2 {
       font-size: 3rem;
       margin: 4rem;

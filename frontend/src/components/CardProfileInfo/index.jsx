@@ -11,13 +11,28 @@ function CardProfileInfo() {
   const [artistData, setArtistData] = useState([]);
   const { profileId } = useParams();
 
+  const [formData, setFormData] = useState({
+    lastname: "",
+    firstname: "",
+    email: "",
+    status: "",
+  });
+  // console.log(formData);
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
+  };
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
       .then(({ data }) => {
         setArtistData(data);
+        setFormData(data);
       });
   }, []);
+  // console.log(formData);
 
   const [isFollow, setIsFollow] = useState(false);
   const handleIsFollow = () => {
@@ -45,6 +60,13 @@ function CardProfileInfo() {
     setIsOpen(false);
   }
 
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
+      ...formData,
+    });
+  };
+
   return (
     <SCardProfile src={artistData}>
       <div
@@ -68,6 +90,85 @@ function CardProfileInfo() {
           </h1>
           <p>{artistData.role}</p>
         </div>
+        <button type="button" onClick={openModal} className="descriptionBtn">
+          Modifier mon profil
+        </button>
+        <Modal
+          isOpen={modalIsOpen}
+          style={customStyles}
+          contentLabel="Description"
+        >
+          <form className="registerForm" onSubmit={hSubmit}>
+            <input
+              className="inputForm"
+              type="text"
+              name="lastname"
+              placeholder="Nom de famille"
+              value={formData.lastname}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="firstname"
+              placeholder="Prénom"
+              value={formData.firstname}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="city"
+              placeholder="Ville"
+              value={formData.city}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="avatar"
+              placeholder="Avatar"
+              value={formData.avatar}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="banner"
+              placeholder="Banner"
+              value={formData.banner}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="demo"
+              placeholder="Démo"
+              value={formData.demo}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="description"
+              placeholder="description"
+              value={formData.description}
+              onChange={hChangeFormData}
+            />
+            <input
+              className="inputForm"
+              type="text"
+              name="cachet"
+              placeholder="cachet"
+              value={formData.cachet}
+              onChange={hChangeFormData}
+            />
+            <button type="submit">validez</button>
+          </form>
+          <button type="button" onClick={closeModal}>
+            close
+          </button>
+        </Modal>
         <button
           type="button"
           className={`followButton ${
@@ -82,7 +183,7 @@ function CardProfileInfo() {
           <li>🌍 {artistData.city}</li>
           <li>€ {artistData.cachet}</li>
         </ul>
-        <div className="description">
+        {/* <div className="description">
           <button type="button" onClick={openModal} className="descriptionBtn">
             + d'informations
           </button>
@@ -97,7 +198,7 @@ function CardProfileInfo() {
               close
             </button>
           </Modal>
-        </div>
+        </div> */}
 
         <div>
           <Link to="/calendar">
