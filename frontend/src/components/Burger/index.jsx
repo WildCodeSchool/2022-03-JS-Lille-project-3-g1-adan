@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import contact from "@assets/pictureNavMob/contact.png";
 import logoAdangris from "@assets/pictureNavMob/logoAdangris.png";
+import search from "@assets/pictureNavMob/Search.svg";
 import { Link } from "react-router-dom";
 import SBurger from "./style";
 
@@ -34,6 +35,9 @@ function Burger() {
           </Link>
         </ul>
       )}
+      <Link to="/search">
+        <img src={search} alt="recherche" className="pict" />
+      </Link>
       <Link to="/message">
         <img src={contact} alt="profil" className="contact" />
       </Link>
