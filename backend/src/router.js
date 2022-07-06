@@ -6,6 +6,7 @@ const {
   ArtistController,
   AuthController,
   SearchableController,
+  EmployerController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -39,5 +40,7 @@ router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.edit);
 router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
+
+router.post("/employer", EmployerController.add);
 
 module.exports = router;
