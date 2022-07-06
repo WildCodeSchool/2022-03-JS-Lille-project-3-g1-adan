@@ -14,8 +14,9 @@ function Burger() {
 
   return (
     <SBurger toggleNav={toggleNav} open={open}>
-      <img src={logoAdangris} alt="logo" className="logo" />
-
+      <Link to="/">
+        <img src={logoAdangris} alt="logo" className="logo" />
+      </Link>
       {toggleMenu && (
         <ul>
           <Link to="/profile/:profileId">
