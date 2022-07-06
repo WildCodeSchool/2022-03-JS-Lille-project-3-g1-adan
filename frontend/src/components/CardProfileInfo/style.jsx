@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import banner from "@assets/imgProfile/banner.png";
 import avatar from "@assets/imgProfile/avatarDefault.svg";
+import editLogo from "@assets/imgProfile/settings.svg";
 
 export default styled.div`
   background-color: #bb5459;
@@ -30,7 +31,6 @@ export default styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
   }
-
   .avatarImg {
     height: 50%;
     width: auto;
@@ -56,7 +56,9 @@ export default styled.div`
     bottom: 72.49%;
     background-color: #bb5459;
   }
-
+  .form {
+    display: flex;
+  }
   .editButton {
     border-radius: 18px;
     font-style: normal;
@@ -65,15 +67,21 @@ export default styled.div`
     line-height: 0.9rem;
     text-transform: uppercase;
     text-align: center;
-    color: #ffffff;
-    background: #f77777;
-    border: 1px solid #bb5759;
-    padding: 0.4rem;
+    color: black;
+    background-image: url(${editLogo});
+    background-size: cover;
+    background-color: rgb(255, 255, 255, 0.8);
+    border: none;
     position: absolute;
-    right: 20rem;
-    top: 1.5rem;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
   }
-
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+  }
   .followButton {
     border-radius: 18px;
     font-style: normal;
@@ -98,7 +106,6 @@ export default styled.div`
     background: #65b857;
     border: 1px solid #199f03;
   }
-
   .bottomProfile {
     background: #f77777;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -170,7 +177,10 @@ export default styled.div`
   .description {
     text-align: center;
   }
-
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
   .descriptionBtn {
     border: none;
     background-color: transparent;
@@ -199,20 +209,9 @@ export default styled.div`
       padding: 0.5rem;
     }
     .editButton {
-      border-radius: 18px;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      text-transform: uppercase;
-      text-align: center;
-      color: #ffffff;
-      background: #f77777;
-      border: 1px solid #bb5759;
-      padding: 0.4rem;
-      position: absolute;
-      right: 20rem;
-      top: 1.5rem;
+      top: 8rem;
+      width: 3rem;
+      height: 3rem;
     }
     h1 {
       font-size: calc(100vw / 40);
