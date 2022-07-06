@@ -7,6 +7,7 @@ const {
   BandController,
   AuthController,
   SearchableController,
+  EmployerController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -46,5 +47,7 @@ router.get("/band/:id", BandController.read);
 router.get("/band", BandController.browse);
 router.post("/band", BandController.add);
 router.delete("/band/:id", BandController.delete);
+
+router.post("/employer", EmployerController.add);
 
 module.exports = router;

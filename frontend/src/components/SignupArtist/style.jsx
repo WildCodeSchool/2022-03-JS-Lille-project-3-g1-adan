@@ -24,6 +24,13 @@ export default styled.section`
     border-radius: 1rem;
     border: 1px solid white;
   }
+  .registerContainerTwo {
+    margin-top: 1rem;
+    width: 85vw;
+    background-color: #c4c4c4;
+    border-radius: 1rem;
+    border: 1px solid white;
+  }
   h1 {
     margin-top: 0.7rem;
     color: white;
@@ -72,9 +79,40 @@ export default styled.section`
     background-color: #f67778;
     color: white;
   }
+  .btnValidate {
+    margin-bottom: 1rem;
+    width: 65vw;
+    height: 5vh;
+    border-radius: 2rem;
+    border: 1px solid white;
+    background-color: #f67778;
+    color: white;
+  }
+
+  fieldset {
+    display: none;
+
+    &.active {
+      display: block;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
   @media screen and (min-width: 850px) {
     .registerContainer {
       height: 40vh;
+    }
+    .registerContainerTwo {
+      height: 40vh;
+    }
+    .btnNext {
+      cursor: pointer;
+    }
+    .btnValidate {
+      cursor: pointer;
     }
   }
 
@@ -86,7 +124,12 @@ export default styled.section`
     .registerContainer {
       margin-top: 3rem;
       width: 40vw;
-      height: 60vh;
+      height: 40vh;
+    }
+    .registerContainerTwo {
+      margin-top: 3rem;
+      width: 40vw;
+      height: 25vh;
     }
     .inputBandName {
       width: 30vw;
@@ -99,6 +142,11 @@ export default styled.section`
     }
     .btnNext {
       margin-top: 2rem;
+      width: 25vw;
+      cursor: pointer;
+    }
+    .btnValidate {
+      margin-top: 1rem;
       width: 25vw;
       cursor: pointer;
     }

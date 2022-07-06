@@ -16,12 +16,22 @@ export default styled.section`
     justify-content: center;
     flex-direction: column;
   }
+  fieldset {
+    display: none;
+    &.active {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
   .registerContainer {
-    margin-top: 2rem;
     width: 85vw;
     background-color: #c4c4c4;
     border-radius: 1rem;
     border: 1px solid white;
+    margin-top: 1rem;
   }
   h1 {
     margin-top: 0.7rem;
@@ -73,7 +83,7 @@ export default styled.section`
   @media screen and (min-width: 1024px) {
     margin-top: 10vh;
     .registerContainer {
-      margin: 5rem 0;
+      margin: 2rem 0;
       width: 40vw;
       height: 45vh;
     }
