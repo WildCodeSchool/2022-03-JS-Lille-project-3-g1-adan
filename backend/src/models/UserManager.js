@@ -16,6 +16,13 @@ class UserManager extends AbstractManager {
       [user.title, user.id]
     );
   }
+
+  findOneByMail(mail) {
+    return this.connection.query(
+      `select * from ${UserManager.table} where email=?`,
+      [mail]
+    );
+  }
 }
 
 module.exports = UserManager;
