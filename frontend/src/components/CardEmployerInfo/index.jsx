@@ -2,7 +2,7 @@ import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SCardProfile from "./style";
 
@@ -26,6 +26,7 @@ function CardEmployerInfo() {
   });
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalIsOpen2, setIsOpen2] = useState(false);
+  const navigate = useNavigate();
 
   function openModal() {
     setIsOpen(true);
@@ -91,6 +92,9 @@ function CardEmployerInfo() {
           draggable: true,
           progress: undefined,
         });
+      })
+      .then(() => {
+        navigate("/");
       });
   };
 
