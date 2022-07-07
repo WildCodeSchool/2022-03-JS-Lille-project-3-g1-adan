@@ -42,5 +42,8 @@ router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.post("/employer", EmployerController.add);
+router.get("/employer/:id", EmployerController.read);
+router.put("/employer/:id", EmployerController.editAllInfo);
+router.delete("/employer/:id", EmployerController.delete);
 
 module.exports = router;
