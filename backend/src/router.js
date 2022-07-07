@@ -1,9 +1,11 @@
 const express = require("express");
+const passport = require("passport");
 
 const {
   UserController,
   MusicStyleController,
   ArtistController,
+  BandController,
   AuthController,
   SearchableController,
   EmployerController,
@@ -26,6 +28,11 @@ router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.post("/auth/signup", AuthController.signup);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  AuthController.login
+);
 
 router.get("/searchs", SearchableController.browse);
 
@@ -40,6 +47,12 @@ router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.edit);
 router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
+
+router.put("/band/:id", BandController.edit);
+router.get("/band/:id", BandController.read);
+router.get("/band", BandController.browse);
+router.post("/band", BandController.add);
+router.delete("/band/:id", BandController.delete);
 
 router.post("/employer", EmployerController.add);
 router.get("/employer/:id", EmployerController.read);
