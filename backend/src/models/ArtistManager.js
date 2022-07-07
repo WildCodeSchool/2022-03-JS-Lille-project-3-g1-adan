@@ -48,6 +48,12 @@ class ArtistManager extends AbstractManager {
   findAll() {
     return this.connection.query(`select role from  ${this.table}`);
   }
+
+  deleteEmployer(id) {
+    return this.connection.query(`DELETE from ${this.table} where id = ?`, [
+      id,
+    ]);
+  }
 }
 
 module.exports = ArtistManager;

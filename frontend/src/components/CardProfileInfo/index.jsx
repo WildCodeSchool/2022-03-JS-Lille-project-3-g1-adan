@@ -3,8 +3,9 @@ import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 import SCardProfile from "./style";
 
 function CardProfileInfo() {
@@ -93,11 +94,44 @@ function CardProfileInfo() {
   }
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
-      ...formData,
-    });
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
+        ...formData,
+      })
+      .then(({ data }) => {
+        setIsOpen2(false);
+        toast.success("Mise à jour effectuée", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        setArtistData(data);
+        setFormData(data);
+      });
   };
 
+  const deleteProfile = () => {
+    axios
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .then(() => {
+        toast.success("profil artist supprimé", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .then(() => {
+        Navigate("/");
+      });
+  };
   return (
     <SCardProfile src={artistData}>
       <div
@@ -265,7 +299,7 @@ function CardProfileInfo() {
                 type="text"
                 name="adress"
                 placeholder="adress"
-                value={formData.adress}
+                value={formData.address}
                 onChange={hChangeFormData}
               />
             </label>
@@ -336,10 +370,13 @@ function CardProfileInfo() {
             </label>
           </div>
           <button type="submit">validez</button>
-          <button type="button" onClick={closeModal}>
-            close
-          </button>
         </form>
+        <button type="button" onClick={deleteProfile}>
+          Supprimer votre profil
+        </button>
+        <button type="button" onClick={closeModal}>
+          close
+        </button>
       </Modal>
       <div className="profileInfo">
         <div
