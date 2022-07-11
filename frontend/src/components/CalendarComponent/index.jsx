@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import DatePicker, { registerLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
@@ -24,6 +26,14 @@ function CalendarComponent() {
   const [isSelected, setIsSelected] = useState(false);
   const [isBook, setIsBook] = useState([]);
 
+  // const dispatch = useDispatch();
+  const { user } = useSelector((state) => {
+    return state.user;
+  });
+  console.log(user.id);
+
+  const { profileId } = useParams();
+
   const onChange = (date) => {
     setStartDate(date);
     setIsSelected(true);
@@ -39,11 +49,15 @@ function CalendarComponent() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/calendar`, {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/calendar/${profileId}`, {
       myDate: startDate.toISOString().split("T")[0],
     });
   };
   console.warn(isBook);
+
+  // const onHandleVisible = () => {
+  //   dispatch(eventVisible(!isVisible));
+  // };
 
   return (
     <SCalendarComponent>

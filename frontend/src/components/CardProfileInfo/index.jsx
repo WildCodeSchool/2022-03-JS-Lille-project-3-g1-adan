@@ -100,7 +100,7 @@ function CardProfileInfo() {
         </div>
 
         <div>
-          <Link to="/calendar">
+          <Link to={`/calendar/${profileId}`}>
             <img className="imgAgenda" src={agenda} alt="Logo agenda" />
           </Link>
           <a href={artistData.instagram}>
