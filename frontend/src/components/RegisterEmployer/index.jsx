@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import Logo from "@assets/logo/Logo_ADAN.png";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import SRegisterEmployer from "./style";
 
 export default function RegisterEmployer() {
@@ -14,6 +16,8 @@ export default function RegisterEmployer() {
     companyStatus: "",
     numberSiret: "",
   });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [currStep, setCurrStep] = useState(1);
   const hNext = () => {
     setCurrStep(Math.min(2, currStep + 1));
@@ -29,10 +33,17 @@ export default function RegisterEmployer() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
       .then(({ data }) => {
         const { id } = data.user;
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/employer`, {
-          ...formData,
-          user_id: id,
-        });
+        delete formData.password;
+        dispatch({ type: "LOGIN", payload: data });
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_URL}/employer`, {
+            ...formData,
+            user_id: id,
+          })
+          .then(({ data: dataEmployer }) => {
+            dispatch({ type: "LOGIN", payload: dataEmployer });
+            navigate(`/employer/${dataEmployer.id}`);
+          });
       });
   };
 

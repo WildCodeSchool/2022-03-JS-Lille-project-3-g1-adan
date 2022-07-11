@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "@assets/logo/Logo_ADAN.png";
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import SSignupArtist from "./style";
 
 export default function SignupArtist() {
@@ -13,6 +14,7 @@ export default function SignupArtist() {
     status: "",
     siren: "",
   });
+  const dispatch = useDispatch();
 
   const [currStep, setCurrStep] = useState(1);
 
@@ -33,13 +35,17 @@ export default function SignupArtist() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
       .then(({ data }) => {
         const { id } = data.user;
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
-          ...formData,
-          user_id: id,
-        });
-      })
-      .then(() => {
-        navigate("/profile");
+        delete formData.password;
+        dispatch({ type: "LOGIN", payload: data });
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
+            ...formData,
+            user_id: id,
+          })
+          .then(({ data: dataArtist }) => {
+            dispatch({ type: "LOGIN", payload: dataArtist });
+            navigate(`/profile/${dataArtist.id}`);
+          });
       });
   };
 
