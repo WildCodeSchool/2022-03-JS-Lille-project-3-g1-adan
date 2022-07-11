@@ -30,7 +30,7 @@ function CalendarComponent() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}`, {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/calendar`, {
       myDate: startDate.toISOString().split("T")[0],
     });
   };

@@ -6,6 +6,7 @@ import Home from "@pages/Home";
 import SignupArtist from "@components/SignupArtist";
 import Register from "@pages/Register";
 import Calendar from "@pages/Calendar";
+import RegisterEmployer from "@components/RegisterEmployer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/profile/:profileId" element={<Profile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/register/artist" element={<SignupArtist />} />
+        <Route path="/register/employer" element={<RegisterEmployer />} />
         <Route path="/calendar" element={<Calendar />} />
       </Routes>
       <Navbar />
