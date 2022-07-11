@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DatePicker, { registerLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
@@ -22,11 +22,20 @@ moment.locale("fr", {
 function CalendarComponent() {
   const [startDate, setStartDate] = useState(new Date());
   const [isSelected, setIsSelected] = useState(false);
+  const [isBook, setIsBook] = useState([]);
 
   const onChange = (date) => {
     setStartDate(date);
     setIsSelected(true);
   };
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/`)
+      .then(({ data }) => {
+        setIsBook(data);
+      });
+  }, []);
 
   const hSubmit = (evt) => {
     evt.preventDefault();
@@ -34,6 +43,7 @@ function CalendarComponent() {
       myDate: startDate.toISOString().split("T")[0],
     });
   };
+  console.warn(isBook);
 
   return (
     <SCalendarComponent>

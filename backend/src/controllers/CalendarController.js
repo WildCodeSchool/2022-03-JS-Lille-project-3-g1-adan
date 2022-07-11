@@ -55,7 +55,9 @@ class CalendarController {
     const calendar = req.body;
 
     // TODO validations (length, format...)
+    // artist.id = parseInt(req.params.id, 10);
 
+    // models.artist.find(id);
     models.calendar
       .insert(calendar)
       .then(([result]) => {

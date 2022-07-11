@@ -5,8 +5,8 @@ class CalendarManager extends AbstractManager {
 
   insert(calendar) {
     return this.connection.query(
-      `insert into ${CalendarManager.table} (title) values (?)`,
-      [calendar.title]
+      `insert into ${CalendarManager.table} (id_artist, id_user,date_event) values (?,?, ?)`,
+      [calendar.id_artist, calendar.id_user, calendar.date_event]
     );
   }
 

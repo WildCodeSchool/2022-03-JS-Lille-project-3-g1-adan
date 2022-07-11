@@ -60,6 +60,6 @@ router.post("/employer", EmployerController.add);
 router.put("/calendar/:id", CalendarController.edit);
 router.get("/calendar/:id", CalendarController.read);
 router.get("/calendar", CalendarController.browse);
-router.post("/calendar", CalendarController.add);
+router.post("/calendar/:id", CalendarController.add);
 router.delete("/calendar/:id", CalendarController.delete);
 module.exports = router;
