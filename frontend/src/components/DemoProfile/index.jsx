@@ -19,7 +19,7 @@ function DemoProfile() {
     <SDemoProfile>
       <div className="player-wrapper">
         <ReactPlayer
-          url="https://soundcloud.com/marev8/au-dd?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+          url={artistImg.demo}
           controls
           width="100%"
           height="100%"
