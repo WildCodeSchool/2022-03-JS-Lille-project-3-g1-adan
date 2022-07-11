@@ -43,7 +43,6 @@ function CalendarComponent() {
       myDate: startDate.toISOString().split("T")[0],
     });
   };
-  console.warn(isBook);
 
   return (
     <SCalendarComponent>
@@ -51,6 +50,7 @@ function CalendarComponent() {
         locale="fr"
         selected={startDate}
         onChange={onChange}
+        highlightDates={isBook.map((date) => [date.date_event])}
         startDate={startDate}
         minDate={new Date()}
         inline
