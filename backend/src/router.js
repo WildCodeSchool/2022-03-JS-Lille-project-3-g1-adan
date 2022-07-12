@@ -56,10 +56,18 @@ router.post("/band", BandController.add);
 router.delete("/band/:id", BandController.delete);
 
 router.post("/employer", EmployerController.add);
+router.get("/employer/:id", EmployerController.read);
+router.put("/employer/:id", EmployerController.editAllInfo);
+router.delete("/employer/:id", EmployerController.delete);
 
+router.post(
+  "/calendar",
+  passport.authenticate("jwt", { session: false }),
+  CalendarController.addCalendar
+);
 router.put("/calendar/:id", CalendarController.edit);
 router.get("/calendar/", CalendarController.read);
 router.get("/calendar", CalendarController.browse);
-router.post("/calendar/:id", CalendarController.add);
+
 router.delete("/calendar/:id", CalendarController.delete);
 module.exports = router;

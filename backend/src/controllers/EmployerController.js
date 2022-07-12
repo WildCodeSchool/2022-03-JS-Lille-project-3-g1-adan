@@ -51,6 +51,28 @@ class EmployerController {
       });
   };
 
+  static editAllInfo = (req, res) => {
+    const employer = req.body;
+
+    // TODO validations (length, format...)
+
+    employer.id = parseInt(req.params.id, 10);
+
+    models.employer
+      .updateAllInfo(employer)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.send(employer);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const employer = req.body;
 
@@ -69,7 +91,7 @@ class EmployerController {
 
   static delete = (req, res) => {
     models.employer
-      .delete(req.params.id)
+      .deleteEmployer(req.params.id)
       .then(() => {
         res.sendStatus(204);
       })

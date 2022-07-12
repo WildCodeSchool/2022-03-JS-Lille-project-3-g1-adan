@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
 import DatePicker, { registerLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
+import useApi from "@services/useApi";
+import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 import SCalendarComponent from "./style";
 
 registerLocale("fr", fr);
@@ -26,13 +26,7 @@ function CalendarComponent() {
   const [isSelected, setIsSelected] = useState(false);
   const [isBook, setIsBook] = useState([]);
 
-  // const dispatch = useDispatch();
-  const { user } = useSelector((state) => {
-    return state.user;
-  });
-  console.log(user.id);
-
-  const { profileId } = useParams();
+  const api = useApi();
 
   const onChange = (date) => {
     setStartDate(date);
@@ -40,24 +34,27 @@ function CalendarComponent() {
   };
 
   useEffect(() => {
-    axios
+    api
       .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/`)
       .then(({ data }) => {
         setIsBook(data);
       });
   }, []);
 
+  const { profileId } = useParams();
+
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/calendar/${profileId}`, {
-      myDate: startDate.toISOString().split("T")[0],
-    });
+    api
+      .post(`${import.meta.env.VITE_BACKEND_URL}/calendar`, {
+        myDate: startDate.toISOString().split("T")[0],
+        profileId,
+      })
+      .then(() => {
+        toast("done");
+      });
   };
   console.warn(isBook);
-
-  // const onHandleVisible = () => {
-  //   dispatch(eventVisible(!isVisible));
-  // };
 
   return (
     <SCalendarComponent>

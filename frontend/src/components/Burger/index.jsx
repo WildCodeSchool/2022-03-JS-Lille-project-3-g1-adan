@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import contact from "@assets/pictureNavMob/contact.png";
 import logoAdangris from "@assets/pictureNavMob/logoAdangris.png";
 import search from "@assets/pictureNavMob/Search.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import SBurger from "./style";
 
 function Burger() {
@@ -11,6 +13,22 @@ function Burger() {
     setToggleMenu(!toggleMenu);
   };
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+    toast.error("Vous êtes déconnecté", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    navigate("/");
+  };
 
   return (
     <SBurger toggleNav={toggleNav} open={open}>
@@ -30,9 +48,9 @@ function Burger() {
           <Link to="/about">
             <li className="picture">A propos</li>
           </Link>
-          <Link to="/logout">
-            <li className="picture">Déconnexion</li>
-          </Link>
+          <button type="submit" onClick={handleLogout}>
+            Déconnexion
+          </button>
         </ul>
       )}
       <Link to="/search">

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Logo from "@assets/logo/Logo_ADAN.png";
-import axios from "axios";
 import { useState } from "react";
+import useApi from "@services/useApi";
 import SSignupArtist from "./style";
 
 export default function SignupArtist() {
@@ -14,6 +14,7 @@ export default function SignupArtist() {
     siren: "",
   });
 
+  const api = useApi();
   const [currStep, setCurrStep] = useState(1);
 
   const hNext = () => {
@@ -29,11 +30,12 @@ export default function SignupArtist() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios
+    api
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
       .then(({ data }) => {
         const { id } = data.user;
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
+        api.defaults.headers.authorization = `Bearer ${data.token}`;
+        api.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
           ...formData,
           user_id: id,
         });

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import axios from "axios";
+import useApi from "@services/useApi";
 import Style from "./style";
 
 export default function Login() {
@@ -11,6 +11,7 @@ export default function Login() {
   });
 
   const dispatch = useDispatch();
+  const api = useApi();
 
   const hChange = (evt) => {
     const { name, value } = evt.target;
@@ -19,10 +20,11 @@ export default function Login() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios
+    api
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
       .then(({ data }) => {
-        const { user } = data;
+        const { user, token } = data;
+        api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({ type: "LOGIN", payload: user });
         toast.success("Bienvenue !", {
           position: "bottom-right",

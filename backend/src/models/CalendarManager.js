@@ -3,10 +3,10 @@ const AbstractManager = require("./AbstractManager");
 class CalendarManager extends AbstractManager {
   static table = "calendar";
 
-  insert(calendar) {
+  insert(artistId, userId, dateEvent) {
     return this.connection.query(
-      `insert into ${CalendarManager.table} (id_artist, id_user,date_event) values (?,?,?)`,
-      [calendar.id_artist, calendar.id_user, calendar.date_event]
+      `insert into ${CalendarManager.table} ( artist_id, user_id, date_event) values (?,?,?)`,
+      [artistId, userId, dateEvent]
     );
   }
 
