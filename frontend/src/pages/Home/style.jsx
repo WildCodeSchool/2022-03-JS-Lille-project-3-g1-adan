@@ -13,7 +13,8 @@ export default styled.div`
   }
 
   .logo {
-    width: auto;
+    /* width: auto; */
+    margin: 0 auto;
     text-align: center;
     display: block;
     margin-top: 2rem;
@@ -32,7 +33,7 @@ export default styled.div`
     margin-top: 2rem;
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .banner {
       width: 100vw;
       display: flex;
