@@ -31,7 +31,21 @@ class AuthController {
     // When we're ariving here, we're *already* logged in through Passport's Local Strategy
     // -> Every intel about our user is located in "req.user". We extract, tokenize and send it back to our frontend
     const token = jwt.sign(req.user, process.env.JWT_SECRET);
-    res.status(200).json({ user: req.user, token });
+    models.user.findOneById(req.user.id).then(([row]) => {
+      const result = row[0];
+      if (result.artistId !== null) {
+        res
+          .status(200)
+          .send({ user: req.user, token, id: row[0].artistId, type: "artist" });
+      } else {
+        res.status(200).send({
+          user: req.user,
+          token,
+          id: row[0].employerId,
+          type: "employer",
+        });
+      }
+    });
   };
 }
 

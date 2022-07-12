@@ -31,11 +31,7 @@ class ArtistController {
 
   static edit = (req, res) => {
     const artist = req.body;
-
-    // TODO validations (length, format...)
-
     artist.id = parseInt(req.params.id, 10);
-
     models.artist
       .update(artist)
       .then(([result]) => {

@@ -23,6 +23,13 @@ export default styled.nav`
     height: fit-content;
     margin: 0 auto;
     align-items: center;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 1em;
+      margin-top: 0.75rem;
+      cursor: pointer;
+    }
   }
   a,
   a:hover,

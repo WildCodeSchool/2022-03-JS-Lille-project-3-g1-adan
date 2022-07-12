@@ -56,6 +56,9 @@ router.post("/band", BandController.add);
 router.delete("/band/:id", BandController.delete);
 
 router.post("/employer", EmployerController.add);
+router.get("/employer/:id", EmployerController.read);
+router.put("/employer/:id", EmployerController.editAllInfo);
+router.delete("/employer/:id", EmployerController.delete);
 
 router.put("/calendar/:id", CalendarController.edit);
 router.get("/calendar/:id", CalendarController.read);

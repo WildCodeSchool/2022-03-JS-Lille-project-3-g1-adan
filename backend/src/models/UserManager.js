@@ -23,6 +23,13 @@ class UserManager extends AbstractManager {
       [mail]
     );
   }
+
+  findOneById(id) {
+    return this.connection.query(
+      `SELECT u.email, a.id as artistId, e.id as employerId FROM ${UserManager.table} u left join artist a on u.id=a.user_id left join employer e on u.id=e.user_id where u.id=?`,
+      [id]
+    );
+  }
 }
 
 module.exports = UserManager;

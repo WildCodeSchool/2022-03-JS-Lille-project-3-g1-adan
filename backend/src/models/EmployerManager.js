@@ -25,8 +25,37 @@ class EmployerManager extends AbstractManager {
     );
   }
 
+  updateAllInfo(employer) {
+    return this.connection.query(
+      `update ${EmployerManager.table} set firstname = ?, lastname= ?, phone= ?, address= ?, zipcode= ?, city= ?, companyName= ?, companyStatus= ?, avatar= ?, banner= ?,
+      descriptionShort= ?, status= ?, numberSiret= ? where id = ?`,
+      [
+        employer.firstname,
+        employer.lastname,
+        employer.phone,
+        employer.address,
+        employer.zipcode,
+        employer.city,
+        employer.companyName,
+        employer.companyStatus,
+        employer.avatar,
+        employer.banner,
+        employer.descriptionShort,
+        employer.status,
+        employer.numberSiret,
+        employer.id,
+      ]
+    );
+  }
+
   findAll() {
     return this.connection.query(`select role from  ${this.table}`);
+  }
+
+  deleteEmployer(id) {
+    return this.connection.query(`DELETE from ${this.table} where id = ?`, [
+      id,
+    ]);
   }
 }
 
