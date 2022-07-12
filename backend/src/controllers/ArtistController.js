@@ -47,6 +47,28 @@ class ArtistController {
       });
   };
 
+  static editAllInfo = (req, res) => {
+    const artist = req.body;
+
+    // TODO validations (length, format...)
+
+    artist.id = parseInt(req.params.id, 10);
+
+    models.artist
+      .updateAllInfo(artist)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.send(artist);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const artist = req.body;
 
