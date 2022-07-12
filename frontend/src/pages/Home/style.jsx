@@ -9,7 +9,7 @@ export default styled.div`
   }
 
   .banner {
-    margin-top: 10vh;
+    margin-top: 8vh;
   }
 
   .logo {
@@ -55,8 +55,9 @@ export default styled.div`
     .banner p {
       color: white;
       width: 80vw;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       text-align: center;
+      font-style: italic;
     }
 
     .logo {
@@ -127,6 +128,10 @@ export default styled.div`
     .formBox {
       margin-top: 7vh;
       margin-left: 7vw;
+    }
+
+    .banner :not(.logo) {
+      display: initial;
     }
   }
 `;
