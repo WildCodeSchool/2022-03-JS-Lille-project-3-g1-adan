@@ -28,7 +28,6 @@ export default styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
-    cursor: pointer;
     margin-top: 2rem;
   }
   h1 {
@@ -95,7 +94,8 @@ export default styled.div`
       grid-area: 2 / 2 / 3 / 3;
       text-align: center;
       align-items: center;
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-left: 4rem;
     }
 
     .about {
@@ -123,6 +123,10 @@ export default styled.div`
     .description p,
     .description h2 {
       margin-top: 1rem;
+    }
+    .formBox {
+      margin-top: 7vh;
+      margin-left: 7vw;
     }
   }
 `;
