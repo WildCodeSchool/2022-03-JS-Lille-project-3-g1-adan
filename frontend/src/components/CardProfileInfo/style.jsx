@@ -187,7 +187,7 @@ export default styled.div`
     color: #1871a3;
     text-decoration: underline;
   }
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .imgAgenda {
       right: 8%;
       top: 30%;

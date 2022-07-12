@@ -103,7 +103,7 @@ function CardEmployerInfo() {
     setIsFollow(!isFollow);
   };
 
-  const customStyles = {
+  const customStyles2 = {
     content: {
       top: "50%",
       left: "50%",
@@ -111,9 +111,12 @@ function CardEmployerInfo() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      lineHeight: "2rem",
+      textAlign: "center",
     },
   };
-  const customStyles2 = {
+
+  const customStyles = {
     content: {
       top: "50%",
       left: "50%",
@@ -206,110 +209,183 @@ function CardEmployerInfo() {
           contentLabel="Description"
         >
           <form className="registerForm" onSubmit={hSubmit}>
-            <input
-              className="inputForm"
-              type="text"
-              name="firstname"
-              placeholder="Prénom"
-              value={formData.firstname}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="lastname"
-              placeholder="Nom de famille"
-              value={formData.lastname}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="phone"
-              placeholder="numéro de téléphone"
-              value={formData.phone}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="address"
-              placeholder="adresse"
-              value={formData.address}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="zipcode"
-              placeholder="code postal"
-              value={formData.zipcode}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="city"
-              placeholder="Ville"
-              value={formData.city}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="companyName"
-              placeholder="nom de la société"
-              value={formData.companyName}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="companyStatus"
-              placeholder="statut de la société(ex : SARL, SAS...)"
-              value={formData.companyStatus}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="avatar"
-              placeholder="Avatar"
-              value={formData.avatar}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="banner"
-              placeholder="bannière"
-              value={formData.banner}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="descriptionShort"
-              placeholder="description"
-              value={formData.descriptionShort}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="status"
-              placeholder="statut de l'employeur (ex : privé, publique...)"
-              value={formData.status}
-              onChange={hChangeFormData}
-            />
-            <input
-              className="inputForm"
-              type="text"
-              name="numberSiret"
-              placeholder="numéro de siret"
-              value={formData.numberSiret}
-              onChange={hChangeFormData}
-            />
+            <h1> Modifier mon profil</h1>
+            <div>
+              <label htmlFor="firstname">
+                Prénom :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="firstname"
+                  placeholder="Prénom"
+                  value={formData.firstname}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="lastname">
+                Nom :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="lastname"
+                  placeholder="Nom de famille"
+                  value={formData.lastname}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="phone">
+                Tél :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="phone"
+                  placeholder="numéro de téléphone"
+                  value={formData.phone}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="address">
+                Adress :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="address"
+                  placeholder="adresse"
+                  value={formData.address}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="zipcode">
+                Code postal :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="zipcode"
+                  placeholder="code postal"
+                  value={formData.zipcode}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="city">
+                Ville :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="city"
+                  placeholder="Ville"
+                  value={formData.city}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="companyName">
+                Société :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="companyName"
+                  placeholder="nom de la société"
+                  value={formData.companyName}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="compagnyStatus">
+                Forme juridique :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="companyStatus"
+                  placeholder="statut de la société(ex : SARL, SAS...)"
+                  value={formData.companyStatus}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="avatar">
+                Avatar :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="avatar"
+                  placeholder="Avatar"
+                  value={formData.avatar}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+
+            <div>
+              <label htmlFor="banner">
+                Bannière :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="banner"
+                  placeholder="bannière"
+                  value={formData.banner}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="description">
+                Description :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="descriptionShort"
+                  placeholder="description"
+                  value={formData.descriptionShort}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="status">
+                Status :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="status"
+                  placeholder="statut de l'employeur (ex : privé, publique...)"
+                  value={formData.status}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="numberSiret">
+                Siret :
+                <input
+                  className="inputForm"
+                  type="text"
+                  name="numberSiret"
+                  placeholder="numéro de siret"
+                  value={formData.numberSiret}
+                  onChange={hChangeFormData}
+                />
+              </label>
+            </div>
             <button type="submit" className="editButton">
               validez
             </button>
