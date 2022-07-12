@@ -13,7 +13,6 @@ export default styled.div`
   }
 
   .logo {
-    /* width: auto; */
     margin: 0 auto;
     text-align: center;
     display: block;
@@ -31,6 +30,15 @@ export default styled.div`
     align-items: center;
     cursor: pointer;
     margin-top: 2rem;
+  }
+  h1 {
+    font-style: italic;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bold;
   }
 
   @media screen and (min-width: 800px) {
@@ -67,12 +75,12 @@ export default styled.div`
 
     .connection p {
       grid-area: 1 / 1 / 3 / 2;
-      height: 15vh;
+      height: 10vh;
       width: 30vw;
       background-color: #d9d9d9;
       margin-top: 7vh;
       margin-left: 7vw;
-      padding: 2rem 1rem 1rem 1rem;
+      padding: 2.5rem 2rem 2rem 2rem;
       border-radius: 2.5rem;
       text-align: center;
       font-size: 1.5rem;
@@ -108,6 +116,7 @@ export default styled.div`
       font-size: 1.5rem;
       color: #ffffff;
       text-align: center;
+      padding-top: 2rem;
     }
 
     .description h1,
