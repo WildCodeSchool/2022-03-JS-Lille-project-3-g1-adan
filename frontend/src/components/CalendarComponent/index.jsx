@@ -4,6 +4,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
+import { subDays } from "date-fns";
 import SCalendarComponent from "./style";
 
 registerLocale("fr", fr);
@@ -31,7 +32,7 @@ function CalendarComponent() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/calendar`)
       .then(({ data }) => {
         setIsBook(data);
       });
@@ -44,13 +45,19 @@ function CalendarComponent() {
     });
   };
 
+  if (!isBook.length) {
+    return null;
+  }
+
   return (
     <SCalendarComponent>
       <DatePicker
         locale="fr"
         selected={startDate}
         onChange={onChange}
-        highlightDates={isBook.map((date) => [date.date_event])}
+        highlightDates={isBook.map((event) =>
+          subDays(new Date(event.date_event), 0)
+        )}
         startDate={startDate}
         minDate={new Date()}
         inline
