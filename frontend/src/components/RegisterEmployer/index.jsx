@@ -89,7 +89,7 @@ export default function RegisterEmployer() {
               />
             </form>
             <button className="btnNext" type="button" onClick={hNext}>
-              Suite
+              SUIVANT
             </button>
           </div>
         </fieldset>
