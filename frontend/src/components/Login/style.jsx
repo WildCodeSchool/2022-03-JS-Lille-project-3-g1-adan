@@ -38,10 +38,7 @@ export default styled.div`
 
   @media screen and (min-width: 500px) {
     .formBox {
-      padding-top: 1rem;
-      padding-left: 7rem;
-      padding-right: 7rem;
-      padding-bottom: 1rem;
+      padding: 1rem 7rem 1rem;
     }
     form {
       display: flex;
