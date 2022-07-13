@@ -51,7 +51,7 @@ function CalendarComponent() {
         profileId,
       })
       .then(() => {
-        toast("done");
+        toast("c'est booké !");
       });
   };
   console.warn(isBook);

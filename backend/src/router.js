@@ -67,6 +67,11 @@ router.post(
 );
 router.put("/calendar/:id", CalendarController.edit);
 router.get("/calendar/", CalendarController.read);
+router.get(
+  "/calendar",
+  passport.authenticate("jwt", { session: false }),
+  CalendarController.read
+);
 router.get("/calendar", CalendarController.browse);
 
 router.delete("/calendar/:id", CalendarController.delete);
