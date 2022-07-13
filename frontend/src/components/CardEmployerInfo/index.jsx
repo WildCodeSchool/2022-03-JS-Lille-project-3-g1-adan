@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 import SCardProfile from "./style";
 
 function CardEmployerInfo() {
   const [employerData, setEmployerData] = useState([]);
   const { employerId } = useParams();
+  const { id } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -193,13 +195,14 @@ function CardEmployerInfo() {
         <button type="button" className="btnBottomProfile">
           MP
         </button>
-
-        <button
-          type="button"
-          label="validation"
-          onClick={openModal2}
-          className="editButton"
-        />
+        {parseInt(employerId, 10) === id && (
+          <button
+            type="button"
+            label="validation"
+            onClick={openModal2}
+            className="editButton"
+          />
+        )}
         <Modal
           isOpen={modalIsOpen2}
           style={customStyles2}
