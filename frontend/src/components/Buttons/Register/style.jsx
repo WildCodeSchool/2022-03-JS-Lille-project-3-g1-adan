@@ -6,6 +6,7 @@ export default styled.button`
   border-radius: 1.6rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 1rem;
+  letter-spacing: 0.1rem;
 
   @media screen and (min-width: 800px) {
     cursor: pointer;
