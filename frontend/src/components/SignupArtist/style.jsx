@@ -31,6 +31,7 @@ export default styled.section`
     background-color: #c4c4c4;
     border-radius: 1rem;
     border: 1px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   h1 {
     margin-top: 0.7rem;
@@ -89,6 +90,7 @@ export default styled.section`
     border: 1px solid white;
     background-color: #f67778;
     color: white;
+    font-size: 1rem;
   }
 
   fieldset {
@@ -107,27 +109,13 @@ export default styled.section`
     .registerContainer {
       height: 40vh;
       padding-bottom: 2rem;
+      margin-top: 3rem;
+      width: 40vw;
     }
-    .registerContainerTwo {
-      height: 40vh;
-    }
-    .btnNext {
-      cursor: pointer;
-    }
-    .btnValidate {
-      cursor: pointer;
-    }
-  }
 
-  @media screen and (min-width: 1024px) {
     margin-top: 10vh;
     .imgLogo {
       width: 15vw;
-    }
-    .registerContainer {
-      margin-top: 3rem;
-      width: 40vw;
-      height: 40vh;
     }
     .registerContainerTwo {
       margin-top: 3rem;

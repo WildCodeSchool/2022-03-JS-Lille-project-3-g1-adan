@@ -133,7 +133,7 @@ export default function RegisterEmployer() {
                 <option value="personal">Personnel </option>
               </select>
               <button className="btnNext" type="submit">
-                Validez
+                VALIDEZ
               </button>
             </form>
           </div>
