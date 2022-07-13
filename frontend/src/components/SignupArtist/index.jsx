@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "@assets/logo/Logo_ADAN.png";
 import { useState } from "react";
 import useApi from "@services/useApi";
+import { useDispatch } from "react-redux";
 import SSignupArtist from "./style";
 
 export default function SignupArtist() {
@@ -13,6 +14,7 @@ export default function SignupArtist() {
     status: "",
     siren: "",
   });
+  const dispatch = useDispatch();
 
   const api = useApi();
   const [currStep, setCurrStep] = useState(1);
@@ -34,14 +36,16 @@ export default function SignupArtist() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
       .then(({ data }) => {
         const { id } = data.user;
+        delete formData.password;
         api.defaults.headers.authorization = `Bearer ${data.token}`;
         api.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
           ...formData,
           user_id: id,
         });
       })
-      .then(() => {
-        navigate("/profile");
+      .then(({ data: dataArtist }) => {
+        dispatch({ type: "LOGIN", payload: dataArtist });
+        navigate(`/profile/${dataArtist.id}`);
       });
   };
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import useApi from "@services/useApi";
@@ -12,6 +13,8 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const api = useApi();
+
+  const navigate = useNavigate();
 
   const hChange = (evt) => {
     const { name, value } = evt.target;
@@ -35,7 +38,9 @@ export default function Login() {
           draggable: true,
           progress: undefined,
         });
+        navigate(`/${data.type}/${data.id}`);
       })
+
       .catch((e) => {
         toast.error(`Mauvais identifiants${e}`, {
           position: "bottom-right",

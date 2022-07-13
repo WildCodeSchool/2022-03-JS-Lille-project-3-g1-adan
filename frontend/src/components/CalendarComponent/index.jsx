@@ -6,6 +6,7 @@ import moment from "moment";
 import useApi from "@services/useApi";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import { subDays } from "date-fns";
 import SCalendarComponent from "./style";
 
 registerLocale("fr", fr);
@@ -54,7 +55,10 @@ function CalendarComponent() {
         toast("c'est booké !");
       });
   };
-  console.warn(isBook);
+
+  if (!isBook.length) {
+    return null;
+  }
 
   return (
     <SCalendarComponent>
@@ -62,6 +66,9 @@ function CalendarComponent() {
         locale="fr"
         selected={startDate}
         onChange={onChange}
+        highlightDates={isBook.map((event) =>
+          subDays(new Date(event.date_event), 0)
+        )}
         startDate={startDate}
         minDate={new Date()}
         inline
