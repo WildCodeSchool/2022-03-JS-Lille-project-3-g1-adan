@@ -8,6 +8,7 @@ import Register from "@pages/Register";
 import Calendar from "@pages/Calendar";
 import RegisterEmployer from "@components/RegisterEmployer";
 import Employer from "@pages/Employer";
+import Band from "@pages/Band";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/register/artist" element={<SignupArtist />} />
         <Route path="/register/employer" element={<RegisterEmployer />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/band/:bandId" element={<Band />} />
       </Routes>
       <Navbar />
     </div>
