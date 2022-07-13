@@ -175,9 +175,6 @@ export default styled.div`
     color: #1871a3;
     text-decoration: underline;
   }
-  .form {
-    display: flex;
-  }
   @media screen and (min-width: 800px) {
     .imgAgenda {
       right: 7.7%;
