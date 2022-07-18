@@ -9,6 +9,7 @@ const {
   AuthController,
   SearchableController,
   EmployerController,
+  FavoriteController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -59,4 +60,19 @@ router.get("/employer/:id", EmployerController.read);
 router.put("/employer/:id", EmployerController.editAllInfo);
 router.delete("/employer/:id", EmployerController.delete);
 
+router.post(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.add
+);
+router.delete(
+  "/favorites/:data",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.delete
+);
+router.get(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.read
+);
 module.exports = router;

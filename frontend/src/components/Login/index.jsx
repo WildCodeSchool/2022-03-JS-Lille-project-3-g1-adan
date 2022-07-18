@@ -37,7 +37,6 @@ export default function Login() {
         });
         navigate(`/${data.type}/${data.id}`);
       })
-
       .catch((e) => {
         toast.error(`Mauvais identifiants${e}`, {
           position: "bottom-right",
