@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import banner from "@assets/imgProfile/banner.png";
 import avatar from "@assets/imgProfile/avatarDefault.svg";
+import editLogo from "@assets/imgProfile/editLogo.svg";
 
 export default styled.div`
   background-color: #bb5459;
@@ -148,6 +149,25 @@ export default styled.div`
     color: #1871a3;
     text-decoration: underline;
   }
+  .editButton {
+    border-radius: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    background-image: url(${editLogo});
+    background-size: cover;
+    background-color: rgb(255, 255, 255, 0.8);
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
   @media screen and (min-width: 800px) {
     .imgAgenda {
       right: 11%;
@@ -162,6 +182,11 @@ export default styled.div`
     .bannerImg {
       height: 35vh;
       margin-top: 10vh;
+    }
+    .editButton {
+      top: 8rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
 `;

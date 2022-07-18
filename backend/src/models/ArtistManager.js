@@ -5,11 +5,9 @@ class ArtistManager extends AbstractManager {
 
   insert(artist) {
     return this.connection.query(
-      `insert into ${ArtistManager.table} (user_id,status,siren,firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,cachet) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+      `insert into ${ArtistManager.table} (user_id,firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,galleryImg, cachet, instagram, linkedin, status, siren) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       [
         artist.user_id,
-        artist.status,
-        artist.siren,
         artist.firstname,
         artist.lastname,
         artist.phone,
@@ -21,20 +19,41 @@ class ArtistManager extends AbstractManager {
         artist.banner,
         artist.demo,
         artist.description,
+        artist.galleryImg,
         artist.cachet,
+        artist.instagram,
+        artist.linkedin,
+        artist.status,
+        artist.siren,
       ]
     );
   }
 
   update(artist) {
     return this.connection.query(
-      `update ${ArtistManager.table} set title = ? where id = ?`,
-      [artist.title, artist.id]
+      `update ${ArtistManager.table} set lastname = ?, firstname = ?, city= ?,avatar= ?,banner= ?,demo= ?,description= ?,cachet= ? where id = ? `,
+      [
+        artist.lastname,
+        artist.firstname,
+        artist.city,
+        artist.avatar,
+        artist.banner,
+        artist.demo,
+        artist.description,
+        artist.cachet,
+        artist.id,
+      ]
     );
   }
 
   findAll() {
     return this.connection.query(`select role from  ${this.table}`);
+  }
+
+  deleteEmployer(id) {
+    return this.connection.query(`DELETE from ${this.table} where id = ?`, [
+      id,
+    ]);
   }
 }
 

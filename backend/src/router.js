@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 
 const {
   UserController,
@@ -8,6 +9,7 @@ const {
   AuthController,
   SearchableController,
   EmployerController,
+  CalendarController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -27,6 +29,11 @@ router.post("/artist", ArtistController.add);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.post("/auth/signup", AuthController.signup);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  AuthController.login
+);
 
 router.get("/searchs", SearchableController.browse);
 
@@ -49,5 +56,13 @@ router.post("/band", BandController.add);
 router.delete("/band/:id", BandController.delete);
 
 router.post("/employer", EmployerController.add);
+router.get("/employer/:id", EmployerController.read);
+router.put("/employer/:id", EmployerController.editAllInfo);
+router.delete("/employer/:id", EmployerController.delete);
 
+router.put("/calendar/:id", CalendarController.edit);
+router.get("/calendar/:id", CalendarController.read);
+router.get("/calendar", CalendarController.browse);
+router.post("/calendar/:id", CalendarController.add);
+router.delete("/calendar/:id", CalendarController.delete);
 module.exports = router;

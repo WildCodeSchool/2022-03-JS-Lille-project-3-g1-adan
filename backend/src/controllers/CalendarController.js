@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class ArtistController {
+class CalendarController {
   static browse = (req, res) => {
-    models.artist
+    models.calendar
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,7 +14,7 @@ class ArtistController {
   };
 
   static read = (req, res) => {
-    models.artist
+    models.calendar
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -30,10 +30,14 @@ class ArtistController {
   };
 
   static edit = (req, res) => {
-    const artist = req.body;
-    artist.id = parseInt(req.params.id, 10);
-    models.artist
-      .update(artist)
+    const calendar = req.body;
+
+    // TODO validations (length, format...)
+
+    calendar.id = parseInt(req.params.id, 10);
+
+    models.calendar
+      .update(calendar)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -48,14 +52,16 @@ class ArtistController {
   };
 
   static add = (req, res) => {
-    const artist = req.body;
+    const calendar = req.body;
 
     // TODO validations (length, format...)
+    // artist.id = parseInt(req.params.id, 10);
 
-    models.artist
-      .insert(artist)
+    // models.artist.find(id);
+    models.calendar
+      .insert(calendar)
       .then(([result]) => {
-        res.status(201).send({ ...artist, id: result.insertId });
+        res.status(201).send({ ...calendar, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
@@ -64,7 +70,7 @@ class ArtistController {
   };
 
   static delete = (req, res) => {
-    models.artist
+    models.calendar
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
@@ -76,4 +82,4 @@ class ArtistController {
   };
 }
 
-module.exports = ArtistController;
+module.exports = CalendarController;

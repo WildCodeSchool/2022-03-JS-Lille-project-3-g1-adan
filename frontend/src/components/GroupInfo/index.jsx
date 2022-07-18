@@ -29,16 +29,13 @@ function GroupInfo() {
             : "imgBand"
         }
       />
-      <>
-        <h1>{bandData[0].style}</h1>
-        <p>🌍 {bandData[0].city}</p>
-        <p>{bandData[0].cachet}€</p>
-        <Link to="/calendar">
-          <img src={agenda} alt="agenda" />
-        </Link>
-        <div className="member">Membres:</div>
-      </>
-
+      <h1>{bandData[0].style}</h1>
+      <p>🌍 {bandData[0].city}</p>
+      <p>{bandData[0].cachet}€</p>
+      <Link to="/calendar">
+        <img src={agenda} alt="agenda" />
+      </Link>
+      <div className="member">Membres:</div>
       <div className="groupContainer">
         {bandData.map((artist) => {
           return (
@@ -46,12 +43,12 @@ function GroupInfo() {
               <img src={artist.avatar} className="avatar" alt="ProfileImg" />
               <div className="memberName">
                 <ul>
-                  <Link to={`/profile/${artist.id}`}>
+                  <Link to={`/artist/${artist.id}`}>
                     <li key={artist.id}>
                       {artist.firstname} {artist.lastname}
-                    </li>{" "}
+                    </li>
                   </Link>
-                  <li key={artist.id}>{artist.label}</li>
+                  <li>{artist.label}</li>
                 </ul>
               </div>
             </div>
