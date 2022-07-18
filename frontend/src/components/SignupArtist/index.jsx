@@ -44,7 +44,7 @@ export default function SignupArtist() {
           })
           .then(({ data: dataArtist }) => {
             dispatch({ type: "LOGIN", payload: dataArtist });
-            navigate(`/profile/${dataArtist.id}`);
+            navigate(`/artist/${dataArtist.id}`);
           });
       });
   };
