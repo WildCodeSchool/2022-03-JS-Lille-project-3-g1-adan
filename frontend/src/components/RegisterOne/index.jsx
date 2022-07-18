@@ -5,7 +5,6 @@ export default function RegisterOne() {
   return (
     <SRegisterOne>
       <div className="register">
-        <input className="registerInput" type="button" value="INSCRIPTION" />
         <div className="registerContainer">
           <Link to="/register/artist">
             <button className="registerContainerInput" type="button">

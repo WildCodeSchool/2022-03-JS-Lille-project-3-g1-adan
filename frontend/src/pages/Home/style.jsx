@@ -9,11 +9,11 @@ export default styled.div`
   }
 
   .banner {
-    margin-top: 10vh;
+    margin-top: 8vh;
   }
 
   .logo {
-    width: auto;
+    margin: 0 auto;
     text-align: center;
     display: block;
     margin-top: 2rem;
@@ -28,11 +28,19 @@ export default styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
-    cursor: pointer;
     margin-top: 2rem;
   }
+  h1 {
+    font-style: italic;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bold;
+  }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .banner {
       width: 100vw;
       display: flex;
@@ -47,8 +55,9 @@ export default styled.div`
     .banner p {
       color: white;
       width: 80vw;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       text-align: center;
+      font-style: italic;
     }
 
     .logo {
@@ -66,12 +75,12 @@ export default styled.div`
 
     .connection p {
       grid-area: 1 / 1 / 3 / 2;
-      height: 15vh;
+      height: 10vh;
       width: 30vw;
       background-color: #d9d9d9;
       margin-top: 7vh;
       margin-left: 7vw;
-      padding: 2rem 1rem 1rem 1rem;
+      padding: 2.5rem 2rem 2rem 2rem;
       border-radius: 2.5rem;
       text-align: center;
       font-size: 1.5rem;
@@ -86,7 +95,8 @@ export default styled.div`
       grid-area: 2 / 2 / 3 / 3;
       text-align: center;
       align-items: center;
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-left: 4rem;
     }
 
     .about {
@@ -107,12 +117,21 @@ export default styled.div`
       font-size: 1.5rem;
       color: #ffffff;
       text-align: center;
+      padding-top: 2rem;
     }
 
     .description h1,
     .description p,
     .description h2 {
       margin-top: 1rem;
+    }
+    .formBox {
+      margin-top: 7vh;
+      margin-left: 7vw;
+    }
+
+    .banner :not(.logo) {
+      display: initial;
     }
   }
 `;
