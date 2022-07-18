@@ -46,10 +46,12 @@ function GroupInfo() {
               <img src={artist.avatar} className="avatar" alt="ProfileImg" />
               <div className="memberName">
                 <ul>
-                  <li>
-                    {artist.firstname} {artist.lastname}{" "}
-                  </li>
-                  <li>{artist.label}</li>
+                  <Link to={`/profile/${artist.id}`}>
+                    <li key={artist.id}>
+                      {artist.firstname} {artist.lastname}
+                    </li>{" "}
+                  </Link>
+                  <li key={artist.id}>{artist.label}</li>
                 </ul>
               </div>
             </div>
