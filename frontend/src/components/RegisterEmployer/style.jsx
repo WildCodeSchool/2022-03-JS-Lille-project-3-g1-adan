@@ -32,6 +32,7 @@ export default styled.section`
     border-radius: 1rem;
     border: 1px solid white;
     margin-top: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   h1 {
     margin-top: 0.7rem;
@@ -74,8 +75,9 @@ export default styled.section`
     border: 1px solid white;
     background-color: #f67778;
     color: white;
+    font-size: 1rem;
   }
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 800px) {
     .registerContainer {
       height: 40vh;
     }

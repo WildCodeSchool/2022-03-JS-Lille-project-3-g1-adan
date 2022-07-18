@@ -176,9 +176,11 @@ function CardProfileInfo() {
             : "bannerImg"
         }
       />
-      <button type="button" onClick={openModal} className="editButton">
-        {" "}
-      </button>
+      {parseInt(profileId, 10) === id && (
+        <button type="button" onClick={openModal} className="editButton">
+          {" "}
+        </button>
+      )}
       <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="Form">
         <form className="form" onSubmit={hSubmit}>
           <h1> Modifier mon profil</h1>

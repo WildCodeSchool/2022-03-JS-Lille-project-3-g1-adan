@@ -9,6 +9,7 @@ const {
   AuthController,
   SearchableController,
   EmployerController,
+  CalendarController,
   FavoriteController,
 } = require("./controllers");
 
@@ -59,6 +60,12 @@ router.post("/employer", EmployerController.add);
 router.get("/employer/:id", EmployerController.read);
 router.put("/employer/:id", EmployerController.editAllInfo);
 router.delete("/employer/:id", EmployerController.delete);
+
+router.put("/calendar/:id", CalendarController.edit);
+router.get("/calendar/:id", CalendarController.read);
+router.get("/calendar", CalendarController.browse);
+router.post("/calendar/:id", CalendarController.add);
+router.delete("/calendar/:id", CalendarController.delete);
 
 router.post(
   "/favorites",

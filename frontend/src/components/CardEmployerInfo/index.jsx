@@ -228,13 +228,14 @@ function CardEmployerInfo() {
         <button type="button" className="btnBottomProfile">
           MP
         </button>
-
-        <button
-          type="button"
-          label="validation"
-          onClick={openModal2}
-          className="editButton"
-        />
+        {parseInt(employerId, 10) === id && (
+          <button
+            type="button"
+            label="validation"
+            onClick={openModal2}
+            className="editButton"
+          />
+        )}
         <Modal
           isOpen={modalIsOpen2}
           style={customStyles2}
