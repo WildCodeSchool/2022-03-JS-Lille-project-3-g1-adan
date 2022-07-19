@@ -19,7 +19,7 @@ function NavMob() {
         <Link to="/message">
           <img src={contact} alt="contact" className="picto" />
         </Link>
-        <Link to="/profile/:profileId">
+        <Link to="/artist/:profileId">
           <img src={profil} alt="profil" className="pict" />
         </Link>
       </nav>

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Logo from "@assets/logo/Logo_ADAN.png";
-import axios from "axios";
 import { useState } from "react";
+import useApi from "@services/useApi";
 import { useDispatch } from "react-redux";
 import SSignupArtist from "./style";
 
@@ -16,6 +16,7 @@ export default function SignupArtist() {
   });
   const dispatch = useDispatch();
 
+  const api = useApi();
   const [currStep, setCurrStep] = useState(1);
 
   const hNext = () => {
@@ -31,21 +32,20 @@ export default function SignupArtist() {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios
+    api
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, formData)
       .then(({ data }) => {
         const { id } = data.user;
         delete formData.password;
-        dispatch({ type: "LOGIN", payload: data });
-        axios
-          .post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
-            ...formData,
-            user_id: id,
-          })
-          .then(({ data: dataArtist }) => {
-            dispatch({ type: "LOGIN", payload: dataArtist });
-            navigate(`/artist/${dataArtist.id}`);
-          });
+        api.defaults.headers.authorization = `Bearer ${data.token}`;
+        api.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
+          ...formData,
+          user_id: id,
+        });
+      })
+      .then(({ data: dataArtist }) => {
+        dispatch({ type: "LOGIN", payload: dataArtist });
+        navigate(`/profile/${dataArtist.id}`);
       });
   };
 
