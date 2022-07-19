@@ -30,6 +30,7 @@ export default function Favorites() {
               followedType={favorite.followedType}
               followedTypeId={favorite.followed_typeId}
               favName={favorite.favName}
+              setFavorites={setFavorites}
             />
           </li>
         );

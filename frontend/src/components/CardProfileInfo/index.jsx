@@ -8,7 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import useApi from "@services/useApi";
 import { useSelector } from "react-redux";
-import Favorites from "@components/Favorites";
+import MyFavorites from "@components/Buttons/MyFavorites";
 import SCardProfile from "./style";
 
 function CardProfileInfo() {
@@ -482,7 +482,7 @@ function CardProfileInfo() {
           MP
         </button>
       </div>
-      {parseInt(profileId, 10) === id && <Favorites />}
+      {parseInt(profileId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }

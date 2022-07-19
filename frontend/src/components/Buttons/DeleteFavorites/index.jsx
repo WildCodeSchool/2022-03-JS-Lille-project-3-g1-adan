@@ -8,6 +8,7 @@ export default function DeleteFavorites({
   followedType,
   followedTypeId,
   favName,
+  setFavorites,
 }) {
   const api = useApi();
   const { token } = useSelector((state) => state.user);
@@ -16,7 +17,8 @@ export default function DeleteFavorites({
     api.defaults.headers.authorization = `Bearer ${token}`;
     api
       .delete(`/favorites/${followedType}-${followedTypeId}`)
-      .then(() => {
+      .then(({ data }) => {
+        setFavorites(data);
         toast.success(`${favName} a été supprimé de vos favoris`, {
           position: "bottom-right",
           autoClose: 5000,
@@ -49,9 +51,11 @@ DeleteFavorites.propTypes = {
   followedType: PropTypes.string,
   followedTypeId: PropTypes.string,
   favName: PropTypes.string,
+  setFavorites: PropTypes.func,
 };
 DeleteFavorites.defaultProps = {
   followedType: "",
   followedTypeId: "",
   favName: "",
+  setFavorites: () => {},
 };

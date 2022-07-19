@@ -6,7 +6,7 @@ import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import useApi from "@services/useApi";
 import { useSelector } from "react-redux";
-import Favorites from "@components/Favorites";
+import MyFavorites from "@components/Buttons/MyFavorites";
 import SCardProfile from "./style";
 
 function CardEmployerInfo() {
@@ -358,7 +358,7 @@ function CardEmployerInfo() {
           </button>
         </Modal>
       </div>
-      {parseInt(employerId, 10) === id && <Favorites />}
+      {parseInt(employerId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }

@@ -9,14 +9,16 @@ export default styled.button`
   border-radius: 27px;
   font-size: 0.8rem;
   color: #ffffff;
+  margin: auto;
+  position: absolute;
+  top: 7%;
+  left: 78%;
 
-  @media screen and (min-width: 500px) {
-    cursor: pointer;
-    width: 8rem;
-    height: 2rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ffffff;
-    border-radius: 1.6rem;
+  @media screen and (min-width: 800px) {
     font-size: 1rem;
+    height: 2rem;
+    width: 7rem;
+    top: 28%;
+    left: 92%;
   }
 `;

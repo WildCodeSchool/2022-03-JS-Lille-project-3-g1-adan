@@ -72,7 +72,9 @@ class FavoriteController {
     models.favorites
       .delete(followingUserId, followedType, followedTypeId)
       .then(() => {
-        res.sendStatus(204);
+        models.favorites.findFavorites(followingUserId).then(([rows]) => {
+          res.send(rows);
+        });
       })
       .catch((err) => {
         console.error(err);
