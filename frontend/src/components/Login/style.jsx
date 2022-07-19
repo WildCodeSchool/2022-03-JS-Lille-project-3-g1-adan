@@ -15,6 +15,7 @@ export default styled.div`
     border-radius: 1.2rem;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   input {
@@ -30,14 +31,14 @@ export default styled.div`
     background: #f77777;
     border: 1px solid #ffffff;
     border-radius: 1.6rem;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
   }
 
   @media screen and (min-width: 500px) {
     .formBox {
-      padding-top: 1rem;
-      padding-left: 6rem;
-      padding-right: 6rem;
-      padding-bottom: 1rem;
+      padding: 1rem 7rem 1rem;
     }
     form {
       display: flex;
