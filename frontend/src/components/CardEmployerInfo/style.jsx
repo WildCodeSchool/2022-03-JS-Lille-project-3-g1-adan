@@ -56,9 +56,6 @@ export default styled.div`
     bottom: 72.49%;
     background-color: #bb5459;
   }
-  .form {
-    display: flex;
-  }
   .editButton {
     border-radius: 18px;
     font-style: normal;
