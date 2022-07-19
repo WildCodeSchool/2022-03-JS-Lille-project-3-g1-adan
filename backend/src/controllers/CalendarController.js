@@ -29,6 +29,24 @@ class CalendarController {
       });
   };
 
+  static addCalendar = (req, res) => {
+    const artistId = req.body.profileId;
+    const userId = req.user.id;
+    const dateEvent = req.body.myDate;
+
+    // TODO validations (length, format...)
+
+    models.calendar
+      .insert(artistId, userId, dateEvent)
+      .then(() => {
+        res.status(201).send(req.body);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static edit = (req, res) => {
     const calendar = req.body;
 
@@ -58,6 +76,7 @@ class CalendarController {
     // artist.id = parseInt(req.params.id, 10);
 
     // models.artist.find(id);
+
     models.calendar
       .insert(calendar)
       .then(([result]) => {

@@ -36,7 +36,7 @@ function Burger() {
 
       {toggleMenu && (
         <ul>
-          <Link to="/profile/:profileId">
+          <Link to="/artist/:profileId">
             <li className="picture">Mon profil</li>
           </Link>
           <Link to="/">
