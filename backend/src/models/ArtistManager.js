@@ -5,7 +5,7 @@ class ArtistManager extends AbstractManager {
 
   insert(artist) {
     return this.connection.query(
-      `insert into ${ArtistManager.table} (user_id,firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,galleryImg,  cachet, instagram, linkedin, status, siren) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+      `insert into ${ArtistManager.table} (user_id,firstname,lastname,phone,address,zipcode,city,nickname,avatar,banner,demo,description,galleryImg,  cachet, instagram, linkedin, status, siren) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       [
         artist.user_id,
         artist.firstname,
@@ -22,9 +22,9 @@ class ArtistManager extends AbstractManager {
         artist.galleryImg,
         artist.cachet,
         artist.instagram,
+        artist.linkedin,
         artist.status,
         artist.siren,
-        artist.linkedin,
       ]
     );
   }

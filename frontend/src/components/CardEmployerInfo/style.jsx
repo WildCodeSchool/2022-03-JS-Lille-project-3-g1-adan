@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "@assets/imgProfile/banner.png";
+import banner from "@assets/imgProfile/banner2.jpg";
 import avatar from "@assets/imgProfile/avatarDefault.svg";
 import editLogo from "@assets/imgProfile/editLogo.svg";
 
