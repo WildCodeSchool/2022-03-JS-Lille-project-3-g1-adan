@@ -15,6 +15,7 @@ const {
 const router = express.Router();
 
 router.get("/musicStyles", MusicStyleController.browse);
+router.get("/musicStyle/:id", MusicStyleController.read);
 
 router.get("/user", UserController.browse);
 router.get("/user/:id", UserController.read);
@@ -65,4 +66,5 @@ router.get("/calendar/:id", CalendarController.read);
 router.get("/calendar", CalendarController.browse);
 router.post("/calendar/:id", CalendarController.add);
 router.delete("/calendar/:id", CalendarController.delete);
+
 module.exports = router;
