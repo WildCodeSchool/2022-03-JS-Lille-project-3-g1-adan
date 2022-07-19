@@ -76,7 +76,7 @@ export default function Login() {
             className="button"
             type="submit"
             onClick={hSubmit}
-            value="connexion"
+            value="CONNEXION"
           />
         </form>
       </div>

@@ -21,6 +21,7 @@ export default styled.section`
     background-color: #c4c4c4;
     border-radius: 1rem;
     border: 1px solid white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   .registerContainerInput {
     width: 50vw;
@@ -30,9 +31,10 @@ export default styled.section`
     border: 1px solid white;
     margin: 2rem;
     color: white;
+    font-size: 1rem;
   }
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 800px) {
     .imgLogo {
       width: 30vw;
     }
@@ -51,6 +53,7 @@ export default styled.section`
       margin-top: 6rem;
       width: 45vw;
       cursor: pointer;
+      font-size: 1.4rem;
     }
   }
 
@@ -67,7 +70,7 @@ export default styled.section`
       border-radius: 2rem;
     }
     .registerContainer {
-      width: 35vw;
+      width: 33vw;
       margin-top: 20rem;
     }
     .registerContainerInput {

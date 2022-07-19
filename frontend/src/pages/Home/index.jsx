@@ -32,9 +32,9 @@ export default function Home() {
         <div className="description">
           <h1>Qui sommes nous ?</h1>
           <p>
-            Lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum,
-            lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum,
-            lorem ipsum, lorem ipsum, lorem ipsum ...
+            Par notre éducation, nos expériences, nos rencontres et nos
+            sensibilités propres, nous portons toutes un intérêt à l’univers
+            artistique et aux acteurs qui le font vivre : les artistes.
           </p>
           <h2>En savoir plus</h2>
         </div>
