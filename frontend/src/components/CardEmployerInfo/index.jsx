@@ -172,7 +172,7 @@ function CardEmployerInfo() {
             contentLabel="Description"
           >
             <h2>Description</h2>
-            <p> {employerData.description}</p>
+            <p> {employerData.descriptionShort}</p>
             <button type="button" onClick={closeModal}>
               close
             </button>
