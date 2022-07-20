@@ -51,7 +51,7 @@ export default styled.section`
     display: flex;
     margin-bottom: 2rem;
   }
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     font-size: calc(100vw / 55);
     line-height: 3rem;
 
@@ -62,6 +62,7 @@ export default styled.section`
     .avatar {
       border-radius: 50%;
       width: 6rem;
+      aspect-ratio: 1/1;
     }
     .memberName {
       margin: auto;
