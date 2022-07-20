@@ -22,7 +22,7 @@ export default styled.div`
     padding-top: 1rem;
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     display: flex;
     justify-content: space-evenly;
     img {
