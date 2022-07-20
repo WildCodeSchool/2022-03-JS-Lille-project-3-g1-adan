@@ -3,7 +3,7 @@ import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
-import { Link, Navigate, useParams, useLocation } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import useApi from "@services/useApi";
@@ -33,9 +33,54 @@ function CardProfileInfo() {
     gallery: "",
     cachet: "",
     instagram: "",
+    linkedin: "",
     status: "",
     siren: "",
   });
+
+  const navigate = useNavigate();
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen2, setIsOpen2] = useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+  function openModal2() {
+    setIsOpen2(true);
+  }
+  function closeModal2() {
+    setIsOpen2(false);
+  }
+
+  const hChangeFormData = (evt) => {
+    const newData = { ...formData };
+    newData[evt.target.name] = evt.target.value;
+    setFormData(newData);
+  };
+
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
+        ...formData,
+      })
+      .then(({ data }) => {
+        setIsOpen(false);
+        toast.success("Mise à jour effectuée", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        setArtistData(data);
+        setFormData(data);
+      });
+  };
 
   useEffect(() => {
     axios
@@ -46,10 +91,23 @@ function CardProfileInfo() {
       });
   }, [location]);
 
-  const hChangeFormData = (evt) => {
-    const newData = { ...formData };
-    newData[evt.target.name] = evt.target.value;
-    setFormData(newData);
+  const deleteProfile = () => {
+    axios
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
+      .then(() => {
+        toast.success("profil artist supprimé", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .then(() => {
+        navigate("/");
+      });
   };
 
   const [isFollow, setIsFollow] = useState(false);
@@ -108,64 +166,6 @@ function CardProfileInfo() {
       transform: "translate(-50%, -50%)",
       lineHeight: "2rem",
     },
-  };
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalIsOpen2, setIsOpen2] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal2() {
-    setIsOpen2(true);
-  }
-
-  function closeModal2() {
-    setIsOpen2(false);
-  }
-  const hSubmit = (evt) => {
-    evt.preventDefault();
-    axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`, {
-        ...formData,
-      })
-      .then(({ data }) => {
-        setIsOpen2(false);
-        toast.success("Mise à jour effectuée", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-        setArtistData(data);
-        setFormData(data);
-      });
-  };
-
-  const deleteProfile = () => {
-    axios
-      .delete(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
-      .then(() => {
-        toast.success("profil artist supprimé", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      })
-      .then(() => {
-        Navigate("/");
-      });
   };
   return (
     <SCardProfile src={artistData}>
@@ -252,7 +252,7 @@ function CardProfileInfo() {
           </div>
           <div>
             <label htmlFor="fistname">
-              démo :
+              Démo :
               <input
                 className="inputForm"
                 type="text"
@@ -310,7 +310,7 @@ function CardProfileInfo() {
                 type="text"
                 name="linkedin"
                 placeholder="Linkedin"
-                value={formData.Linkedin}
+                value={formData.linkedin}
                 onChange={hChangeFormData}
               />
             </label>

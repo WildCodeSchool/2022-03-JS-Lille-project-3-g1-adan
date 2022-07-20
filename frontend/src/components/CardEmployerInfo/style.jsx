@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import banner from "@assets/imgProfile/banner.png";
+import banner from "@assets/imgProfile/banner2.jpg";
 import avatar from "@assets/imgProfile/avatarDefault.svg";
-import editLogo from "@assets/imgProfile/editLogo.svg";
+import editLogo from "@assets/imgProfile/settings.svg";
 
 export default styled.div`
   background-color: #bb5459;
@@ -31,7 +31,6 @@ export default styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
   }
-
   .avatarImg {
     height: 50%;
     width: auto;
@@ -57,7 +56,29 @@ export default styled.div`
     bottom: 72.49%;
     background-color: #bb5459;
   }
-
+  .editButton {
+    border-radius: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    background-image: url(${editLogo});
+    background-size: cover;
+    background-color: rgb(255, 255, 255, 0.8);
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+  }
   .followButton {
     border-radius: 18px;
     font-style: normal;
@@ -82,10 +103,8 @@ export default styled.div`
     background: #65b857;
     border: 1px solid #199f03;
   }
-
   .bottomProfile {
     background: #f77777;
-
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-bottom-right-radius: 19px;
     border-bottom-left-radius: 19px;
@@ -137,11 +156,15 @@ export default styled.div`
     width: auto;
     position: absolute;
     right: 1.8rem;
-    top: 50%;
+    top: 2.8rem;
   }
 
   .description {
     text-align: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
   }
   .descriptionBtn {
     border: none;
@@ -149,44 +172,36 @@ export default styled.div`
     color: #1871a3;
     text-decoration: underline;
   }
-  .editButton {
-    border-radius: 18px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.8rem;
-    line-height: 0.9rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: black;
-    background-image: url(${editLogo});
-    background-size: cover;
-    background-color: rgb(255, 255, 255, 0.8);
-    border: none;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-  }
   @media screen and (min-width: 800px) {
     .imgAgenda {
-      right: 11%;
-      top: 50%;
+      right: 7.7%;
+      top: 40%;
     }
+
     .followButton {
       right: 6.5%;
       top: 5%;
-      font-size: calc(100vw / 45);
-      padding: calc(100vw / 99);
-    }
-    .bannerImg {
-      height: 35vh;
-      margin-top: 10vh;
+      font-size: 1rem;
+      padding: 0.5rem;
     }
     .editButton {
       top: 8rem;
       width: 3rem;
       height: 3rem;
+    }
+    h1 {
+      font-size: calc(100vw / 40);
+    }
+    p {
+      font-size: calc(100vw / 60);
+    }
+    .bannerImg {
+      height: 35vh;
+      margin-top: 10vh;
+    }
+    .defaultBanner {
+      height: 35vh;
+      margin-top: 10vh;
     }
   }
 `;

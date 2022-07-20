@@ -1,5 +1,4 @@
 import agenda from "@assets/imgProfile/agenda.svg";
-import GroupMember from "@components/GroupMember";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -40,12 +39,19 @@ function GroupInfo() {
       <div className="groupContainer">
         {bandData.map((artist) => {
           return (
-            <GroupMember
-              avatar={artist.avatar}
-              firstname={artist.firstname}
-              lastname={artist.lastname}
-              label={artist.label}
-            />
+            <div className="cardMember">
+              <img src={artist.avatar} className="avatar" alt="ProfileImg" />
+              <div className="memberName">
+                <ul>
+                  <Link to={`/artist/${artist.id}`}>
+                    <li key={artist.id}>
+                      {artist.firstname} {artist.lastname}
+                    </li>
+                  </Link>
+                  <li>{artist.label}</li>
+                </ul>
+              </div>
+            </div>
           );
         })}
       </div>
