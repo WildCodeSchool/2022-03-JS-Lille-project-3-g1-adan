@@ -17,8 +17,8 @@ class CalendarController {
     models.calendar
       .find(req.params.id)
       .then(([rows]) => {
-        if (rows[0] == null) {
-          res.sendStatus(404);
+        if (!rows.length) {
+          res.sendStatus(204);
         } else {
           res.send(rows[0]);
         }
