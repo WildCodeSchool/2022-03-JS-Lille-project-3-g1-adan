@@ -2,15 +2,20 @@ import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import useApi from "@services/useApi";
 import { useSelector } from "react-redux";
+import MyFavorites from "@components/Buttons/MyFavorites";
 import SCardProfile from "./style";
 
 function CardEmployerInfo() {
   const [employerData, setEmployerData] = useState([]);
   const { employerId } = useParams();
   const { id } = useSelector((state) => state.user);
+  const location = useLocation();
+  const api = useApi();
+  const { token } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -79,7 +84,7 @@ function CardEmployerInfo() {
         setEmployerData(data);
         setFormData(data);
       });
-  }, []);
+  }, [location]);
 
   const deleteEmployer = () => {
     axios
@@ -102,7 +107,35 @@ function CardEmployerInfo() {
 
   const [isFollow, setIsFollow] = useState(false);
   const handleIsFollow = () => {
-    setIsFollow(!isFollow);
+    api.defaults.headers.authorization = `Bearer ${token}`;
+    api
+      .post("/favorites", { location })
+      .then(() => {
+        setIsFollow(!isFollow);
+        toast.success(
+          `${employerData.firstname} ${employerData.lastname} ${employerData.companyName} a été ajouté à vos favoris`,
+          {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+      })
+      .catch(() => {
+        toast.error("Oups, une erreur s'est produite", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
   };
 
   const customStyles2 = {
@@ -401,6 +434,7 @@ function CardEmployerInfo() {
           </button>
         </Modal>
       </div>
+      {parseInt(employerId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }

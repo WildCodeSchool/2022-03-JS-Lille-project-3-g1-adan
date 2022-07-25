@@ -10,6 +10,7 @@ const {
   SearchableController,
   EmployerController,
   CalendarController,
+  FavoriteController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -62,4 +63,20 @@ router.get("/calendar/:id", CalendarController.read);
 router.get("/calendar", CalendarController.browse);
 
 router.delete("/calendar/:id", CalendarController.delete);
+
+router.post(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.add
+);
+router.delete(
+  "/favorites/:data",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.delete
+);
+router.get(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.read
+);
 module.exports = router;
