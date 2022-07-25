@@ -107,15 +107,13 @@ export default styled.section`
   }
   @media screen and (min-width: 800px) {
     .registerContainer {
-      height: 40vh;
+      height: 45vh;
       padding-bottom: 2rem;
-      margin-top: 3rem;
       width: 40vw;
     }
-
-    margin-top: 10vh;
     .imgLogo {
-      width: 15vw;
+      width: 13vw;
+      margin-top: 4rem;
     }
     .registerContainerTwo {
       margin-top: 3rem;
@@ -132,7 +130,7 @@ export default styled.section`
       margin-top: 0.5rem;
     }
     .btnNext {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       width: 25vw;
       cursor: pointer;
     }
