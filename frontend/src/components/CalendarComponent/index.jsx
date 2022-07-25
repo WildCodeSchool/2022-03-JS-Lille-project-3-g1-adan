@@ -54,6 +54,30 @@ export default function CalendarComponent() {
         toast("c'est booké !");
       });
   };
+  if (!isBook.length) {
+    return (
+      <SCalendarComponent>
+        <DatePicker
+          locale="fr"
+          selected={startDate}
+          onChange={onChange}
+          startDate={startDate}
+          minDate={new Date()}
+          inline
+        />
+        {isSelected === true ? (
+          <div className="container">
+            <div className="selectedDate">
+              {moment(startDate).locale("fr").format("LLLL")}
+            </div>
+            <button className="reservation" type="submit" onClick={hSubmit}>
+              PROPOSER UN EVENEMENT
+            </button>
+          </div>
+        ) : null}
+      </SCalendarComponent>
+    );
+  }
 
   return (
     <SCalendarComponent>
