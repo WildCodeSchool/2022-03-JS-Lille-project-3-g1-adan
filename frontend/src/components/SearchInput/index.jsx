@@ -41,7 +41,7 @@ function SearchInput() {
       <ul>
         {searchResults.map((searchResult) => {
           return (
-            <li>
+            <li key={`${searchResult.type}${searchResult.id}`}>
               {searchResult.displayName}
               <Link to={`/${searchResult.type}/${searchResult.id}`}>voir</Link>
             </li>

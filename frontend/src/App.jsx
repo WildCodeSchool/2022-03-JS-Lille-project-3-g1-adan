@@ -9,8 +9,10 @@ import Calendar from "@pages/Calendar";
 import RegisterEmployer from "@components/RegisterEmployer";
 import Employer from "@pages/Employer";
 import Band from "@pages/Band";
+import Modal from "react-modal/lib/components/Modal";
 
 function App() {
+  Modal.setAppElement("#root");
   return (
     <div className="App">
       <Routes>

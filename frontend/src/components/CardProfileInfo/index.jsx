@@ -297,12 +297,12 @@ function CardProfileInfo() {
           </div>
           <div>
             <label htmlFor="fistname">
-              Adress :
+              Adresse :
               <input
                 className="inputForm"
                 type="text"
                 name="adress"
-                placeholder="adress"
+                placeholder="adresse"
                 value={formData.address}
                 onChange={hChangeFormData}
               />
@@ -336,12 +336,12 @@ function CardProfileInfo() {
           </div>
           <div>
             <label htmlFor="fistname">
-              Gallerie d'image :
+              Galerie d'image :
               <input
                 className="inputForm"
                 type="text"
                 name="galleryImg"
-                placeholder="Gallerie d'images"
+                placeholder="Galerie d'images"
                 value={formData.galleryImg}
                 onChange={hChangeFormData}
               />
@@ -349,7 +349,7 @@ function CardProfileInfo() {
           </div>
           <div>
             <label htmlFor="fistname">
-              Status :
+              Statut :
               <input
                 className="inputForm"
                 type="text"
@@ -379,7 +379,7 @@ function CardProfileInfo() {
           Supprimer votre profil
         </button>
         <button type="button" onClick={closeModal}>
-          close
+          fermer
         </button>
       </Modal>
       <div className="profileInfo">
