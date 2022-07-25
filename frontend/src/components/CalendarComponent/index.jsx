@@ -22,10 +22,11 @@ moment.locale("fr", {
   },
 });
 
-function CalendarComponent() {
+export default function CalendarComponent() {
   const [startDate, setStartDate] = useState(new Date());
   const [isSelected, setIsSelected] = useState(false);
   const [isBook, setIsBook] = useState([]);
+  const { profileId } = useParams();
 
   const api = useApi();
 
@@ -36,13 +37,11 @@ function CalendarComponent() {
 
   useEffect(() => {
     api
-      .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/${profileId}`)
       .then(({ data }) => {
-        setIsBook(data);
+        setIsBook(data || []);
       });
   }, []);
-
-  const { profileId } = useParams();
 
   const hSubmit = (evt) => {
     evt.preventDefault();
@@ -55,10 +54,6 @@ function CalendarComponent() {
         toast("c'est booké !");
       });
   };
-
-  if (!isBook.length) {
-    return null;
-  }
 
   return (
     <SCalendarComponent>
@@ -86,5 +81,3 @@ function CalendarComponent() {
     </SCalendarComponent>
   );
 }
-
-export default CalendarComponent;

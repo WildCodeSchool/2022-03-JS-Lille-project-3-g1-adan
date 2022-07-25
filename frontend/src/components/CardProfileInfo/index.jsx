@@ -3,15 +3,20 @@ import linkedin from "@assets/imgProfile/linkedin.svg";
 import agenda from "@assets/imgProfile/agenda.svg";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import useApi from "@services/useApi";
 import { useSelector } from "react-redux";
+import MyFavorites from "@components/Buttons/MyFavorites";
 import SCardProfile from "./style";
 
 function CardProfileInfo() {
   const [artistData, setArtistData] = useState([]);
   const { profileId } = useParams();
+  const location = useLocation();
+  const api = useApi();
+  const { token } = useSelector((state) => state.user);
   const { id } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({
     firstname: "",
@@ -84,7 +89,7 @@ function CardProfileInfo() {
         setArtistData(data);
         setFormData(data);
       });
-  }, []);
+  }, [location]);
 
   const deleteProfile = () => {
     axios
@@ -107,7 +112,35 @@ function CardProfileInfo() {
 
   const [isFollow, setIsFollow] = useState(false);
   const handleIsFollow = () => {
-    setIsFollow(!isFollow);
+    api.defaults.headers.authorization = `Bearer ${token}`;
+    api
+      .post("/favorites", { location })
+      .then(() => {
+        setIsFollow(!isFollow);
+        toast.success(
+          `${artistData.firstname} ${artistData.lastname} a été ajouté à vos favoris`,
+          {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+      })
+      .catch(() => {
+        toast.error("Oups, une erreur s'est produite", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
   };
 
   const customStyles = {
@@ -449,6 +482,7 @@ function CardProfileInfo() {
           MP
         </button>
       </div>
+      {parseInt(profileId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }
