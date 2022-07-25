@@ -10,7 +10,6 @@ import { subDays } from "date-fns";
 import SCalendarComponent from "./style";
 
 registerLocale("fr", fr);
-
 moment.locale("fr", {
   months:
     "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split(
@@ -21,20 +20,16 @@ moment.locale("fr", {
     LLLL: "dddd D MMMM YYYY",
   },
 });
-
 export default function CalendarComponent() {
   const [startDate, setStartDate] = useState(new Date());
   const [isSelected, setIsSelected] = useState(false);
   const [isBook, setIsBook] = useState([]);
   const { profileId } = useParams();
-
   const api = useApi();
-
   const onChange = (date) => {
     setStartDate(date);
     setIsSelected(true);
   };
-
   useEffect(() => {
     api
       .get(`${import.meta.env.VITE_BACKEND_URL}/calendar/${profileId}`)
@@ -42,7 +37,6 @@ export default function CalendarComponent() {
         setIsBook(data || []);
       });
   }, []);
-
   const hSubmit = (evt) => {
     evt.preventDefault();
     api
@@ -54,7 +48,30 @@ export default function CalendarComponent() {
         toast("c'est booké !");
       });
   };
-
+  if (!isBook.length) {
+    return (
+      <SCalendarComponent>
+        <DatePicker
+          locale="fr"
+          selected={startDate}
+          onChange={onChange}
+          startDate={startDate}
+          minDate={new Date()}
+          inline
+        />
+        {isSelected === true ? (
+          <div className="container">
+            <div className="selectedDate">
+              {moment(startDate).locale("fr").format("LLLL")}
+            </div>
+            <button className="reservation" type="submit" onClick={hSubmit}>
+              PROPOSER UN EVENEMENT
+            </button>
+          </div>
+        ) : null}
+      </SCalendarComponent>
+    );
+  }
   return (
     <SCalendarComponent>
       <DatePicker
