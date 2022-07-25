@@ -22,7 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/register/artist" element={<SignupArtist />} />
         <Route path="/register/employer" element={<RegisterEmployer />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar/:profileId" element={<Calendar />} />
         <Route path="/band/:bandId" element={<Band />} />
         <Route
           path="/artist/:profileId/favorites"
