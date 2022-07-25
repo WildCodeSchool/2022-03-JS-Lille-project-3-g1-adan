@@ -75,7 +75,7 @@ export default styled.div`
 
     .connection p {
       grid-area: 1 / 1 / 3 / 2;
-      height: 10vh;
+      height: fit-content;
       width: 30vw;
       background-color: #d9d9d9;
       margin-top: 7vh;
