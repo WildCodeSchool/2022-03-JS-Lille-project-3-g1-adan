@@ -26,9 +26,9 @@ export default function Login() {
     api
       .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, formData)
       .then(({ data }) => {
-        const { user, token } = data;
+        const { token } = data;
         api.defaults.headers.authorization = `Bearer ${token}`;
-        dispatch({ type: "LOGIN", payload: user });
+        dispatch({ type: "LOGIN", payload: data });
         toast.success("Bienvenue !", {
           position: "bottom-right",
           autoClose: 5000,
@@ -40,7 +40,6 @@ export default function Login() {
         });
         navigate(`/${data.type}/${data.id}`);
       })
-
       .catch((e) => {
         toast.error(`Mauvais identifiants${e}`, {
           position: "bottom-right",

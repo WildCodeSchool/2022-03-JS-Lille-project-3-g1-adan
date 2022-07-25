@@ -10,6 +10,7 @@ const {
   SearchableController,
   EmployerController,
   CalendarController,
+  FavoriteController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -34,7 +35,11 @@ router.delete("/user/:id", UserController.delete);
 router.get("/artist", ArtistController.browse);
 router.get("/artist/:id", ArtistController.read);
 router.put("/artist/:id", ArtistController.editAllInfo);
-router.post("/artist", ArtistController.add);
+router.post(
+  "/artist",
+  passport.authenticate("jwt", { session: false }),
+  ArtistController.add
+);
 router.delete("/artist/:id", ArtistController.delete);
 
 router.put("/band/:id", BandController.edit);
@@ -54,13 +59,24 @@ router.post(
   CalendarController.addCalendar
 );
 router.put("/calendar/:id", CalendarController.edit);
-router.get("/calendar/", CalendarController.read);
-router.get(
-  "/calendar",
-  passport.authenticate("jwt", { session: false }),
-  CalendarController.read
-);
+router.get("/calendar/:id", CalendarController.read);
 router.get("/calendar", CalendarController.browse);
 
 router.delete("/calendar/:id", CalendarController.delete);
+
+router.post(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.add
+);
+router.delete(
+  "/favorites/:data",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.delete
+);
+router.get(
+  "/favorites",
+  passport.authenticate("jwt", { session: false }),
+  FavoriteController.read
+);
 module.exports = router;

@@ -38,14 +38,15 @@ export default function SignupArtist() {
         const { id } = data.user;
         delete formData.password;
         api.defaults.headers.authorization = `Bearer ${data.token}`;
-        api.post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
-          ...formData,
-          user_id: id,
-        });
-      })
-      .then(({ data: dataArtist }) => {
-        dispatch({ type: "LOGIN", payload: dataArtist });
-        navigate(`/profile/${dataArtist.id}`);
+        api
+          .post(`${import.meta.env.VITE_BACKEND_URL}/artist`, {
+            ...formData,
+            user_id: id,
+          })
+          .then(({ data: dataArtist }) => {
+            dispatch({ type: "LOGIN", payload: dataArtist });
+            navigate(`/artist/${dataArtist.id}`);
+          });
       });
   };
 
