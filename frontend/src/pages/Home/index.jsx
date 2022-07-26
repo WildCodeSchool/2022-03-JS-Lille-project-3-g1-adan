@@ -31,7 +31,7 @@ export default function Home() {
       <section className="about">
         <img src={thisIsUs} className="thisIsUs" alt="thisIsUs" />
         <div className="description">
-          <h1>Qui sommes nous ?</h1>
+          <h1>A propos :</h1>
           <p>
             Par notre éducation, nos expériences, nos rencontres et nos
             sensibilités propres, nous portons toutes un intérêt à l’univers
