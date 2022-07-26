@@ -16,7 +16,7 @@ export default styled.div`
     margin: 0 auto;
     text-align: center;
     display: block;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .formBox {
@@ -52,7 +52,12 @@ export default styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: end;
-      background-image: url(${banner});
+      background-image: linear-gradient(
+          90deg,
+          rgba(120, 0, 0, 0.311) 0%,
+          rgba(120, 0, 0, 0.311) 0%
+        ),
+        url(${banner});
       background-size: cover;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
@@ -63,6 +68,7 @@ export default styled.div`
       font-size: 1.6rem;
       text-align: center;
       font-style: italic;
+      margin-bottom: 1rem;
     }
 
     .logo {

@@ -429,19 +429,25 @@ function CardProfileInfo() {
           </h1>
           <p>{artistData.role}</p>
         </div>
-        <button
-          type="button"
-          className={`followButton ${
-            isFollow ? "isNotFollowed" : "isFollowed"
-          }`}
-          onClick={handleIsFollow}
-        >
-          Suivre
-        </button>
+        {parseInt(profileId, 10) === id ? (
+          <div className="favBtn">
+            <MyFavorites />
+          </div>
+        ) : (
+          <button
+            type="button"
+            className={`followButton ${
+              isFollow ? "isNotFollowed" : "isFollowed"
+            }`}
+            onClick={handleIsFollow}
+          >
+            Suivre
+          </button>
+        )}
         <ul>
-          <li>👥 {artistData.bandname} The goodman</li>
+          <li>👥 {artistData.bandname} </li>
           <li>🌍 {artistData.city}</li>
-          <li>€ {artistData.cachet}</li>
+          <li> € {artistData.cachet}</li>
         </ul>
         <div className="description">
           <button type="button" onClick={openModal2} className="descriptionBtn">
@@ -482,7 +488,6 @@ function CardProfileInfo() {
           MP
         </button>
       </div>
-      {parseInt(profileId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }

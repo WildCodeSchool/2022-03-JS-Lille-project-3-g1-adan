@@ -11,14 +11,14 @@ export default styled.button`
   color: #ffffff;
   margin: auto;
   position: absolute;
-  top: 7%;
-  left: 78%;
+  top: 6%;
+  left: 76%;
 
   @media screen and (min-width: 800px) {
     font-size: 1rem;
     height: 2rem;
     width: 7rem;
-    top: 28%;
-    left: 92%;
+    top: 8%;
+    left: 87.2%;
   }
 `;
