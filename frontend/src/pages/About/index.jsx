@@ -3,7 +3,7 @@ import SAbout from "./style";
 export default function About() {
   return (
     <SAbout>
-      <h2>Qui sommes-nous?</h2>
+      <h2>A propos :</h2>
       <p>
         La profession d'artiste peut être dans certains cas synonyme de
         précarité dû à un système de rémunération assez mal connu. Cette
