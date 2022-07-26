@@ -186,15 +186,21 @@ function CardEmployerInfo() {
           </h1>
           <p>{employerData.role}</p>
         </div>
-        <button
-          type="button"
-          className={`followButton ${
-            isFollow ? "isNotFollowed" : "isFollowed"
-          }`}
-          onClick={handleIsFollow}
-        >
-          Suivre
-        </button>
+        {parseInt(employerId, 10) === id ? (
+          <div className="favBtn">
+            <MyFavorites />
+          </div>
+        ) : (
+          <button
+            type="button"
+            className={`followButton ${
+              isFollow ? "isNotFollowed" : "isFollowed"
+            }`}
+            onClick={handleIsFollow}
+          >
+            Suivre
+          </button>
+        )}
         <ul>
           <li>🌍 {employerData.city}</li>
         </ul>
@@ -434,7 +440,6 @@ function CardEmployerInfo() {
           </button>
         </Modal>
       </div>
-      {parseInt(employerId, 10) === id && <MyFavorites />}
     </SCardProfile>
   );
 }
