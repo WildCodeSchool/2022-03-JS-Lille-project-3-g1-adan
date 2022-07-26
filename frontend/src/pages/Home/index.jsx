@@ -2,6 +2,7 @@ import logo from "@assets/homePageImg/logo.svg";
 import thisIsUs from "@assets/homePageImg/thisIsUs.png";
 import Register from "@components/Buttons/Register";
 import Login from "@components/Login";
+import { Link } from "react-router-dom";
 import SHome from "./style";
 
 export default function Home() {
@@ -17,8 +18,8 @@ export default function Home() {
       <section className="connection">
         <p>
           ADAN, un outil simple, intuitif, qui garantit aux artistes et à leur
-          employeur une cadre sécurisé et légal dédié à la mise en place de
-          prestations
+          employeur un cadre sécurisé et légal dédié à la mise en place de
+          prestations.
         </p>
         <div className="login">
           <Login />
@@ -36,7 +37,9 @@ export default function Home() {
             sensibilités propres, nous portons toutes un intérêt à l’univers
             artistique et aux acteurs qui le font vivre : les artistes.
           </p>
-          <h2>En savoir plus</h2>
+          <Link to="/about">
+            <h2>En savoir plus</h2>
+          </Link>
         </div>
       </section>
     </SHome>

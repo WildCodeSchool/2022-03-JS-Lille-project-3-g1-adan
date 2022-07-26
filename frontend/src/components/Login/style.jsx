@@ -36,7 +36,7 @@ export default styled.div`
     letter-spacing: 0.1rem;
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     .formBox {
       padding: 1rem 7rem 1rem;
     }

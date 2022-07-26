@@ -3,11 +3,14 @@ import contact from "@assets/pictureNavMob/contact.png";
 import logoAdangris from "@assets/pictureNavMob/logoAdangris.png";
 import search from "@assets/pictureNavMob/Search.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import SBurger from "./style";
 
 function Burger() {
+  const { type } = useSelector((state) => state.user);
+  const { id } = useSelector((state) => state.user);
+
   const [toggleMenu, setToggleMenu] = useState(false);
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
@@ -36,7 +39,7 @@ function Burger() {
 
       {toggleMenu && (
         <ul>
-          <Link to="/artist/:profileId">
+          <Link to={`/${type}/${id}`}>
             <li className="picture">Mon profil</li>
           </Link>
           <Link to="/">
