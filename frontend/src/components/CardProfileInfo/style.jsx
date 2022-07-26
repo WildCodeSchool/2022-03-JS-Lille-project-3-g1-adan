@@ -188,6 +188,11 @@ export default styled.div`
     text-decoration: underline;
   }
   @media screen and (min-width: 800px) {
+    .avatarImg {
+      height: 80%;
+      width: auto;
+      aspect-ratio: 1/1;
+    }
     .imgAgenda {
       right: 8%;
       top: 30%;
@@ -205,6 +210,12 @@ export default styled.div`
     .followButton {
       right: 6.5%;
       top: 5%;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+    .favBtn {
+      right: 6.5%;
+      top: 0;
       font-size: 1rem;
       padding: 0.5rem;
     }
