@@ -40,6 +40,11 @@ export default styled.div`
     font-weight: bold;
   }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   @media screen and (min-width: 800px) {
     .banner {
       width: 100vw;
