@@ -39,7 +39,7 @@ function GroupInfo() {
       <div className="groupContainer">
         {bandData.map((artist) => {
           return (
-            <div className="cardMember">
+            <div className="cardMember" key={artist.id}>
               <img src={artist.avatar} className="avatar" alt="ProfileImg" />
               <div className="memberName">
                 <ul>

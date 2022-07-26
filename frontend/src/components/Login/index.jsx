@@ -40,8 +40,8 @@ export default function Login() {
         });
         navigate(`/${data.type}/${data.id}`);
       })
-      .catch((e) => {
-        toast.error(`Mauvais identifiants${e}`, {
+      .catch(() => {
+        toast.error("Email ou mot de passe erroné", {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,

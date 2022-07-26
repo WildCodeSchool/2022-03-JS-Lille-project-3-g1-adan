@@ -24,7 +24,7 @@ export default function Favorites() {
     <SFavorites>
       {favorites.map((favorite) => {
         return (
-          <li>
+          <li key={favorite.followed_typeId}>
             <Link to={`/${favorite.favUrl}`}> {favorite.favName} </Link>
             <DeleteFavorites
               followedType={favorite.followedType}
