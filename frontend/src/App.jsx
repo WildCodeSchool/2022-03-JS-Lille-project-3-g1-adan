@@ -11,8 +11,10 @@ import Employer from "@pages/Employer";
 import About from "@pages/About";
 import SearchResult from "@pages/Result";
 import FavoritesPage from "@pages/FavoritesPage";
+import Modal from "react-modal/lib/components/Modal";
 
 function App() {
+  Modal.setAppElement("#root");
   return (
     <div className="App">
       <Routes>

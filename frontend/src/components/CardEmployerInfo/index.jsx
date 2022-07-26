@@ -288,7 +288,7 @@ function CardEmployerInfo() {
 
             <div>
               <label htmlFor="address">
-                Adress :
+                Adresse :
                 <input
                   className="inputForm"
                   type="text"
@@ -398,7 +398,7 @@ function CardEmployerInfo() {
             </div>
             <div>
               <label htmlFor="status">
-                Status :
+                Statut :
                 <input
                   className="inputForm"
                   type="text"
@@ -430,7 +430,7 @@ function CardEmployerInfo() {
             Supprimer votre profil
           </button>
           <button type="button" onClick={closeModal2}>
-            close
+            fermer
           </button>
         </Modal>
       </div>
