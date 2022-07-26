@@ -288,7 +288,7 @@ function CardEmployerInfo() {
 
             <div>
               <label htmlFor="address">
-                Adress :
+                Adresse :
                 <input
                   className="inputForm"
                   type="text"
