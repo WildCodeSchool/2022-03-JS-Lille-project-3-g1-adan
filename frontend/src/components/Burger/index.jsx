@@ -45,7 +45,7 @@ function Burger() {
           <Link to="/">
             <li className="picture">Page d'accueil</li>
           </Link>
-          <Link to="/agenda">
+          <Link to={`/calendar/${id}`}>
             <li className="picture">Mon agenda</li>
           </Link>
           <Link to="/about">
