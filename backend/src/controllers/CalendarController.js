@@ -20,7 +20,7 @@ class CalendarController {
         if (!rows.length) {
           res.sendStatus(204);
         } else {
-          res.send(rows[0]);
+          res.send(rows);
         }
       })
       .catch((err) => {

@@ -85,6 +85,7 @@ export default function CalendarComponent() {
         minDate={new Date()}
         inline
       />
+      <div className="legende">Les dates en vert sont réservées</div>
       {isSelected === true ? (
         <div className="container">
           <div className="selectedDate">
