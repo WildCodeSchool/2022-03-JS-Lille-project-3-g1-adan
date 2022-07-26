@@ -36,8 +36,7 @@ function Burger() {
   return (
     <SBurger toggleNav={toggleNav} open={open}>
       <img src={logoAdangris} alt="logo" className="logo" />
-
-      {toggleMenu && (
+      {parseInt(id, 10) && toggleMenu ? (
         <ul>
           <Link to={`/${type}/${id}`}>
             <li className="picture">Mon profil</li>
@@ -55,6 +54,17 @@ function Burger() {
             Déconnexion
           </button>
         </ul>
+      ) : (
+        toggleMenu && (
+          <ul>
+            <Link to="/">
+              <li className="picture">Page d'accueil</li>
+            </Link>
+            <Link to="/about">
+              <li className="picture">A propos</li>
+            </Link>
+          </ul>
+        )
       )}
       <Link to="/search">
         <img src={search} alt="recherche" className="pict" />
