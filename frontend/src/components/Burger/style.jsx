@@ -51,7 +51,7 @@ export default styled.nav`
   }
   .logo {
     padding-top: 0;
-    margin-right: 87vw;
+    margin-right: 85vw;
     width: auto;
     height: 10vh;
   }

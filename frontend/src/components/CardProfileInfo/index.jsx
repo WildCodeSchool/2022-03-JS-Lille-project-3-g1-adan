@@ -448,7 +448,7 @@ function CardProfileInfo() {
         <ul>
           <li>👥 {artistData.bandname} </li>
           <li>🌍 {artistData.city}</li>
-          <li> € {artistData.cachet}</li>
+          <li className="cachet"> € {artistData.cachet}</li>
         </ul>
         <div className="description">
           <button type="button" onClick={openModal2} className="descriptionBtn">
