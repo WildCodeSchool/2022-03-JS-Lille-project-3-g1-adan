@@ -11,7 +11,7 @@ import Employer from "@pages/Employer";
 import Band from "@pages/Band";
 import About from "@pages/About";
 import FavoritesPage from "@pages/FavoritesPage";
-import Modal from "react-modal/lib/components/Modal";
+import Modal from "react-modal";
 
 function App() {
   Modal.setAppElement("#root");
