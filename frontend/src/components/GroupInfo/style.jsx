@@ -51,9 +51,40 @@ export default styled.section`
     display: flex;
     margin-bottom: 2rem;
   }
+  .followButton {
+    border-radius: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    padding: 0.3rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+
+  .isFollowed {
+    background: #f77777;
+    border: 1px solid #bb5759;
+  }
+
+  .isNotFollowed {
+    background: #65b857;
+    border: 1px solid #199f03;
+  }
   @media screen and (min-width: 800px) {
     font-size: calc(100vw / 55);
     line-height: 3rem;
+
+    .followButton {
+      right: 6.5%;
+      top: 5%;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
 
     .imgband {
       height: 10rem;
