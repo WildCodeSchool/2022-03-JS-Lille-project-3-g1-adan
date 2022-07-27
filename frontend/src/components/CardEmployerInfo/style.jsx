@@ -173,6 +173,11 @@ export default styled.div`
     text-decoration: underline;
   }
   @media screen and (min-width: 800px) {
+    .avatarImg {
+      height: 80%;
+      width: auto;
+      aspect-ratio: 1/1;
+    }
     .imgAgenda {
       right: 7.7%;
       top: 40%;

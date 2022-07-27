@@ -4,6 +4,10 @@ export default styled.form`
   display: flex;
   flex-direction: column;
 
+  .legende {
+    margin: auto;
+    margin-top: 0.5rem;
+  }
   .react-datepicker {
     background-color: var(--main-color);
     border: none;
@@ -101,6 +105,11 @@ export default styled.form`
     justify-content: flex-start;
     width: 100vw;
 
+    .legende {
+      position: absolute;
+      top: 90%;
+      left: 4%;
+    }
     .react-datepicker {
       margin-top: 5vh;
       width: 70vw;

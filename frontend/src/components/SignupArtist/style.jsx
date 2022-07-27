@@ -108,12 +108,11 @@ export default styled.section`
   @media screen and (min-width: 800px) {
     .registerContainer {
       height: 45vh;
-      padding-bottom: 2rem;
       width: 40vw;
     }
     .imgLogo {
       width: 13vw;
-      margin-top: 4rem;
+      margin-top: 6rem;
     }
     .registerContainerTwo {
       margin-top: 3rem;
