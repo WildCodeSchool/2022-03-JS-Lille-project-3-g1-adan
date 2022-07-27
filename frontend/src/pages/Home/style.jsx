@@ -125,7 +125,7 @@ export default styled.div`
 
     .description {
       width: 30vw;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #ffffff;
       text-align: center;
       padding-top: 2rem;

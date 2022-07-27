@@ -33,9 +33,11 @@ export default function Home() {
         <div className="description">
           <h1>A propos :</h1>
           <p>
-            Par notre éducation, nos expériences, nos rencontres et nos
-            sensibilités propres, nous portons toutes un intérêt à l’univers
-            artistique et aux acteurs qui le font vivre : les artistes.
+            ADAN est un outil né de l'imagination d'Emeline et Calista,
+            étudiantes à l'Université de Technologies de Compiègne. Baignées
+            dans les notions de création et d'innovation nous avons mis au point
+            ADAN afin de rendre les tâches administratives des artistes et de
+            leurs employeurs plus simples.
           </p>
           <Link to="/about">
             <h2>En savoir plus</h2>
