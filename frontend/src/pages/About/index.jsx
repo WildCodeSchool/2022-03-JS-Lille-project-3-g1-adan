@@ -5,9 +5,11 @@ export default function About() {
   return (
     <SAbout>
       <h2>A propos :</h2>
+      <div className="back">
+        <BackButton />
+      </div>
       <div className="container">
         {" "}
-        <BackButton className="back" />
         <p>
           La profession d'artiste peut être dans certains cas synonyme de
           précarité dû à un système de rémunération assez mal connu. Cette

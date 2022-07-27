@@ -39,9 +39,11 @@ export default styled.section`
       font-size: 3rem;
       margin: 4rem;
     }
-    .back {
-      color: #c4c4c4;
+    button {
+      top: 6rem;
+      color: white;
     }
+
     .container {
       margin-top: 2rem;
       width: fit-content;

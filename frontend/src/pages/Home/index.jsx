@@ -17,8 +17,8 @@ export default function Home() {
       </section>
       <section className="connection">
         <p>
-          ADAN, un outil simple, intuitif, qui garantit aux artistes et à leur
-          employeur un cadre sécurisé et légal dédié à la mise en place de
+          ADAN, un outil simple, intuitif, qui garantit aux artistes et à leurs
+          employeurs un cadre sécurisé et légal dédié à la mise en place de
           prestations.
         </p>
         <div className="login">
