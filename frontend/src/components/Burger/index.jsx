@@ -35,14 +35,16 @@ function Burger() {
 
   return (
     <SBurger toggleNav={toggleNav} open={open}>
-      <img src={logoAdangris} alt="logo" className="logo" />
+      <Link to="/">
+        <img src={logoAdangris} alt="logo" className="logo" />
+      </Link>{" "}
       {parseInt(id, 10) && toggleMenu ? (
         <ul>
           <Link to={`/${type}/${id}`}>
             <li className="picture">Mon profil</li>
           </Link>
           <Link to="/">
-            <li className="picture">Page d'accueil</li>
+            <li className="picture">Accueil</li>
           </Link>
           <Link to={`/calendar/${id}`}>
             <li className="picture">Mon agenda</li>
@@ -58,7 +60,7 @@ function Burger() {
         toggleMenu && (
           <ul>
             <Link to="/">
-              <li className="picture">Page d'accueil</li>
+              <li className="picture">Accueil</li>
             </Link>
             <Link to="/about">
               <li className="picture">A propos</li>

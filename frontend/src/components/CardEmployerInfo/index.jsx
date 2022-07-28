@@ -222,7 +222,7 @@ function CardEmployerInfo() {
         </div>
 
         <div>
-          <Link to="/calendar">
+          <Link to={`/calendar/${id}`}>
             <img className="imgAgenda" src={agenda} alt="Logo agenda" />
           </Link>
         </div>

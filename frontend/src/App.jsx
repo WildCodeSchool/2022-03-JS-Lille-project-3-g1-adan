@@ -9,9 +9,9 @@ import Calendar from "@pages/Calendar";
 import RegisterEmployer from "@components/RegisterEmployer";
 import Employer from "@pages/Employer";
 import About from "@pages/About";
+import SearchResult from "@pages/Result";
 import FavoritesPage from "@pages/FavoritesPage";
 import Modal from "react-modal";
-import SearchResult from "@components/SearchResult";
 
 function App() {
   Modal.setAppElement("#root");

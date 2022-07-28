@@ -17,7 +17,7 @@ export default styled.section`
     h2 {
       display: block;
       font-size: 3rem;
-      margin-top: 6rem;
+      margin-top: 10rem;
       color: white;
       font-weight: bold;
     }

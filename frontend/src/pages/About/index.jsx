@@ -1,10 +1,15 @@
+import BackButton from "@components/BackButton";
 import SAbout from "./style";
 
 export default function About() {
   return (
     <SAbout>
-      <h2>Qui sommes-nous?</h2>
+      <h2>A propos :</h2>
+      <div className="back">
+        <BackButton />
+      </div>
       <div className="container">
+        {" "}
         <p>
           La profession d'artiste peut être dans certains cas synonyme de
           précarité dû à un système de rémunération assez mal connu. Cette
@@ -14,7 +19,6 @@ export default function About() {
           artistes reçoivent en échange de leur services des prestations
           compensatoires ou encore un paiement de la main à la main aléatoire.
         </p>
-
         <p>
           Tout artiste a déjà reçu en échange d’une prestation « un verre offert
           par la maison », ou encore un petit billet mais moins que prévu car le
@@ -26,7 +30,6 @@ export default function About() {
           encore faut-il les connaître et prendre le temps de faire les
           démarches.{" "}
         </p>
-
         <p>
           En effet, les répétitions, la recherche de prestation et les
           représentations prennent beaucoup de temps aux artistes qui souvent

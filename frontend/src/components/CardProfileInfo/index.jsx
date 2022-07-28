@@ -95,7 +95,7 @@ function CardProfileInfo() {
     axios
       .delete(`${import.meta.env.VITE_BACKEND_URL}/artist/${profileId}`)
       .then(() => {
-        toast.success("profil artist supprimé", {
+        toast.success("profil artiste supprimé", {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -167,6 +167,7 @@ function CardProfileInfo() {
       lineHeight: "2rem",
     },
   };
+
   return (
     <SCardProfile src={artistData}>
       <div
@@ -244,8 +245,8 @@ function CardProfileInfo() {
                 className="inputForm"
                 type="text"
                 name="banner"
-                placeholder="Banner"
-                value={formData.banner || ""}
+                placeholder="Bannière"
+                value={formData.banner}
                 onChange={hChangeFormData}
               />{" "}
             </label>
@@ -447,11 +448,11 @@ function CardProfileInfo() {
         <ul>
           <li>👥 {artistData.bandname} </li>
           <li>🌍 {artistData.city}</li>
-          <li> € {artistData.cachet}</li>
+          <li className="cachet"> € {artistData.cachet}</li>
         </ul>
         <div className="description">
           <button type="button" onClick={openModal2} className="descriptionBtn">
-            + d'informations
+            + d'information
           </button>
           <Modal
             isOpen={modalIsOpen2}
