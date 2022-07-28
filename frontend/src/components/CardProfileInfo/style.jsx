@@ -7,6 +7,7 @@ export default styled.div`
   background-color: #bb5459;
   height: 100%;
   width: 100%;
+
   .bannerImg {
     height: 12vh;
     background-image: url(${(props) => props.src.banner});
@@ -192,6 +193,9 @@ export default styled.div`
       height: 80%;
       width: auto;
       aspect-ratio: 1/1;
+    }
+    .cachet {
+      padding-left: 0.3rem;
     }
     .imgAgenda {
       right: 8%;

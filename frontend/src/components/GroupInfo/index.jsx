@@ -66,7 +66,7 @@ function GroupInfo() {
         }
       />
       <h1>{bandData[0].style}</h1>
-      <p>🌍 {bandData[0].city}</p>
+      <p>🌍{bandData[0].city}</p>
       <p>{bandData[0].cachet}€</p>
       <Link to="/calendar">
         <img src={agenda} alt="agenda" />
