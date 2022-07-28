@@ -194,7 +194,7 @@ function CardProfileInfo() {
                 name="lastname"
                 id="lastname"
                 placeholder="Nom de famille"
-                value={formData.lastname}
+                value={formData.lastname || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -207,7 +207,7 @@ function CardProfileInfo() {
               type="text"
               name="firstname"
               placeholder="Prénom"
-              value={formData.firstname}
+              value={formData.firstname || ""}
               onChange={hChangeFormData}
             />
           </label>
@@ -220,7 +220,7 @@ function CardProfileInfo() {
                 type="text"
                 name="city"
                 placeholder="Ville"
-                value={formData.city}
+                value={formData.city || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -233,7 +233,7 @@ function CardProfileInfo() {
                 type="text"
                 name="avatar"
                 placeholder="Avatar"
-                value={formData.avatar}
+                value={formData.avatar || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -259,7 +259,7 @@ function CardProfileInfo() {
                 type="text"
                 name="demo"
                 placeholder="Démo"
-                value={formData.demo}
+                value={formData.demo || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -272,7 +272,7 @@ function CardProfileInfo() {
                 type="text"
                 name="description"
                 placeholder="description"
-                value={formData.description}
+                value={formData.description || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -285,7 +285,7 @@ function CardProfileInfo() {
                 type="text"
                 name="cachet"
                 placeholder="cachet"
-                value={formData.cachet}
+                value={formData.cachet || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -298,7 +298,7 @@ function CardProfileInfo() {
                 type="text"
                 name="instagram"
                 placeholder="Instagram"
-                value={formData.instagram}
+                value={formData.instagram || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -311,7 +311,7 @@ function CardProfileInfo() {
                 type="text"
                 name="linkedin"
                 placeholder="Linkedin"
-                value={formData.linkedin}
+                value={formData.linkedin || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -324,7 +324,7 @@ function CardProfileInfo() {
                 type="text"
                 name="phone"
                 placeholder="Tel"
-                value={formData.phone}
+                value={formData.phone || ""}
                 onChange={hChangeFormData}
               />{" "}
             </label>
@@ -336,8 +336,8 @@ function CardProfileInfo() {
                 className="inputForm"
                 type="text"
                 name="adress"
-                placeholder="adress"
-                value={formData.address}
+                placeholder="adresse"
+                value={formData.address || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -350,7 +350,7 @@ function CardProfileInfo() {
                 type="text"
                 name="zipcode"
                 placeholder="Code postal"
-                value={formData.zipcode}
+                value={formData.zipcode || ""}
                 onChange={hChangeFormData}
               />{" "}
             </label>
@@ -363,33 +363,33 @@ function CardProfileInfo() {
                 type="text"
                 name="nickname"
                 placeholder="Pseudonyme"
-                value={formData.nickname}
+                value={formData.nickname || ""}
                 onChange={hChangeFormData}
               />
             </label>
           </div>
           <div>
             <label htmlFor="fistname">
-              Gallerie d'image :
+              Galerie d'image :
               <input
                 className="inputForm"
                 type="text"
                 name="galleryImg"
-                placeholder="Gallerie d'images"
-                value={formData.galleryImg}
+                placeholder="Galerie d'images"
+                value={formData.galleryImg || ""}
                 onChange={hChangeFormData}
               />
             </label>
           </div>
           <div>
             <label htmlFor="fistname">
-              Status :
+              Statut :
               <input
                 className="inputForm"
                 type="text"
                 name="status"
                 placeholder="status"
-                value={formData.status}
+                value={formData.status || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -402,7 +402,7 @@ function CardProfileInfo() {
                 type="text"
                 name="siren"
                 placeholder="siren"
-                value={formData.siren}
+                value={formData.siren || ""}
                 onChange={hChangeFormData}
               />
             </label>
@@ -413,7 +413,7 @@ function CardProfileInfo() {
           Supprimer votre profil
         </button>
         <button type="button" onClick={closeModal}>
-          close
+          fermer
         </button>
       </Modal>
       <div className="profileInfo">

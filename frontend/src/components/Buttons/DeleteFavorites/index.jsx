@@ -49,13 +49,13 @@ export default function DeleteFavorites({
 }
 DeleteFavorites.propTypes = {
   followedType: PropTypes.string,
-  followedTypeId: PropTypes.string,
+  followedTypeId: PropTypes.number,
   favName: PropTypes.string,
   setFavorites: PropTypes.func,
 };
 DeleteFavorites.defaultProps = {
   followedType: "",
-  followedTypeId: "",
+  followedTypeId: 0,
   favName: "",
   setFavorites: () => {},
 };

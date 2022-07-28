@@ -260,7 +260,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="firstname"
                   placeholder="Prénom"
-                  value={formData.firstname}
+                  value={formData.firstname || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -273,7 +273,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="lastname"
                   placeholder="Nom de famille"
-                  value={formData.lastname}
+                  value={formData.lastname || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -286,7 +286,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="phone"
                   placeholder="numéro de téléphone"
-                  value={formData.phone}
+                  value={formData.phone || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -300,7 +300,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="address"
                   placeholder="adresse"
-                  value={formData.address}
+                  value={formData.address || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -314,7 +314,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="zipcode"
                   placeholder="code postal"
-                  value={formData.zipcode}
+                  value={formData.zipcode || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -328,7 +328,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="city"
                   placeholder="Ville"
-                  value={formData.city}
+                  value={formData.city || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -342,7 +342,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="companyName"
                   placeholder="nom de la société"
-                  value={formData.companyName}
+                  value={formData.companyName || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -356,7 +356,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="companyStatus"
                   placeholder="statut de la société(ex : SARL, SAS...)"
-                  value={formData.companyStatus}
+                  value={formData.companyStatus || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -370,7 +370,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="avatar"
                   placeholder="Avatar"
-                  value={formData.avatar}
+                  value={formData.avatar || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -384,7 +384,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="banner"
                   placeholder="bannière"
-                  value={formData.banner}
+                  value={formData.banner || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -397,20 +397,20 @@ function CardEmployerInfo() {
                   type="text"
                   name="descriptionShort"
                   placeholder="description"
-                  value={formData.descriptionShort}
+                  value={formData.descriptionShort || ""}
                   onChange={hChangeFormData}
                 />
               </label>
             </div>
             <div>
               <label htmlFor="status">
-                Status :
+                Statut :
                 <input
                   className="inputForm"
                   type="text"
                   name="status"
                   placeholder="statut de l'employeur (ex : privé, publique...)"
-                  value={formData.status}
+                  value={formData.status || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -423,7 +423,7 @@ function CardEmployerInfo() {
                   type="text"
                   name="numberSiret"
                   placeholder="numéro de siret"
-                  value={formData.numberSiret}
+                  value={formData.numberSiret || ""}
                   onChange={hChangeFormData}
                 />
               </label>
@@ -436,7 +436,7 @@ function CardEmployerInfo() {
             Supprimer votre profil
           </button>
           <button type="button" onClick={closeModal2}>
-            close
+            fermer
           </button>
         </Modal>
       </div>
